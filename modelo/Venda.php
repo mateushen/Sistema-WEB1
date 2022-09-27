@@ -5,7 +5,7 @@ Class Venda{
     private $idCliente;
     private $idVeiculo;
     private $idPagamento;
-    private $data;
+    private $data_venda;
 
     public function __construct($i, $if, $ic, $iv, $ip, $d){
         $this->idVenda = $i;
@@ -72,14 +72,14 @@ Class Venda{
         return $this;
     }
 
-    public function getData()
+    public function getData_venda()
     {
-        return $this->data;
+        return $this->data_venda;
     }
 
-    public function setData($data)
+    public function setData_venda($data_venda)
     {
-        $this->data = $data;
+        $this->data_venda = $data_venda;
         return $this;
     }
 }
