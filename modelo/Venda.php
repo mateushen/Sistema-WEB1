@@ -7,15 +7,6 @@ Class Venda{
     private $idPagamento;
     private $data_venda;
 
-    public function __construct($i, $if, $ic, $iv, $ip, $d){
-        $this->idVenda = $i;
-        $this->idFuncionario = $if;
-        $this->idCliente = $ic;
-        $this->idVeiculo = $iv;
-        $this->idPagamento = $ip;
-        $this->data = $d;
-    }
-
     public function getIdVenda()
     {
         return $this->idVenda;

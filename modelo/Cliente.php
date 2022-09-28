@@ -5,13 +5,6 @@ Class Cliente{
     private $cpf;
     private $telefone;
 
-    public function __construct ($i, $n, $c, $t){
-        $this->idCliente = $i;
-        $this->nome = $n;
-        $this->cpf = $c;
-        $this->telefone = $t;
-    }
-
     public function getIdCliente()
     {
         return $this->idCliente;

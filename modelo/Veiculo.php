@@ -9,17 +9,6 @@ Class Veiculo{
     private $ano;
     private $vendida;
 
-    public function __construct($i, $p, $r, $ma, $mo, $c, $a, $v){
-        $this->idVeiculo = $i;
-        $this->placa = $p;
-        $this->renavam = $r;
-        $this->marca = $ma;
-        $this->modelo = $mo;
-        $this->cor = $c;
-        $this->ano = $a;
-        $this->vendida = $v;
-    }
-
     public function getIdVeiculo()
     {
         return $this->idVeiculo;

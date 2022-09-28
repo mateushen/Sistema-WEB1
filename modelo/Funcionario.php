@@ -8,15 +8,6 @@ Class Funcionario{
     private $senha;
     private $idGerente;
 
-    public function __construct ($i, $n, $c, $e, $s, $ig){
-        $this->idFuncionario = $i;
-        $this->nome = $n;
-        $this->cpf = $c;
-        $this->email = $e;
-        $this->senha = $s;
-        $this->idGerente = $ig;
-    }
-
     public function getIdFuncionario()
     {
         return $this->idFuncionario;

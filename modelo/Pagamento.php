@@ -2,11 +2,6 @@
 Class Pagamento{
     private $idPagamento;
     private $tipo_pagamento;
-    
-    public function __construct ($i, $tp){
-        $this->idPagamento = $i;
-        $this->tipo_pagamento = $tp;
-    }
 
     public function getIdPagamento()
     {
