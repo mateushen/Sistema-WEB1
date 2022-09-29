@@ -30,44 +30,51 @@
 </head>
 
 <body>
+
     <div>
-        <h1>LISTAGEM DE CLIENTES</h1>
+        <h1>LISTAGEM DE MOTOS</h1>
     </div>
 
     <table>
         <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Telefone</th>
-            <th>EXCLUIR</th>
-            <th>EDITAR</th>
+            <th>Placa</th>
+            <th>Renavam</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th>Ano</th>
+            <th></th>
+            <th></th>
         </tr>
         <?php
-        require_once '../../dao/DAOCliente.php';
+        require_once '../../dao/DAOVeiculo.php';
         require_once '../../dao/Conexao.php';
 
-        $dao = new DAOCliente();
+        $dao = new DAOVeiculo();
         $lista = $dao->lista();
 
         foreach ($lista as $l) {
             echo "<tr>";
 
-            echo '<td>' . $l['idCliente'] . "</td>";
-            echo '<td>' . $l['nome'] . "</td>";
-            echo '<td>' . $l['cpf'] . "</td>";
-            echo '<td>' . $l['telefone'] . "</td>";
+            echo '<td>' . $l['idVeiculo'] . "</td>";
+            echo '<td>' . $l['placa'] . "</td>";
+            echo '<td>'. $l['renavam']. "</td>";
+            echo '<td>' . $l['marca'] . "</td>";
+            echo '<td>' . $l['modelo'] . "</td>";
+            echo '<td>' . $l['cor'] . "</td>";
+            echo '<td>' . $l['ano'] . "</td>";
 
             echo '<td>
-            <form method="POST" action="excluiCliente.php">
+            <form method="POST" action="excluiVeiculo.php">
             <input type="submit" value="" id="trash" name="excluir">
-            <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
+            <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
             </form></td>';
 
             echo '<td>
-            <form method="POST" action="formEditaCliente.php">
+            <form method="POST" action="formEditaVeiculo.php">
             <input type="submit" value="" id="edit" name="editar">
-            <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
+            <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
             </form></td>';
 
             echo "</tr>";

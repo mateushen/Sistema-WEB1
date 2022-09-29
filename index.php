@@ -9,5 +9,10 @@
 <body>
     <a href="visao/Cliente/formCadastroCliente.php">Cadastrar Cliente</a><br><br>
     <a href="visao/Cliente/listagemCliente.php">Listagem de Clientes</a>
+
+<br><br>
+
+    <a href="visao/Veiculo/formCadastroVeiculo.php">Cadastrar Veiculo</a><br><br>
+    <a href="visao/Veiculo/listagemVeiculo.php">Listagem de Veiculos</a>
 </body>
 </html>
