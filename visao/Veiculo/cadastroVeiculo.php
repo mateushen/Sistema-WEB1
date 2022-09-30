@@ -14,7 +14,6 @@
     require_once '../../dao/DAOVeiculo.php';
     require_once '../../dao/Conexao.php';
 
-    $idVeiculo = filter_input(INPUT_POST, 'idVeiculo');
     $placa = filter_input(INPUT_POST, 'placa');
     $renavam = filter_input(INPUT_POST, 'renavam');
     $marca = filter_input(INPUT_POST, 'marca');
@@ -26,18 +25,18 @@
     $tamAno = strlen($ano);
     $tamRenavam = strlen($renavam);
 
-    if ($idVeiculo && $tamPlaca == 8 && $tamRenavam == 11 && $marca && $modelo && $cor && $tamAno == 4) {
+    if ($tamPlaca == 8 && $tamRenavam == 11 && $marca && $modelo && $cor && $tamAno == 4) {
 
         $obj = new Veiculo();
         $dao = new DAOVeiculo();
 
-        $obj->setIdVeiculo($idVeiculo);
         $obj->setPlaca($placa);
         $obj->setRenavam($renavam);
         $obj->setMarca($marca);
         $obj->setModelo($modelo);
         $obj->setCor($cor);
         $obj->setAno($ano);
+        $obj->setVendida(0);
 
         try {
             $dao->inclui($obj);
@@ -51,7 +50,7 @@
 
     ?>
     <br><br>
-    <a href="/conexaoWEB1">Inicio</a>
+    <a href="/Sistema-Concessionaria">Inicio</a>
 </body>
 
 </html>

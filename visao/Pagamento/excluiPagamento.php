@@ -5,26 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusão de veículo</title>
+    <title>Exclusão de forma de pagamento</title>
 </head>
 
 <body>
     <h1>Exclusão</h1>
     <?php
     require_once '../../dao/Conexao.php';
-    require_once '../../dao/DAOVeiculo.php';
+    require_once '../../dao/DAOPagamento.php';
 
-    $idVeiculo = $_POST['idVeiculo'];
+    $idPagamento = $_POST['idPagamento'];
 
-    $dao = new DAOVeiculo();
+    $dao = new DAOPagamento();
 
     try {
-        $dao->exclui($idVeiculo);
+        $dao->exclui($idPagamento);
         echo 'DELETADO!';
     } catch (Exception $e) {
         echo 'ERRO: ',  $e->getMessage(), "\n";
     }
     ?>
+
     <br><br>
     <a href="/Sistema-Concessionaria">Inicio</a>
 </body>

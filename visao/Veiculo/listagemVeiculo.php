@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela</title>
+    <title>Listagem de veículos</title>
     <style>
         #trash {
             width: 5vh;
@@ -44,8 +44,6 @@
             <th>Modelo</th>
             <th>Cor</th>
             <th>Ano</th>
-            <th></th>
-            <th></th>
         </tr>
         <?php
         require_once '../../dao/DAOVeiculo.php';

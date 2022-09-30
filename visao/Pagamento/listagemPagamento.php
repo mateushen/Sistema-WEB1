@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela</title>
+    <title>Listagem de tipos de pagamento</title>
     <style>
         #trash {
             width: 5vh;
@@ -31,41 +31,31 @@
 
 <body>
     <div>
-        <h1>LISTAGEM DE CLIENTES</h1>
+        <h1>TIPOS DE PAGAMENTO</h1>
     </div>
 
     <table>
         <tr>
             <th>ID</th>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Telefone</th>
+            <th>Tipo</th>
         </tr>
         <?php
-        require_once '../../dao/DAOCliente.php';
+        require_once '../../dao/DAOPagamento.php';
         require_once '../../dao/Conexao.php';
 
-        $dao = new DAOCliente();
+        $dao = new DAOPagamento();
         $lista = $dao->lista();
 
         foreach ($lista as $l) {
             echo "<tr>";
 
-            echo '<td>' . $l['idCliente'] . "</td>";
-            echo '<td>' . $l['nome'] . "</td>";
-            echo '<td>' . $l['cpf'] . "</td>";
-            echo '<td>' . $l['telefone'] . "</td>";
+            echo '<td>' . $l['idPagamento'] . "</td>";
+            echo '<td>' . $l['tipo_pagamento'] . "</td>";
 
             echo '<td>
-            <form method="POST" action="excluiCliente.php">
+            <form method="POST" action="excluiPagamento.php">
             <input type="submit" value="" id="trash" name="excluir">
-            <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
-            </form></td>';
-
-            echo '<td>
-            <form method="POST" action="formEditaCliente.php">
-            <input type="submit" value="" id="edit" name="editar">
-            <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
+            <input type="hidden" value="' . $l['idPagamento'] . '" id="idPagamento" name="idPagamento">
             </form></td>';
 
             echo "</tr>";
