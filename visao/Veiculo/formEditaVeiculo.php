@@ -23,7 +23,7 @@
     $veiculo = $lista[0];
 
     ?>
-    <form action="editaVeiculo.php" method="post">
+    <form action="editaVeiculo.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
         <input type="hidden" id="idVeiculo" name="idVeiculo" value="<?= $veiculo['idVeiculo'] ?>">
 

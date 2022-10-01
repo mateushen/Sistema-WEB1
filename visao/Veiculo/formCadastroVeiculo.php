@@ -10,7 +10,7 @@
 
 <body>
 
-    <form action="cadastroVeiculo.php" method="post">
+    <form action="cadastroVeiculo.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
         <label for="placa">Placa: </label>
         <input type="text" id="placa" name="placa" autocomplete="off" maxlength="8"><br><br>

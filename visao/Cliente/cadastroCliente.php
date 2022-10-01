@@ -18,10 +18,7 @@
     $cpf = filter_input(INPUT_POST, 'cpf');
     $telefone = filter_input(INPUT_POST, 'telefone');
 
-    $tamCPF = strlen($cpf);
-    $tamTEL = strlen($telefone);
-
-    if ($nome && $cpf && $telefone && $tamCPF == 14 && $tamTEL == 14) {
+    if ($nome && $cpf && $telefone) {
 
         $obj = new Cliente();
 

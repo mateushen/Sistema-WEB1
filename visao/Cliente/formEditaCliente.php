@@ -23,12 +23,12 @@
     $cliente = $lista[0];
 
     ?>
-    <form action="editaCliente.php" method="post">
+    <form action="editaCliente.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
         <input type="hidden" id="idCliente" name="idCliente" value="<?= $cliente['idCliente'] ?>">
 
         <label for="nome">Nome: </label>
-        <input type="text" id="nome" autocomplete="off" name="nome" maxlength="8" value="<?= $cliente['nome'] ?>"><br><br>
+        <input type="text" id="nome" autocomplete="off" name="nome" maxlength="25" value="<?= $cliente['nome'] ?>"><br><br>
 
         <label for="cpf">CPF: </label>
         <input type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)" value="<?= $cliente['cpf'] ?>"><br><br>

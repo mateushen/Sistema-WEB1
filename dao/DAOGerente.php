@@ -2,6 +2,43 @@
 
 class DAOGerente
 {
+    public function lista()
+    {
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
+    
+    public function inclui(Gerente $gerente){
+        $sql = 'INSERT INTO Gerente (idGerente, nome, cpf, senha) VALUES (?,?,?,?)';
+
+        $pst = Conexao::getPreparedStatement($sql);
+        $pst->bindValue(1, $gerente->getIdGerente());
+        $pst->bindValue(2, $gerente->getNome());
+        $pst->bindValue(3, $gerente->getCpf());
+        $pst->bindValue(4, $gerente->getSenha());
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function exclui(){
+        $sql = 'DELETE FROM Gerente';
+        $pst = Conexao::getPreparedStatement($sql);
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function verificaGerente($cpf, $senha)
     {
         $lista = [];
@@ -10,18 +47,6 @@ class DAOGerente
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
 
         if (($lista['cpf'] == $cpf) && ($lista['senha'] == $senha)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function exclui($idGerente)
-    {
-        $sql = 'DELETE FROM Gerente WHERE idGerente = ?';
-        $pst = Conexao::getPreparedStatement($sql);
-        $pst->bindValue(1, $idGerente);
-        if ($pst->execute()) {
             return true;
         } else {
             return false;

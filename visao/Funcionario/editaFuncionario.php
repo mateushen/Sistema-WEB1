@@ -5,29 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição de cliente</title>
+    <title>Edição de funcionário</title>
 </head>
 
 <body>
     <?php
-    require_once '../../modelo/Cliente.php';
-    require_once '../../dao/DAOCliente.php';
+    require_once '../../modelo/Funcionario.php';
+    require_once '../../dao/DAOFuncionario.php';
     require_once '../../dao/Conexao.php';
 
-    $idCliente = filter_input(INPUT_POST, 'idCliente');
     $nome = filter_input(INPUT_POST, 'nome');
     $cpf = filter_input(INPUT_POST, 'cpf');
-    $telefone = filter_input(INPUT_POST, 'telefone');
+    $email = filter_input(INPUT_POST, 'email');
+    $senha = filter_input(INPUT_POST, 'senha');
 
-    if ($idCliente && $nome && $cpf && $telefone) {
+    if ($nome && $email && $cpf && $senha) {
 
-        $obj = new Cliente();
-        $dao = new DAOCliente();
+        $obj = new Funcionario();
+        $dao = new DAOFuncionario();
 
-        $obj->setIdCliente($idCliente);
+        $obj->setIdFuncionario($idFuncionario);
         $obj->setNome($nome);
         $obj->setCpf($cpf);
-        $obj->setTelefone($telefone);
+        $obj->setEmail($email);
+        $obj->setSenha($senha);
+        $obj->setIdGerente(1);
 
         try {
             $dao->altera($obj);
