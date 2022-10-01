@@ -2,8 +2,7 @@
 
 class DAOGerente
 {
-    public function lista()
-    {
+    public function lista(){
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente');
         $pst->execute();
@@ -28,19 +27,7 @@ class DAOGerente
         }
     }
 
-    public function exclui(){
-        $sql = 'DELETE FROM Gerente';
-        $pst = Conexao::getPreparedStatement($sql);
-
-        if($pst->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public function verificaGerente($cpf, $senha)
-    {
+    public function verificaGerente($cpf, $senha){
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT cpf, senha FROM Gerente');
         $pst->execute();
