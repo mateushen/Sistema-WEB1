@@ -26,16 +26,29 @@ telefone.addEventListener('keypress', () => {
     }
 })
 
-// Verifica cpf e telefone
+// Verifica nome, cpf e telefone
 function verifica() {
-    var ok = verificaCPF();
+    var ok = verificaNome();
     if (ok) {
-        ok = verificaTelefone();
+        ok = verificaCPF();
         if (ok) {
+            ok = verificaTelefone();
+        } if (ok) {
             return true;
-        } else return false;
+        }else return false;
     } else {
         return false;
+    }
+}
+
+// Verificação de nome
+function verificaNome() {
+    if (document.forms[0].nome.value.length < 3) {
+        alert('Informe o nome.');
+        document.frmEnvia.nome.focus();
+        return false;
+    } else {
+        return true;
     }
 }
 
