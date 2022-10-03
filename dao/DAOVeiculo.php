@@ -59,6 +59,18 @@ class DAOVeiculo
         }
     }
 
+    public function motoVendida($idVeiculo){
+        $sql = 'UPDATE Veiculo SET vendida = 1 WHERE idVeiculo = ?';
+        $pst = Conexao::getPreparedStatement($sql);        
+        $pst->bindValue(2, $idVeiculo);
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function buscaID($idVeiculo){
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE idVeiculo = ?');
