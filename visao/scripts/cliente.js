@@ -35,10 +35,8 @@ function verifica() {
             ok = verificaTelefone();
         } if (ok) {
             return true;
-        }else return false;
-    } else {
-        return false;
-    }
+        } else return false;
+    } else return false;
 }
 
 // Verificação de nome

@@ -79,7 +79,23 @@ class DAOVeiculo
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
     }
+
+    public function motoNaoVendida(){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendida = 0');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
     
+    public function retornaID($modelo){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT idVeiculo FROM Veiculo WHERE modelo = ?');
+        $pst->bindValue(1, $modelo);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
 }
 
 ?>

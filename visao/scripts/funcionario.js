@@ -18,17 +18,19 @@ function verifica() {
         ok = verificaCPF();
         if (ok) {
             ok = verificaEmail();
-        } if (ok) {
-            ok = verificaSenha();
-        }else return false;
-    }else{
-        return false;
-    }
+            if (ok) {
+                ok = verificaSenha();
+                if (ok) {
+                    return true;
+                } else return false;
+            } else return false;
+        } else return false;
+    } else return false;
 }
 
 // Verificação de nome
 function verificaNome() {
-    if (document.forms[0].nome.value.length == 0) {
+    if (document.forms[0].nome.value.length < 3) {
         alert('Informe o seu nome.');
         document.frmEnvia.nome.focus();
         return false;

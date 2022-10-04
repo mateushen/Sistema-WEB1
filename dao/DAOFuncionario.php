@@ -64,6 +64,15 @@ class DAOFuncionario
         return $lista;
     }
 
+    public function retornaID($nome){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT idFuncionario FROM Funcionario WHERE nome = ?');
+        $pst->bindValue(1, $nome);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
 }
 
 ?>

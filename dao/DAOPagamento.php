@@ -44,6 +44,15 @@ class DAOPagamento
         return $lista;
     }
 
+    public function retornaID($tipo_pagamento){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT idPagamento FROM Pagamento WHERE tipo_pagamento = ?');
+        $pst->bindValue(1, $tipo_pagamento);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
+
 }
 
 ?>

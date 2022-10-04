@@ -5,20 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de forma de venda</title>
+    <title>Cadastro de venda</title>
 </head>
 
 <body>
     <?php
+    require_once '../../dao/Conexao.php';
     require_once '../../modelo/Venda.php';
     require_once '../../dao/DAOVenda.php';
-    require_once '../../dao/Conexao.php';
+    require_once '../../modelo/Funcionario.php';
+    require_once '../../dao/DAOFuncionario.php';
+    require_once '../../modelo/Cliente.php';
+    require_once '../../dao/DAOCliente.php';
+    require_once '../../modelo/Veiculo.php';
+    require_once '../../dao/DAOVeiculo.php';
+    require_once '../../modelo/Pagamento.php';
+    require_once '../../dao/DAOPagamento.php';
 
-    $idFuncionario = filter_input(INPUT_POST, 'idFuncionario');
-    $idCliente = filter_input(INPUT_POST, 'idCliente');
-    $idVeiculo = filter_input(INPUT_POST, 'idVeiculo');
-    $idPagamento = filter_input(INPUT_POST, 'idPagamento');
-    $data_venda = filter_input(INPUT_POST, 'data_venda');
+    $nomeFuncionario = $_POST['funcionario'];
+    $nomeCliente = $_POST['cliente'];
+    $veiculo = $_POST['veiculo'];
+    $pagamento = $_POST['pagamento'];
+
+    $daoF = new DAOFuncionario();
+    $idF = $daoF->retornaID($nomeFuncionario);
+
+    $daoC = new DAOCliente();
+    $idC = $daoC->retornaID($nomeCliente);
+
+    $daoV = new DAOVeiculo();
+    $idV = $daoV->retornaID($veiculo);
+
+    $daoP = new DAOPagamento();
+    $idP = $daoP->retornaID($pagamento);
+
+    $listaFuncionario = $idF[0];
+    $listaCliente = $idC[0];
+    $listaVeiculo = $idV[0];
+    $listaPagamento = $idP[0];
+
+    $idFuncionario = $listaFuncionario['idFuncionario'];
+    $idCliente = $listaCliente['idCliente'];
+    $idVeiculo = $listaVeiculo['idVeiculo'];
+    $idPagamento = $listaPagamento['idPagamento'];
+
+    $data_venda =date('d/m/y');
 
     if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
 
