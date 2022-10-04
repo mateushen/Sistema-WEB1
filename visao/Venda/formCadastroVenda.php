@@ -11,9 +11,9 @@
 
 <body>
 
-    <form action="cadastroVenda.php" method="post">
+    <form action="cadastroVenda.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
-        <select name="funcionario">
+        <select name="funcionario" id="funcionario">
             <?php
             require_once '../../modelo/Funcionario.php';
             require_once '../../dao/DAOFuncionario.php';
@@ -30,7 +30,7 @@
             ?>
         </select>
 
-        <select name="cliente">
+        <select name="cliente" id="cliente">
         <?php
             require_once '../../modelo/Cliente.php';
             require_once '../../dao/DAOCliente.php';
@@ -47,14 +47,14 @@
             ?>
         </select>
 
-        <select name="veiculo">
+        <select name="veiculo" id="veiculo">
         <?php
             require_once '../../modelo/Veiculo.php';
             require_once '../../dao/DAOVeiculo.php';
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOVeiculo();
-            $lista = $dao->lista();
+            $lista = $dao->motoNaoVendida();
 
             if ($lista) {
                 foreach ($lista as $l) {
@@ -64,7 +64,7 @@
             ?>
         </select>
 
-        <select name="pagamento">
+        <select name="pagamento" id="pagamento">
         <?php
             require_once '../../modelo/Pagamento.php';
             require_once '../../dao/DAOPagamento.php';
@@ -87,7 +87,7 @@
 
         <a href="/Sistema-Concessionaria">Inicio</a>
 
-        <script src="../scripts/main.js"></script>
+        <script src="../scripts/venda.js"></script>
 
     </form>
 </body>

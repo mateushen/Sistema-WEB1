@@ -62,7 +62,7 @@ class DAOVeiculo
     public function motoVendida($idVeiculo){
         $sql = 'UPDATE Veiculo SET vendida = 1 WHERE idVeiculo = ?';
         $pst = Conexao::getPreparedStatement($sql);        
-        $pst->bindValue(2, $idVeiculo);
+        $pst->bindValue(1, $idVeiculo);
 
         if($pst->execute()){
             return true;

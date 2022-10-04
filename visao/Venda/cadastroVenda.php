@@ -55,6 +55,7 @@
 
         $obj = new Venda();
         $dao = new DAOVenda();
+        $daoVeiculo = new DAOVeiculo();
 
         $obj->setIdFuncionario($idFuncionario);
         $obj->setIdCliente($idCliente);
@@ -64,6 +65,7 @@
 
         try {
             $dao->inclui($obj);
+            $daoVeiculo->motoVendida($idVeiculo);
             echo 'SALVO';
         } catch (Exception $e) {
             echo 'ERRO: ',  $e->getMessage(), "\n";
