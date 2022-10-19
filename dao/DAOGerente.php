@@ -4,7 +4,7 @@ class DAOGerente
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente WHERE idGerente = 1');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

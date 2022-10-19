@@ -10,7 +10,7 @@
         #trash {
             width: 5vh;
             height: 5vh;
-            background-image: url("../img/trash.png");
+            background-image: url("../img/iconExclui.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 4vh;
@@ -20,7 +20,7 @@
         #edit {
             width: 5vh;
             height: 5vh;
-            background-image: url("../img/pencil.png");
+            background-image: url("../img/iconEdita.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 4vh;
