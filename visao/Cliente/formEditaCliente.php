@@ -8,7 +8,7 @@
     <title>Edição de cliente</title>
 </head>
 
-<body style="background-color:#dad5b7;">
+<body>
     <?php
     require_once '../../modelo/Cliente.php';
     require_once '../../dao/DAOCliente.php';

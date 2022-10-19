@@ -42,7 +42,7 @@
 
         <div></div>
 
-        <a href="/Sistema-Concessionaria">Inicio</a>
+        <a href="/Sistema-WEB1">Inicio</a>
 
         <script src="../scripts/funcionario.js"></script>
         <script src="../scripts/main.js"></script>
