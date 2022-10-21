@@ -5,31 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Venda de Veículos</title>
-    
+    <title>Login</title>
 </head>
 
 <body>
+    <a href="visao/Gerente/loginGerente.php">Entrar Como Gerente</a>
+    <br><br>
 
-    <a href="visao/Cliente/formCadastroCliente.php">Cadastrar Cliente</a><br><br>
-    <a href="visao/Cliente/listagemCliente.php">Listagem de Clientes</a>
-    <br><br><br><br>
+    <form action="visao/Funcionario/loginFuncionario.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
-    <a href="visao/Veiculo/formCadastroVeiculo.php">Cadastrar Veiculo</a><br><br>
-    <a href="visao/Veiculo/listagemVeiculo.php">Listagem de Veiculos</a>
-    <br><br><br><br>
+        <label for="cpf">CPF: </label>
+        <input type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
 
-    <a href="visao/Pagamento/formCadastroPagamento.php">Cadastrar Pagamento</a><br><br>
-    <a href="visao/Pagamento/listagemPagamento.php">Listagem de Pagamentos</a>
-    <br><br><br><br>
+        <label for="senha">Senha: </label>
+        <input type="password" name="senha" id="senha" maxlength="6"><br><br>
 
-    <a href="visao/Funcionario/formCadastroFuncionario.php">Cadastrar Funcionario</a><br><br>
-    <a href="visao/Funcionario/listagemFuncionario.php">Listagem de Funcionarios</a>
-    <br><br><br><br>
+        <button>ENTRAR</button><br><br>
 
-    <a href="visao/Venda/formCadastroVenda.php">Cadastrar Venda</a><br><br>
-    <a href="visao/Venda/listagemVenda.php">Listagem de Vendas</a>
+        <script src="visao/scripts/main.js"></script>
+        <script src="visao/scripts/login.js"></script>
 
+    </form>
 </body>
 
 </html>

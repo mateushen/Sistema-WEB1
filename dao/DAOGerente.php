@@ -39,4 +39,22 @@ class DAOGerente
             return false;
         }
     }
+
+    public function login($cpf, $senha){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT senha FROM Gerente WHERE cpf = ?');
+        $pst->bindValue(1, $cpf);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+
+        if($lista){
+            $login = $lista[0];
+            if($login['senha'] == $senha){
+                return $login;
+            }else{
+                $login = [];
+                return $login;
+            }
+        }else return $lista;
+    }
 }
