@@ -12,9 +12,9 @@
 
     <?php
         //Verifica se existe um gerente no id 1, se não existir ocorre a adição de um gerente
-        require_once 'modelo/Gerente.php';
-        require_once 'dao/DAOGerente.php';
-        require_once 'dao/Conexao.php';
+        require_once '../../modelo/Gerente.php';
+        require_once '../../dao/DAOGerente.php';
+        require_once '../../dao/Conexao.php';
 
         $dao = new DAOGerente();
         $obj = new Gerente();
@@ -30,9 +30,12 @@
 
             try {
                 $dao->inclui($obj);
+                header('location: ../Veiculo/listagemVeiculo.php');
             } catch (Exception $e) {
                 echo 'ERRO: ',  $e->getMessage(), "\n";
             }
+        }else{
+            header('location: ../Veiculo/listagemVeiculo.php');
         }
     ?>
     

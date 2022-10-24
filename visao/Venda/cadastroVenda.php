@@ -49,7 +49,7 @@
     $idVeiculo = $listaVeiculo['idVeiculo'];
     $idPagamento = $listaPagamento['idPagamento'];
 
-    $data_venda =date('d/m/y');
+    $data_venda = date('d/m/y');
 
     if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
 
