@@ -11,7 +11,7 @@ cpf.addEventListener('keypress', () => {
     }
 })
 
-// Verifica nome, cpf, email e senha
+// Verifica cpf e senha
 function verifica() {
     var ok = verificaCPF();
     if (ok) {
