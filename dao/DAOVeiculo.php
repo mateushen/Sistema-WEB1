@@ -11,7 +11,7 @@ class DAOVeiculo
     }
 
     public function inclui(Veiculo $veiculo){
-        $sql = 'INSERT INTO Veiculo (placa, renavam, marca, modelo, cor, ano, vendida) VALUES (?,?,?,?,?,?,?)';
+        $sql = 'INSERT INTO Veiculo (placa, renavam, marca, modelo, cor, ano, vendido) VALUES (?,?,?,?,?,?,?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $veiculo->getPlaca());
@@ -20,7 +20,7 @@ class DAOVeiculo
         $pst->bindValue(4, $veiculo->getModelo());
         $pst->bindValue(5, $veiculo->getCor());
         $pst->bindValue(6, $veiculo->getAno());
-        $pst->bindValue(7, $veiculo->getVendida());
+        $pst->bindValue(7, $veiculo->getVendido());
 
         if($pst->execute()){
             return true;
@@ -41,7 +41,7 @@ class DAOVeiculo
     }
 
     public function altera(Veiculo $veiculo){
-        $sql = 'UPDATE Veiculo SET placa = ?, renavam = ?, marca = ?, modelo = ?, cor = ?, ano = ?, vendida = ? WHERE idVeiculo = ?';
+        $sql = 'UPDATE Veiculo SET placa = ?, renavam = ?, marca = ?, modelo = ?, cor = ?, ano = ?, vendido = ? WHERE idVeiculo = ?';
         $pst = Conexao::getPreparedStatement($sql);        
         $pst->bindValue(1, $veiculo->getPlaca());
         $pst->bindValue(2, $veiculo->getRenavam());
@@ -49,20 +49,8 @@ class DAOVeiculo
         $pst->bindValue(4, $veiculo->getModelo());
         $pst->bindValue(5, $veiculo->getCor());
         $pst->bindValue(6, $veiculo->getAno());
-        $pst->bindValue(7, $veiculo->getVendida());
+        $pst->bindValue(7, $veiculo->getVendido());
         $pst->bindValue(8, $veiculo->getIdVeiculo());
-
-        if($pst->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public function motoVendida($idVeiculo){
-        $sql = 'UPDATE Veiculo SET vendida = 1 WHERE idVeiculo = ?';
-        $pst = Conexao::getPreparedStatement($sql);        
-        $pst->bindValue(1, $idVeiculo);
 
         if($pst->execute()){
             return true;
@@ -80,9 +68,21 @@ class DAOVeiculo
         return $lista;
     }
 
-    public function motoNaoVendida(){
+    public function veiculoVendido($idVeiculo){
+        $sql = 'UPDATE Veiculo SET vendido = 1 WHERE idVeiculo = ?';
+        $pst = Conexao::getPreparedStatement($sql);        
+        $pst->bindValue(1, $idVeiculo);
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function veiculoNaoVendido(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendida = 0');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendido = 0');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

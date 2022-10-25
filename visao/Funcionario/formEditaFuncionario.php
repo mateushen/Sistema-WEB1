@@ -40,13 +40,11 @@
         <input type="password" name="senha" id="senha" maxlength="6" value="<?= $funcionario['senha'] ?>"><br><br>
         <button>SALVAR</button><br><br>
 
-        <div></div>
-
-        <a href="/Sistema-WEB1">Inicio</a>
-
         <script src="../scripts/funcionario.js"></script>
         <script src="../scripts/main.js"></script>
     </form>
+
+    <a href="/Sistema-WEB1">Inicio</a>
 
 </body>
 

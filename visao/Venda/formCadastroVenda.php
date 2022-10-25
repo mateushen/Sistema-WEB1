@@ -13,7 +13,7 @@
 
     <form action="cadastroVenda.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
-        <select name="funcionario" id="funcionario">
+        <select name="funcionario" id="funcionario" >
             <?php
             require_once '../../modelo/Funcionario.php';
             require_once '../../dao/DAOFuncionario.php';
@@ -54,7 +54,7 @@
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOVeiculo();
-            $lista = $dao->motoNaoVendida();
+            $lista = $dao->veiculoNaoVendido();
 
             if ($lista) {
                 foreach ($lista as $l) {

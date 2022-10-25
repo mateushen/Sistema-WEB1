@@ -65,7 +65,7 @@
 
         try {
             $dao->inclui($obj);
-            $daoVeiculo->motoVendida($idVeiculo);
+            $daoVeiculo->veiculoVendido($idVeiculo);
             echo 'SALVO';
         } catch (Exception $e) {
             echo 'ERRO: ',  $e->getMessage(), "\n";

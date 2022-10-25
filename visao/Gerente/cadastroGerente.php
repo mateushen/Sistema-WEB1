@@ -5,37 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de funcionário</title>
+    <title>Cadastro de gerente</title>
 </head>
 
 <body>
     <?php
-    require_once '../../modelo/Funcionario.php';
-    require_once '../../dao/DAOFuncionario.php';
+    require_once '../../modelo/Gerente.php';
+    require_once '../../dao/DAOGerente.php';
     require_once '../../dao/Conexao.php';
 
     $nome = filter_input(INPUT_POST, 'nome');
     $cpf = filter_input(INPUT_POST, 'cpf');
-    $email = filter_input(INPUT_POST, 'email');
     $senha = filter_input(INPUT_POST, 'senha');
 
     $senha_crip = password_hash($senha, PASSWORD_DEFAULT);
 
-    if ($nome && $cpf && $email && $senha_crip) {
+    if ($nome && $cpf && $senha_crip) {
 
-        $obj = new Funcionario();
+        $obj = new Gerente();
 
+        $obj->setIdGerente(1);
         $obj->setNome($nome);
         $obj->setCpf($cpf);
-        $obj->setEmail($email);
         $obj->setSenha($senha_crip);
-        $obj->setIdGerente('1');
 
-        $dao = new DAOFuncionario();
+        $dao = new DAOGerente();
 
         try {
             $dao->inclui($obj);
-            echo 'SALVO';
+            header('location: ../Veiculo/listagemVeiculo.php');
         } catch (Exception $e) {
             echo 'ERRO: ',  $e->getMessage(), "\n";
         }

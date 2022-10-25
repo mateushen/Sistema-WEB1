@@ -14,17 +14,16 @@
     <form action="cadastroPagamento.php" method="post">
 
         <label for="tipo_pagamento">Tipo de pagamento: </label>
-        <input type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)" ><br><br>
+        <input type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)"><br><br>
 
         <button>SALVAR</button><br><br>
-
-        <div></div>
-
-        <a href="/Sistema-WEB1">Inicio</a>
 
         <script src="../scripts/main.js"></script>
 
     </form>
+
+    <a href="/Sistema-WEB1">Inicio</a>
+
 </body>
 
 </html>

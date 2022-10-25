@@ -21,11 +21,7 @@
     $cor = filter_input(INPUT_POST, 'cor');
     $ano = filter_input(INPUT_POST, 'ano');
 
-    $tamPlaca = strlen($placa);
-    $tamAno = strlen($ano);
-    $tamRenavam = strlen($renavam);
-
-    if ($tamPlaca == 8 && $tamRenavam == 11 && $marca && $modelo && $cor && $tamAno == 4) {
+    if ($placa && $renavam && $marca && $modelo && $cor && $ano) {
 
         $obj = new Veiculo();
         $dao = new DAOVeiculo();
@@ -36,7 +32,7 @@
         $obj->setModelo($modelo);
         $obj->setCor($cor);
         $obj->setAno($ano);
-        $obj->setVendida(0);
+        $obj->setVendido(0);
 
         try {
             $dao->inclui($obj);

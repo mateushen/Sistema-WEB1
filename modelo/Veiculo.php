@@ -1,5 +1,6 @@
 <?php
-Class Veiculo{
+class Veiculo
+{
     private $idVeiculo;
     private $placa;
     private $renavam;
@@ -7,7 +8,7 @@ Class Veiculo{
     private $modelo;
     private $cor;
     private $ano;
-    private $vendida;
+    private $vendido;
 
     public function getIdVeiculo()
     {
@@ -86,14 +87,14 @@ Class Veiculo{
         return $this;
     }
 
-    public function getVendida()
+    public function getVendido()
     {
-        return $this->vendida;
+        return $this->vendido;
     }
- 
-    public function setVendida($vendida)
+
+    public function setVendido($vendido)
     {
-        $this->vendida = $vendida;
+        $this->vendido = $vendido;
         return $this;
     }
 }
