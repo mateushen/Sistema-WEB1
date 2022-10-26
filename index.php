@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Gerente</title>
+    <link rel="stylesheet" href="visao/css/cadgerente.css">
 </head>
 
 <body>
@@ -40,7 +41,7 @@
             <script src="visao/scripts/main.js"></script>
         </form>';
     } else {
-        header('location: visao/Gerente/formLoginGerente.php');
+        header('location: main.php');
     }
     ?>
 
