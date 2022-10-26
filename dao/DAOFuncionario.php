@@ -82,15 +82,13 @@ class DAOFuncionario
 
         if($lista){
             $login = $lista[0];
-            if($login['senha'] == $senha){
-                return $login;
+            if (password_verify($senha, $login['senha'])){
+                return true;
             }else{
-                $login = [];
-                return $login;
+                return false;
             }
-        }else return $lista;
+        }else return false;
     }
-
 }
 
 ?>

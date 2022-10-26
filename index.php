@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verificação de Gerente</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             <script src="visao/scripts/main.js"></script>
         </form>';
     } else {
-        header('location: visao/Veiculo/listagemVeiculo.php');
+        header('location: visao/Gerente/formLoginGerente.php');
     }
     ?>
 

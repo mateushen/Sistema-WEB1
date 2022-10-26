@@ -17,13 +17,15 @@
     $cpf = filter_input(INPUT_POST, 'cpf');
     $senha = filter_input(INPUT_POST, 'senha');
 
+
+
     $dao = new DAOGerente();
     $lista = $dao->login($cpf, $senha);
 
     if ($lista) {
         echo 'Autenticação confirmada';
     } else {
-        echo 'Dados inválidos';
+        echo 'Login incorreto';
     }
 
     ?>
