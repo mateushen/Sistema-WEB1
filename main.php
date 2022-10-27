@@ -7,12 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema-WEB1</title>
     <link rel="stylesheet" href="visao/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="visao/scripts/menu.js"></script>
 </head>
 
 <body class="container">
     <header>
         <div class="header">
-            <img class="menu" src="visao/img/menu.png" />
+            <nav>
+                <ul id="ul-principal">
+                    <li class="li-p">
+                        <a href="javascript://" class="bt">
+                            <img class="icon-menu" src="visao/img/menu.png">
+                        </a>
+                        <ul class="ul-menu">
+                            <li class="item-menu"><a href="">Veículos à venda</a></li>
+                            <li class="item-menu"><a href="">Sobre</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
             <img src="visao/img/title.png" />
             <div style="display: flex; flex-direction:column">
                 <div class="login">
@@ -28,7 +42,7 @@
         </div>
     </header>
     <main>
-        <div>
+        <div class="box">
             <div class="right">
                 <img class="background" src="visao/img/start2022.png" />
             </div>
