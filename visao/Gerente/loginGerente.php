@@ -23,7 +23,7 @@
     $lista = $dao->login($cpf, $senha);
 
     if ($lista) {
-        echo 'Autenticação confirmada';
+        header('../TelasGerente/index.php');
     } else {
         echo 'Login incorreto';
     }

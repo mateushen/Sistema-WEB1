@@ -17,8 +17,8 @@
             <nav>
                 <ul id="ul-principal">
                     <li class="li-p">
-                        <a href="javascript://" class="bt">
-                            <img class="icon-menu" src="visao/img/menu.png">
+                        <a href="javascript://" class="bt" id="bt-menu">
+                            <img class="icon-menu" src="visao/img/icon-menu.png">
                         </a>
                         <ul class="ul-menu">
                             <li class="item-menu"><a href="">Veículos à venda</a></li>
@@ -41,13 +41,11 @@
             </div>
         </div>
     </header>
+    <div class="bar"></div>
     <main>
         <div class="box">
-            <div class="right">
-                <img class="background" src="visao/img/start2022.png" />
-            </div>
-            <div class="left">
-                <img class="background" src="visao/img/civic.png" />
+            <div class="fundo">
+                <img class="background" src="visao/img/fundo.jpg" />
             </div>
         </div>
     </main>
