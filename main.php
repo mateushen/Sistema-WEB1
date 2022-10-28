@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema-WEB1</title>
+    <link rel="icon" type="imagem/png" href="visao/img/logo.png" />
     <link rel="stylesheet" href="visao/css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="visao/scripts/menu.js"></script>
@@ -42,6 +43,7 @@
         </div>
     </header>
     <div class="bar"></div>
+
     <main>
         <div class="box">
             <div class="fundo">
@@ -49,6 +51,23 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="footer-penult">
+            <img class="logo" src="visao/img/logo.png" />
+            <div class="social">
+                <p class="pub">Siga WEBCars nas redes sociais:</p>
+                <img class="icon-social" src="visao/img/icon-facebook.png" />
+                <img class="icon-social" src="visao/img/icon-instagram.png" />
+            </div>
+        </div>
+        </div>
+        <div class="footer-end">
+            <p class="cookies">Copyright © WEBCars</p>
+            <p class="cookies">Política de privacidade</p>
+            <p class="cookies">Termos de uso</p>
+        </div>
+    </footer>
 </body>
 
 </html>
