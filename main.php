@@ -8,6 +8,7 @@
     <title>Sistema-WEB1</title>
     <link rel="icon" type="imagem/png" href="visao/img/logo.png" />
     <link rel="stylesheet" href="visao/css/main.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="visao/scripts/menu.js"></script>
 </head>
@@ -60,7 +61,6 @@
                 <img class="icon-social" src="visao/img/icon-facebook.png" />
                 <img class="icon-social" src="visao/img/icon-instagram.png" />
             </div>
-        </div>
         </div>
         <div class="footer-end">
             <p class="cookies">Copyright © WEBCars</p>

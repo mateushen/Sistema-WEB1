@@ -33,17 +33,15 @@
 
         try {
             $dao->inclui($obj);
-            header('location: ../Veiculo/listagemVeiculo.php');
+            header('location: ../../main.php');
         } catch (Exception $e) {
             echo 'ERRO: ',  $e->getMessage(), "\n";
         }
     } else {
-        echo 'Dados inválidos';
+        header('location: ../../index.php');
     }
 
     ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
 </body>
 
 </html>
