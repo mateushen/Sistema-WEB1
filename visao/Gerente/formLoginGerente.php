@@ -36,7 +36,7 @@
                 <label for="senha">Senha: </label>
                 <input type="password" name="senha" id="senha" maxlength="6"><br><br>
 
-                <button>ENTRAR</button><br><br>
+                <button class="bt-form">ENTRAR</button><br><br>
 
                 <script src="../scripts/main.js"></script>
                 <script src="../scripts/login.js"></script>

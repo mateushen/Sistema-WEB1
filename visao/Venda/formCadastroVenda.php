@@ -6,90 +6,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Venda</title>
-
+    <link rel="icon" type="imagem/png" href="../img/logo.png" />
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
 
-    <form action="cadastroVenda.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+    <header>
+        <div class="header">
+            <img src="../img/title.png" />
+        </div>
+    </header>
 
-        <select name="funcionario" id="funcionario" >
-            <?php
-            require_once '../../modelo/Funcionario.php';
-            require_once '../../dao/DAOFuncionario.php';
-            require_once '../../dao/Conexao.php';
+    <div class="bar"></div>
 
-            $dao = new DAOFuncionario();
-            $lista = $dao->lista();
+    <main>
+        <div class="title">
+            <h1>CADASTRO DE VEÍCULO</h1>
+        </div>
+        <div class="form-box"><br>
 
-            if ($lista) {
-                foreach ($lista as $l) {
-                    echo '<option value="' . $l['nome'] . '">' . $l['nome'] . '</option>';
-                }
-            }
-            ?>
-        </select>
+            <form class="input-form" action="cadastroVenda.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+                <label for="funcionario">Funcionário: </label>
+                <select name="funcionario" id="funcionario">
+                    <?php
+                    require_once '../../modelo/Funcionario.php';
+                    require_once '../../dao/DAOFuncionario.php';
+                    require_once '../../dao/Conexao.php';
 
-        <select name="cliente" id="cliente">
-        <?php
-            require_once '../../modelo/Cliente.php';
-            require_once '../../dao/DAOCliente.php';
-            require_once '../../dao/Conexao.php';
+                    $dao = new DAOFuncionario();
+                    $lista = $dao->lista();
 
-            $dao = new DAOCliente();
-            $lista = $dao->lista();
+                    if ($lista) {
+                        foreach ($lista as $l) {
+                            echo '<option value="' . $l['nome'] . '">' . $l['nome'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
 
-            if ($lista) {
-                foreach ($lista as $l) {
-                    echo '<option value="' . $l['nome'] . '">' . $l['nome'] . '</option>';
-                }
-            }
-            ?>
-        </select>
+                <br>
 
-        <select name="veiculo" id="veiculo">
-        <?php
-            require_once '../../modelo/Veiculo.php';
-            require_once '../../dao/DAOVeiculo.php';
-            require_once '../../dao/Conexao.php';
+                <label>Cliente: </label>
+                <select name="cliente" id="cliente">
+                    <?php
+                    require_once '../../modelo/Cliente.php';
+                    require_once '../../dao/DAOCliente.php';
+                    require_once '../../dao/Conexao.php';
 
-            $dao = new DAOVeiculo();
-            $lista = $dao->veiculoNaoVendido();
+                    $dao = new DAOCliente();
+                    $lista = $dao->lista();
 
-            if ($lista) {
-                foreach ($lista as $l) {
-                    echo '<option value="' . $l['modelo'] . '">' . $l['modelo'] . '</option>';
-                }
-            }
-            ?>
-        </select>
+                    if ($lista) {
+                        foreach ($lista as $l) {
+                            echo '<option value="' . $l['nome'] . '">' . $l['nome'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
 
-        <select name="pagamento" id="pagamento">
-        <?php
-            require_once '../../modelo/Pagamento.php';
-            require_once '../../dao/DAOPagamento.php';
-            require_once '../../dao/Conexao.php';
+                <br>
 
-            $dao = new DAOPagamento();
-            $lista = $dao->lista();
+                <label>Veículo: </label>
+                <select name="veiculo" id="veiculo">
+                    <?php
+                    require_once '../../modelo/Veiculo.php';
+                    require_once '../../dao/DAOVeiculo.php';
+                    require_once '../../dao/Conexao.php';
 
-            if ($lista) {
-                foreach ($lista as $l) {
-                    echo '<option value="' . $l['tipo_pagamento'] . '">' . $l['tipo_pagamento'] . '</option>';
-                }
-            }
-            ?>
-        </select>
+                    $dao = new DAOVeiculo();
+                    $lista = $dao->veiculoNaoVendido();
 
-        <button>SALVAR</button><br><br>
+                    if ($lista) {
+                        foreach ($lista as $l) {
+                            echo '<option value="' . $l['modelo'] . '">' . $l['modelo'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
 
-        <div></div>
+                <br>
 
-        <a href="/Sistema-WEB1">Inicio</a>
+                <label>Forma de pgto: </label>
+                <select name="pagamento" id="pagamento">
+                    <?php
+                    require_once '../../modelo/Pagamento.php';
+                    require_once '../../dao/DAOPagamento.php';
+                    require_once '../../dao/Conexao.php';
 
-        <script src="../scripts/venda.js"></script>
+                    $dao = new DAOPagamento();
+                    $lista = $dao->lista();
 
-    </form>
+                    if ($lista) {
+                        foreach ($lista as $l) {
+                            echo '<option value="' . $l['tipo_pagamento'] . '">' . $l['tipo_pagamento'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
+
+                <br><br>
+
+                <button class="bt-formPG">SALVAR</button><br><br>
+
+                <script src="../scripts/venda.js"></script>
+
+            </form>
+
+        </div>
+        <br><br>
+    </main>
+
+    <footer>
+        <div class="footer-penult">
+            <img class="logo" src="../img/logo.png" />
+            <div class="social">
+                <p class="pub">Siga WEBCars nas redes sociais:</p>
+                <img class="icon-social" src="../img/icon-facebook.png" />
+                <img class="icon-social" src="../img/icon-instagram.png" />
+            </div>
+        </div>
+        <div class="footer-end">
+            <p class="cookies">Copyright © WEBCars</p>
+            <p class="cookies">Política de privacidade</p>
+            <p class="cookies">Termos de uso</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

@@ -3,7 +3,7 @@
     background-color: #A3A9A3;
     border-radius: 0.5em;
     height: 5em;
-    width: 30em;
+    width: 40em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,12 +45,24 @@ label {
     font-family: Verdana;
 }
 
-button {
+.bt-form {
     margin-left: 40%;
+    width: 5em;
+    height: 2.5em;
+}
+
+.bt-formPG {
     width: 5em;
     height: 2.5em;
 }
 
 button:hover{
     color: #AB2114;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -54,7 +54,7 @@
             <label for="senha">Senha: </label>
             <input type="password" name="senha" id="senha" maxlength="6"><br><br>
     
-            <button>SALVAR</button><br><br>
+            <button class="bt-form">SALVAR</button><br><br>
     
             <script src="visao/scripts/gerente.js"></script>
             <script src="visao/scripts/main.js"></script>
