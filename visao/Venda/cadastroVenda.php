@@ -13,41 +13,13 @@
     require_once '../../dao/Conexao.php';
     require_once '../../modelo/Venda.php';
     require_once '../../dao/DAOVenda.php';
-    require_once '../../modelo/Funcionario.php';
-    require_once '../../dao/DAOFuncionario.php';
-    require_once '../../modelo/Cliente.php';
-    require_once '../../dao/DAOCliente.php';
     require_once '../../modelo/Veiculo.php';
     require_once '../../dao/DAOVeiculo.php';
-    require_once '../../modelo/Pagamento.php';
-    require_once '../../dao/DAOPagamento.php';
 
-    $nomeFuncionario = $_POST['funcionario'];
-    $nomeCliente = $_POST['cliente'];
-    $veiculo = $_POST['veiculo'];
-    $pagamento = $_POST['pagamento'];
-
-    $daoF = new DAOFuncionario();
-    $idF = $daoF->retornaID($nomeFuncionario);
-
-    $daoC = new DAOCliente();
-    $idC = $daoC->retornaID($nomeCliente);
-
-    $daoV = new DAOVeiculo();
-    $idV = $daoV->retornaID($veiculo);
-
-    $daoP = new DAOPagamento();
-    $idP = $daoP->retornaID($pagamento);
-
-    $listaFuncionario = $idF[0];
-    $listaCliente = $idC[0];
-    $listaVeiculo = $idV[0];
-    $listaPagamento = $idP[0];
-
-    $idFuncionario = $listaFuncionario['idFuncionario'];
-    $idCliente = $listaCliente['idCliente'];
-    $idVeiculo = $listaVeiculo['idVeiculo'];
-    $idPagamento = $listaPagamento['idPagamento'];
+    $idFuncionario = $_POST['funcionario'];
+    $idCliente = $_POST['cliente'];
+    $idVeiculo = $_POST['veiculo'];
+    $idPagamento = $_POST['pagamento'];
 
     $data_venda = date('d/m/y');
 
@@ -55,6 +27,7 @@
 
         $obj = new Venda();
         $dao = new DAOVenda();
+        
         $daoVeiculo = new DAOVeiculo();
 
         $obj->setIdFuncionario($idFuncionario);

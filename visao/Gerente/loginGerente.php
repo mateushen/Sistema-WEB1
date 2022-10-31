@@ -17,8 +17,6 @@
     $cpf = filter_input(INPUT_POST, 'cpf');
     $senha = filter_input(INPUT_POST, 'senha');
 
-
-
     $dao = new DAOGerente();
     $lista = $dao->login($cpf, $senha);
 

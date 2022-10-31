@@ -24,6 +24,7 @@
                 });
         });
 
+
         window.addEventListener('load', () => {
             document.getElementById('estado').addEventListener('change', () => {
                 const estado = document.getElementById('estado').value;
@@ -33,7 +34,6 @@
                     })
                     .then((json) => {
                         let cidade = document.getElementById('cidade');
-                        console.log(cidade);
                         cidade.innerHTML = '';
                         for (let i = 0; i < json.length; i++) {
                             let option = document.createElement('option');
@@ -42,12 +42,50 @@
                         }
                     });
             });
+
+
+            document.querySelector('button').addEventListener('click', () => {
+                // const dados = new FormData(document.forms[0]);
+
+                const dados = new FormData();
+                dados.append('nome', document.forms[0].nome);
+                dados.append('estado', document.forms[0].estado);
+                dados.append('cidade', document.forms[0].cidade);
+
+                const config = {
+                    method: 'POST',
+                    body: dados
+                };
+                fetch('cadastroTeste.php', config)
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((json) => {
+                        console.log(json);
+                        let p = document.querySelector('p');
+                        p.innerText = json.mensagem;
+                        if(json.status == 'ok'){
+                            p.style.color = 'green';
+                        }else {
+                            p.style.color = 'red';
+                        }
+                    })
+            });
+
+            document.forms[0].addEventListener('submit', () => {
+                event.preventDefault();
+            });
+
         });
     </script>
 </head>
 
 <body>
     <form>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome"></input>
+        <br>
+
         <label for="estado">Estado: </label>
         <select name="estado" id="estado">
 
@@ -56,9 +94,12 @@
 
         <label for="cidade">Cidade: </label>
         <select name="cidade" id="cidade">
-
         </select>
+        <br>
+
+        <button>Salvar</button>
     </form>
+    <p></p>
 </body>
 
 </html>

@@ -24,11 +24,11 @@
 
     <main>
         <div class="title">
-            <h1>CADASTRO DE VEÍCULO</h1>
+            <h1>CADASTRO DE VENDA</h1>
         </div>
         <div class="form-box"><br>
 
-            <form class="input-form" action="cadastroVenda.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+            <form class="input-form" action="cadastroVenda.php" name="frmEnvia" method="post">
                 <label for="funcionario">Funcionário: </label>
                 <select name="funcionario" id="funcionario">
                     <?php
@@ -41,7 +41,7 @@
 
                     if ($lista) {
                         foreach ($lista as $l) {
-                            echo '<option value="' . $l['nome'] . '">' . $l['nome'] . '</option>';
+                            echo '<option value="' . $l['idFuncionario'] . '">' . $l['nome'] . '</option>';
                         }
                     }
                     ?>
@@ -61,7 +61,7 @@
 
                     if ($lista) {
                         foreach ($lista as $l) {
-                            echo '<option value="' . $l['nome'] . '">' . $l['nome'] . '</option>';
+                            echo '<option value="' . $l['idCliente'] . '">' . $l['nome'] . '</option>';
                         }
                     }
                     ?>
@@ -81,7 +81,7 @@
 
                     if ($lista) {
                         foreach ($lista as $l) {
-                            echo '<option value="' . $l['modelo'] . '">' . $l['modelo'] . '</option>';
+                            echo '<option value="' . $l['idVeiculo'] . '">' . $l['modelo'] . '</option>';
                         }
                     }
                     ?>
@@ -101,7 +101,7 @@
 
                     if ($lista) {
                         foreach ($lista as $l) {
-                            echo '<option value="' . $l['tipo_pagamento'] . '">' . $l['tipo_pagamento'] . '</option>';
+                            echo '<option value="' . $l['idPagamento'] . '">' . $l['tipo_pagamento'] . '</option>';
                         }
                     }
                     ?>
