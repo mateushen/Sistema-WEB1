@@ -24,36 +24,32 @@
     <div class="bar"></div>
 
     <main>
-    <br><br><br>
+    <br>
         <div class="form-box">
-            <br>
             <h1>CADASTRO DE VEÍCULO</h1>
-            <br>
 
-            <form>
-
+            <form class="form-main">
                 <label for="placa">Placa: </label>
-                <input type="text" id="placa" name="placa" autocomplete="off" maxlength="8"><br><br>
+                <input class="input-form" type="text" id="placa" name="placa" autocomplete="off" maxlength="8"><br>
 
                 <label for="renavam">Renavam: </label>
-                <input type="text" name="renavam" id="renavam" onkeypress="return somenteNumeros(event)" maxlength="11"><br><br>
+                <input class="input-form" type="text" name="renavam" id="renavam" onkeypress="return somenteNumeros(event)" maxlength="11"><br>
 
                 <label for="marca">Marca: </label>
-                <input type="text" name="marca" id="marca" onkeypress="return somenteLetras(event)" maxlength="15"><br><br>
+                <input class="input-form" type="text" name="marca" id="marca" onkeypress="return somenteLetras(event)" maxlength="15"><br>
 
                 <label for="modelo">Modelo: </label>
-                <input type="text" name="modelo" id="modelo" maxlength="15"><br><br>
+                <input class="input-form" type="text" name="modelo" id="modelo" maxlength="15"><br>
 
                 <label for="cor">Cor: </label>
-                <input type="text" name="cor" id="cor" onkeypress="return somenteLetras(event)" maxlength="15"><br><br>
+                <input class="input-form" type="text" name="cor" id="cor" onkeypress="return somenteLetras(event)" maxlength="15"><br>
 
                 <label for="ano">Ano: </label>
-                <input type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br><br>
+                <input class="input-form" type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br>
 
-                <button class="bt-form">SALVAR</button><br><br>
+                <button>SALVAR</button>
 
                 <script src="../scripts/main.js"></script>
-
             </form>
 
         </div>

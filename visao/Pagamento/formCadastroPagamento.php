@@ -24,20 +24,17 @@
     <div class="bar"></div>
 
     <main>
-    <br><br><br>
+    <br>
         <div class="form-box">
-            <br>
             <h1>CADASTRO DE TIPO DE PAGAMENTO</h1>
-            <br>
-            <form class="input-form">
 
+            <form class="form-main">
                 <label for="tipo_pagamento">Tipo de pagamento: </label>
-                <input type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)"><br><br>
+                <input class="input-form" type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)"><br><br>
 
-                <button class="bt-formPG">SALVAR</button><br><br>
+                <button>SALVAR</button>
 
                 <script src="../scripts/main.js"></script>
-
             </form>
 
         </div>

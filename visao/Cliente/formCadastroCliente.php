@@ -24,30 +24,26 @@
     <div class="bar"></div>
 
     <main>
-        <br><br><br>
+        <br>
         <div class="form-box">
-            <br>
-            <h1>CADASTRO DE CLIENTE</h1>
-            <br>
-            <form>
+            <h1>CADASTRO DE CLIENTE</h1><br>
 
-                <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br><br>
+            <form class="form-main">
+                <label for="nome">Nome</label>
+                <input class="input-form" type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br>
 
-                <label for="cpf">CPF: </label>
-                <input type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
+                <label for="cpf">CPF</label>
+                <input class="input-form" type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
 
-                <label for="telefone">Telefone: </label>
-                <input type="text" id="telefone" name="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
+                <label for="telefone">Telefone</label>
+                <input class="input-form" type="text" id="telefone" name="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
 
                 <p></p>
 
-                <button class="bt-form">SALVAR</button><br><br>
+                <button>SALVAR</button>
 
                 <script src="../scripts/main.js"></script>
-
             </form>
-
         </div>
         <br><br>
     </main>

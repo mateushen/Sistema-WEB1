@@ -24,15 +24,14 @@
     <div class="bar"></div>
 
     <main>
-        <br><br><br>
+        <br>
         <div class="form-box">
-            <br>
             <h1>CADASTRO DE VENDA</h1>
-            <br>
 
-            <form class="input-form">
+            <form class="form-main">
                 <label for="funcionario">Funcionário: </label>
                 <select name="funcionario" id="funcionario">
+                <option selected hidden >- Selecione -</option>
                     <?php
                     require_once '../../modelo/Funcionario.php';
                     require_once '../../dao/DAOFuncionario.php';
@@ -53,6 +52,7 @@
 
                 <label>Cliente: </label>
                 <select name="cliente" id="cliente">
+                <option selected hidden >- Selecione -</option>
                     <?php
                     require_once '../../modelo/Cliente.php';
                     require_once '../../dao/DAOCliente.php';
@@ -73,6 +73,7 @@
 
                 <label>Veículo: </label>
                 <select name="veiculo" id="veiculo">
+                <option selected hidden >- Selecione -</option>
                     <?php
                     require_once '../../modelo/Veiculo.php';
                     require_once '../../dao/DAOVeiculo.php';
@@ -93,6 +94,7 @@
 
                 <label>Forma de pgto: </label>
                 <select name="pagamento" id="pagamento">
+                <option selected hidden >- Selecione -</option>
                     <?php
                     require_once '../../modelo/Pagamento.php';
                     require_once '../../dao/DAOPagamento.php';
@@ -111,8 +113,7 @@
 
                 <br><br>
 
-                <button class="bt-formPG">SALVAR</button><br><br>
-
+                <button>SALVAR</button>
             </form>
 
         </div>

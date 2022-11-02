@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login de Gerente</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/form-login.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
@@ -23,27 +23,30 @@
     <div class="bar"></div>
 
     <main>
-        <div class="title">
-            <h1>LOGIN DE GERENTE</h1>
-        </div>
-        <div class="form-box"><br>
+        <br><br><br>
+        <div class="box-login">
+            <div class="img-user">
+                <img src="../img/iconUser.png"/>
+            </div>
+                <br><br><br>
+                <h1>LOGIN</h1>
+                <br>
+                <div class="form-login">
+                    <form action="loginGerente.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
 
-            <form action="loginGerente.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+                        <input class="campo" type="text" placeholder="CPF" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
 
-                <label for="cpf">CPF: </label>
-                <input type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
+                        <input class="campo" type="password" placeholder="Senha" name="senha" id="senha" maxlength="6"><br><br>
 
-                <label for="senha">Senha: </label>
-                <input type="password" name="senha" id="senha" maxlength="6"><br><br>
+                        <button class="bt-form">ENTRAR</button><br><br>
 
-                <button class="bt-form">ENTRAR</button><br><br>
+                        <script src="../scripts/main.js"></script>
+                        <script src="../scripts/login.js"></script>
 
-                <script src="../scripts/main.js"></script>
-                <script src="../scripts/login.js"></script>
-
-            </form>
-        </div>
-        <br><br>
+                    </form>
+                </div>
+            </div>
+            <br><br>
     </main>
 
     <footer>

@@ -1,0 +1,79 @@
+h1 {
+    font-family: Verdana;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+}
+
+.box-login {
+    background-color: #353535;
+    width: 22em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    border-radius: 2em 0.5em 2em 0.5em;
+    box-shadow: 0 1em 1.5em;
+    position: relative;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo {
+    padding: 0.7em;
+    font-size: 15px;
+    background-color: transparent;
+    color: #fff;
+    letter-spacing: 0.3em;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.bt-form {
+    width: 8em;
+    height: 2.5em;
+    background-color: #e0e0e0;
+    border: none;
+    margin-left: 25%;
+    border-radius: 0.2em;
+}
+
+button:hover{
+    color: #AB2114;
+}
+
+.img-user {
+    width: 60px;
+    height: 60px;
+    left: 0;
+    right: 0;
+    top: -5%;
+    margin:auto;
+    position: absolute;
+    background-color: #515151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.img-user img {
+    width: 100%;
+}
