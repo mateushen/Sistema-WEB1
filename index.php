@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="visao/css/form.css">
     <link rel="stylesheet" href="visao/css/header.css">
     <link rel="stylesheet" href="visao/css/footer.css">
+    <script type="text/javascript" src="visao/Gerente/scripts/savedata.js"></script>
 </head>
 
 <body>
@@ -38,28 +39,33 @@
         <div class="bar"></div>
 
         <main>
-        <div class="title">
+            <br><br><br>
+            <div class="form-box">
+                <br>
                 <h1>CADASTRO DE GERENTE</h1>
-        </div>
-        <div class="form-box"><br>
-        
-        <form action="visao/Gerente/cadastroGerente.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+                <br>
 
-            <label for="nome">Nome: </label>
-            <input type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br><br>
-    
-            <label for="cpf">CPF: </label>
-            <input type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
-    
-            <label for="senha">Senha: </label>
-            <input type="password" name="senha" id="senha" maxlength="6"><br><br>
-    
-            <button class="bt-form">SALVAR</button><br><br>
-    
-            <script src="visao/scripts/gerente.js"></script>
-            <script src="visao/scripts/main.js"></script>
-        </form>
-        </div>
+                <form>
+
+                    <label for="nome">Nome: </label>
+                    <input type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br><br>
+            
+                    <label for="cpf">CPF: </label>
+                    <input type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
+            
+                    <label for="email">E-mail: </label>
+                    <input type="text" name="email" id="email"><br><br>
+
+                    <label for="senha">Senha: </label>
+                    <input type="password" name="senha" id="senha" maxlength="6"><br><br>
+            
+                    <button class="bt-form">SALVAR</button><br><br>
+            
+                    <script src="visao/scripts/main.js"></script>
+
+                </form>
+                <p></p>
+            </div>
         <br><br>
         </main>
 

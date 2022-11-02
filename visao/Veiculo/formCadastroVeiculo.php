@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/savedata.js"></script>
 </head>
 
 <body>
@@ -23,12 +24,13 @@
     <div class="bar"></div>
 
     <main>
-        <div class="title">
+    <br><br><br>
+        <div class="form-box">
+            <br>
             <h1>CADASTRO DE VEÍCULO</h1>
-        </div>
-        <div class="form-box"><br>
+            <br>
 
-            <form action="cadastroVeiculo.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+            <form>
 
                 <label for="placa">Placa: </label>
                 <input type="text" id="placa" name="placa" autocomplete="off" maxlength="8"><br><br>
@@ -50,7 +52,6 @@
 
                 <button class="bt-form">SALVAR</button><br><br>
 
-                <script src="../scripts/veiculo.js"></script>
                 <script src="../scripts/main.js"></script>
 
             </form>

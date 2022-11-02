@@ -1,47 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Gerente.php';
+require_once '../../dao/DAOGerente.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de gerente</title>
-</head>
+$nome = filter_input(INPUT_POST, 'nome');
+$cpf = filter_input(INPUT_POST, 'cpf');
+$email = filter_input(INPUT_POST, 'email');
+$senha = filter_input(INPUT_POST, 'senha');
 
-<body>
-    <?php
-    require_once '../../modelo/Gerente.php';
-    require_once '../../dao/DAOGerente.php';
-    require_once '../../dao/Conexao.php';
+$senha_crip = password_hash($senha, PASSWORD_DEFAULT);
 
-    $nome = filter_input(INPUT_POST, 'nome');
-    $cpf = filter_input(INPUT_POST, 'cpf');
-    $senha = filter_input(INPUT_POST, 'senha');
+if ($nome && $cpf && $email && $senha_crip) {
 
-    $senha_crip = password_hash($senha, PASSWORD_DEFAULT);
+    $obj = new Gerente();
 
-    if ($nome && $cpf && $senha_crip) {
+    $obj->setIdGerente(1);
+    $obj->setNome($nome);
+    $obj->setEmail($email);
+    $obj->setCpf($cpf);
+    $obj->setSenha($senha_crip);
 
-        $obj = new Gerente();
+    $dao = new DAOGerente();
 
-        $obj->setIdGerente(1);
-        $obj->setNome($nome);
-        $obj->setCpf($cpf);
-        $obj->setSenha($senha_crip);
-
-        $dao = new DAOGerente();
-
-        try {
-            $dao->inclui($obj);
-            header('location: ../../main.php');
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        header('location: ../../index.php');
+    try {
+        $dao->inclui($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Gerente cadastrado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => $e->getMessage(),
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-</body>
-
-</html>
+echo json_encode($retorno);

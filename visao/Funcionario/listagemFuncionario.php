@@ -5,28 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela</title>
-    <style>
-        #trash {
-            width: 5vh;
-            height: 5vh;
-            background-image: url("../img/iconExclui.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 4vh;
-            padding-left: 4vh;
-        }
-
-        #edit {
-            width: 5vh;
-            height: 5vh;
-            background-image: url("../img/iconEdita.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 4vh;
-            padding-left: 4vh;
-        }
-    </style>
+    <title>Listagem de funcionários</title>
+    <link rel="icon" type="imagem/png" href="../img/logo.png" />
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>

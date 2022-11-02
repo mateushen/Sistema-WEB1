@@ -1,52 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Veiculo.php';
+require_once '../../dao/DAOVeiculo.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de veículo</title>
-</head>
+$placa = filter_input(INPUT_POST, 'placa');
+$renavam = filter_input(INPUT_POST, 'renavam');
+$marca = filter_input(INPUT_POST, 'marca');
+$modelo = filter_input(INPUT_POST, 'modelo');
+$cor = filter_input(INPUT_POST, 'cor');
+$ano = filter_input(INPUT_POST, 'ano');
 
-<body>
-    <?php
-    require_once '../../modelo/Veiculo.php';
-    require_once '../../dao/DAOVeiculo.php';
-    require_once '../../dao/Conexao.php';
+if ($placa && $renavam && $marca && $modelo && $cor && $ano) {
 
-    $placa = filter_input(INPUT_POST, 'placa');
-    $renavam = filter_input(INPUT_POST, 'renavam');
-    $marca = filter_input(INPUT_POST, 'marca');
-    $modelo = filter_input(INPUT_POST, 'modelo');
-    $cor = filter_input(INPUT_POST, 'cor');
-    $ano = filter_input(INPUT_POST, 'ano');
+    $obj = new Veiculo();
+    $dao = new DAOVeiculo();
 
-    if ($placa && $renavam && $marca && $modelo && $cor && $ano) {
+    $obj->setPlaca($placa);
+    $obj->setRenavam($renavam);
+    $obj->setMarca($marca);
+    $obj->setModelo($modelo);
+    $obj->setCor($cor);
+    $obj->setAno($ano);
+    $obj->setVendido(0);
 
-        $obj = new Veiculo();
-        $dao = new DAOVeiculo();
-
-        $obj->setPlaca($placa);
-        $obj->setRenavam($renavam);
-        $obj->setMarca($marca);
-        $obj->setModelo($modelo);
-        $obj->setCor($cor);
-        $obj->setAno($ano);
-        $obj->setVendido(0);
-
-        try {
-            $dao->inclui($obj);
-            echo 'SALVO';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->inclui($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Veículo cadastrado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => $e->getMessage(),
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);

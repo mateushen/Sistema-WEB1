@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-
+    <script type="text/javascript" src="scripts/savedata.js"></script>
 </head>
 
 <body>
@@ -24,12 +24,12 @@
     <div class="bar"></div>
 
     <main>
-        <div class="title">
-            <h1>CADASTRO DE FUNCIONÁRIO</h1>
-        </div>
-        <div class="form-box"><br>
-        
-            <form class="input-form" action="cadastroPagamento.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+    <br><br><br>
+        <div class="form-box">
+            <br>
+            <h1>CADASTRO DE TIPO DE PAGAMENTO</h1>
+            <br>
+            <form class="input-form">
 
                 <label for="tipo_pagamento">Tipo de pagamento: </label>
                 <input type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)"><br><br>
@@ -37,7 +37,6 @@
                 <button class="bt-formPG">SALVAR</button><br><br>
 
                 <script src="../scripts/main.js"></script>
-                <script src="../scripts/pgto.js"></script>
 
             </form>
 

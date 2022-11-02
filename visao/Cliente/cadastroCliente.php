@@ -1,46 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Cliente.php';
+require_once '../../dao/DAOCliente.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de cliente</title>
-</head>
+$nome = filter_input(INPUT_POST, 'nome');
+$cpf = filter_input(INPUT_POST, 'cpf');
+$telefone = filter_input(INPUT_POST, 'telefone');
 
-<body>
-    <?php
-    require_once '../../modelo/Cliente.php';
-    require_once '../../dao/DAOCliente.php';
-    require_once '../../dao/Conexao.php';
+if ($nome && $cpf && $telefone) {
 
-    $nome = filter_input(INPUT_POST, 'nome');
-    $cpf = filter_input(INPUT_POST, 'cpf');
-    $telefone = filter_input(INPUT_POST, 'telefone');
+    $obj = new Cliente();
 
-    if ($nome && $cpf && $telefone) {
+    $obj->setNome($nome);
+    $obj->setCpf($cpf);
+    $obj->setTelefone($telefone);
 
-        $obj = new Cliente();
+    $dao = new DAOCliente();
 
-        $obj->setNome($nome);
-        $obj->setCpf($cpf);
-        $obj->setTelefone($telefone);
-
-        $dao = new DAOCliente();
-
-        try {
-            $dao->inclui($obj);
-            echo 'SALVO';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->inclui($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Cliente cadastrado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => $e->getMessage(),
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);

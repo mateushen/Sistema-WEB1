@@ -1,41 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Pagamento.php';
+require_once '../../dao/DAOPagamento.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de forma de pagamento</title>
-</head>
+$tipo_pagamento = filter_input(INPUT_POST, 'tipo_pagamento');
 
-<body>
-    <?php
-    require_once '../../modelo/Pagamento.php';
-    require_once '../../dao/DAOPagamento.php';
-    require_once '../../dao/Conexao.php';
+if ($tipo_pagamento) {
 
-    $tipo_pagamento = filter_input(INPUT_POST, 'tipo_pagamento');
+    $obj = new Pagamento();
+    $dao = new DAOPagamento();
 
-    if ($tipo_pagamento) {
+    $obj->setTipo_pagamento($tipo_pagamento);
 
-        $obj = new Pagamento();
-        $dao = new DAOPagamento();
-
-        $obj->setTipo_pagamento($tipo_pagamento);
-
-        try {
-            $dao->inclui($obj);
-            echo 'SALVO';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->inclui($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Tipo de pagamento cadastrado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => $e->getMessage(),
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);

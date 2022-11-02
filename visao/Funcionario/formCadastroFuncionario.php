@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/savedata.js"></script>
 </head>
 
 <body>
@@ -23,12 +24,12 @@
     <div class="bar"></div>
 
     <main>
-        <div class="title">
+        <br><br><br>
+        <div class="form-box">
+            <br>
             <h1>CADASTRO DE FUNCIONÁRIO</h1>
-        </div>
-        <div class="form-box"><br>
-
-            <form action="cadastroFuncionario.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+            <br>
+            <form>
 
                 <label for="nome">Nome: </label>
                 <input type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br><br>
@@ -37,15 +38,15 @@
                 <input type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
 
                 <label for="email">E-mail: </label>
-                <input type="text" name="email" id="email" onblur="checarEmail();"><br><br>
+                <input type="text" name="email" id="email"><br><br>
 
                 <label for="senha">Senha: </label>
                 <input type="password" name="senha" id="senha" maxlength="6"><br><br>
 
                 <button class="bt-form">SALVAR</button><br><br>
 
-                <script src="../scripts/funcionario.js"></script>
                 <script src="../scripts/main.js"></script>
+
             </form>
 
         </div>

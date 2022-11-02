@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/savedata.js"></script>
 </head>
 
 <body>
@@ -23,12 +24,13 @@
     <div class="bar"></div>
 
     <main>
-        <div class="title">
+        <br><br><br>
+        <div class="form-box">
+            <br>
             <h1>CADASTRO DE VENDA</h1>
-        </div>
-        <div class="form-box"><br>
+            <br>
 
-            <form class="input-form" action="cadastroVenda.php" name="frmEnvia" method="post">
+            <form class="input-form">
                 <label for="funcionario">Funcionário: </label>
                 <select name="funcionario" id="funcionario">
                     <?php
@@ -110,8 +112,6 @@
                 <br><br>
 
                 <button class="bt-formPG">SALVAR</button><br><br>
-
-                <script src="../scripts/venda.js"></script>
 
             </form>
 

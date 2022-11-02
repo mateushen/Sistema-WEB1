@@ -12,13 +12,14 @@ class DAOGerente
 
     
     public function inclui(Gerente $gerente){
-        $sql = 'INSERT INTO Gerente (idGerente, nome, cpf, senha) VALUES (?,?,?,?)';
+        $sql = 'INSERT INTO Gerente (idGerente, nome, cpf, email, senha) VALUES (?,?,?,?,?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $gerente->getIdGerente());
         $pst->bindValue(2, $gerente->getNome());
         $pst->bindValue(3, $gerente->getCpf());
-        $pst->bindValue(4, $gerente->getSenha());
+        $pst->bindValue(4, $gerente->getEmail());
+        $pst->bindValue(5, $gerente->getSenha());
 
         if($pst->execute()){
             return true;

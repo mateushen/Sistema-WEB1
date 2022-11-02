@@ -3,6 +3,7 @@ Class Gerente{
     private $idGerente;
     private $nome;
     private $cpf;
+    private $email;
     private $senha;
  
     public function getIdGerente()
@@ -35,6 +36,17 @@ Class Gerente{
     public function setCpf($cpf)
     {
         $this->cpf = $cpf;
+        return $this;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
         return $this;
     }
 

@@ -47,6 +47,21 @@ class DAOVenda
         return $lista;
     }
 
-}
+    public function listagemVenda(){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('
+            SELECT idVenda, F.nome AS FNome, 
+            C.nome AS CNome, V.modelo AS modelo, C.nome AS CNome, V.modelo AS modelo, 
+            P.tipo_pagamento AS pgto, data_venda FROM 
+            Venda AS Vd 
+            INNER JOIN Funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
+            INNER JOIN Cliente AS C ON C.idCliente = Vd.idCliente 
+            INNER JOIN Veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
+            INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento
+        ');
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        return $lista;
+    }
 
-?>
+}

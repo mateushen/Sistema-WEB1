@@ -1,55 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../dao/Conexao.php';
+require_once '../../modelo/Venda.php';
+require_once '../../dao/DAOVenda.php';
+require_once '../../modelo/Veiculo.php';
+require_once '../../dao/DAOVeiculo.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de venda</title>
-</head>
+$idFuncionario = $_POST['idFuncionario'];
+$idCliente = $_POST['idCliente'];
+$idVeiculo = $_POST['idVeiculo'];
+$idPagamento = $_POST['idPagamento'];
 
-<body>
-    <?php
-    require_once '../../dao/Conexao.php';
-    require_once '../../modelo/Venda.php';
-    require_once '../../dao/DAOVenda.php';
-    require_once '../../modelo/Veiculo.php';
-    require_once '../../dao/DAOVeiculo.php';
+$data_venda = date('d/m/y');
 
-    $idFuncionario = $_POST['funcionario'];
-    $idCliente = $_POST['cliente'];
-    $idVeiculo = $_POST['veiculo'];
-    $idPagamento = $_POST['pagamento'];
+if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
 
-    $data_venda = date('d/m/y');
+    $obj = new Venda();
+    $dao = new DAOVenda();
 
-    if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
+    $daoVeiculo = new DAOVeiculo();
 
-        $obj = new Venda();
-        $dao = new DAOVenda();
-        
-        $daoVeiculo = new DAOVeiculo();
+    $obj->setIdFuncionario($idFuncionario);
+    $obj->setIdCliente($idCliente);
+    $obj->setIdVeiculo($idVeiculo);
+    $obj->setIdPagamento($idPagamento);
+    $obj->setData_venda($data_venda);
 
-        $obj->setIdFuncionario($idFuncionario);
-        $obj->setIdCliente($idCliente);
-        $obj->setIdVeiculo($idVeiculo);
-        $obj->setIdPagamento($idPagamento);
-        $obj->setData_venda($data_venda);
-
-        try {
-            $dao->inclui($obj);
-            $daoVeiculo->veiculoVendido($idVeiculo);
-            echo 'SALVO';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->inclui($obj);
+        $daoVeiculo->veiculoVendido($idVeiculo);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Venda cadastrada com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => $e->getMessage(),
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);

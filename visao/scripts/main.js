@@ -15,3 +15,45 @@ function somenteLetras(e) {
         }
     }
 }
+
+// Máscara de CPF
+var cpf = document.getElementById('cpf')
+if (cpf) {
+    cpf.addEventListener('keypress', () => {
+        let inputLength = cpf.value.length
+
+        if (inputLength == 3 || inputLength == 7) {
+            cpf.value += '.'
+        } else if (inputLength == 11) {
+            cpf.value += '-'
+        }
+    })
+}
+
+// Máscara de Telefone
+var telefone = document.getElementById('telefone')
+if (telefone) {
+    telefone.addEventListener('keypress', () => {
+        let inputLength = telefone.value.length
+
+        if (inputLength == 0) {
+            telefone.value += '('
+        } else if (inputLength == 3) {
+            telefone.value += ')'
+        } else if (inputLength == 9) {
+            telefone.value += '-'
+        }
+    })
+}
+
+// Máscara de Placa
+const placa = document.getElementById('placa')
+if (placa) {
+    placa.addEventListener('keypress', () => {
+        tamText = placa.value.length
+
+        if (tamText == 3) {
+            placa.value += "-"
+        }
+    })
+}
