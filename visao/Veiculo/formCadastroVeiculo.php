@@ -17,6 +17,7 @@
 
     <header>
         <div class="header">
+            <a href="../../main.php"><img class="img-home" src="../img/iconHome.png" /></a>
             <img src="../img/title.png" />
         </div>
     </header>
@@ -24,35 +25,34 @@
     <div class="bar"></div>
 
     <main>
-    <br>
-        <div class="form-box">
+        <br>
+        <div class="title">
             <h1>CADASTRO DE VEÍCULO</h1>
-
-            <form class="form-main">
-                <label for="placa">Placa: </label>
-                <input class="input-form" type="text" id="placa" name="placa" autocomplete="off" maxlength="8"><br>
-
-                <label for="renavam">Renavam: </label>
-                <input class="input-form" type="text" name="renavam" id="renavam" onkeypress="return somenteNumeros(event)" maxlength="11"><br>
-
-                <label for="marca">Marca: </label>
-                <input class="input-form" type="text" name="marca" id="marca" onkeypress="return somenteLetras(event)" maxlength="15"><br>
-
-                <label for="modelo">Modelo: </label>
-                <input class="input-form" type="text" name="modelo" id="modelo" maxlength="15"><br>
-
-                <label for="cor">Cor: </label>
-                <input class="input-form" type="text" name="cor" id="cor" onkeypress="return somenteLetras(event)" maxlength="15"><br>
-
-                <label for="ano">Ano: </label>
-                <input class="input-form" type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br>
-
-                <button>SALVAR</button>
-
-                <script src="../scripts/main.js"></script>
-            </form>
-
         </div>
+
+        <form class="form-main">
+            <label for="placa">Placa</label>
+            <input class="input-form" type="text" id="placa" name="placa" autocomplete="off" maxlength="8"><br>
+
+            <label for="renavam">Renavam</label>
+            <input class="input-form" type="text" name="renavam" id="renavam" onkeypress="return somenteNumeros(event)" maxlength="11"><br>
+
+            <label for="marca">Marca</label>
+            <input class="input-form" type="text" name="marca" id="marca" onkeypress="return somenteLetras(event)" maxlength="15"><br>
+
+            <label for="modelo">Modelo</label>
+            <input class="input-form" type="text" name="modelo" id="modelo" maxlength="15"><br>
+
+            <label for="cor">Cor</label>
+            <input class="input-form" type="text" name="cor" id="cor" onkeypress="return somenteLetras(event)" maxlength="15"><br>
+
+            <label for="ano">Ano</label>
+            <input class="input-form" type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br>
+
+            <button>SALVAR</button>
+
+            <script src="../scripts/main.js"></script>
+        </form>
         <br><br>
     </main>
 

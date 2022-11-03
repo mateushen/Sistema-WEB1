@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+}
+
+.logo {
+    left: 0;
+    margin:auto;
+    margin-left: 10%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-exit {
+    right: 0;
+    margin:auto;
+    margin-right: 3%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar {
+    width: 100%;
+    height: 2.5em;
+    background-color: #A3A9A3;
+}
+

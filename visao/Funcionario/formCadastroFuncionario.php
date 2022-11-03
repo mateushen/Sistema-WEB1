@@ -25,28 +25,27 @@
 
     <main>
         <br>
-        <div class="form-box">
-            <h1>CADASTRO DE FUNCIONÁRIO</h1><br>
-
-            <form class="form-main">
-                <label for="nome">Nome: </label>
-                <input class="input-form" type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br>
-
-                <label for="cpf">CPF: </label>
-                <input class="input-form" type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
-
-                <label for="email">E-mail: </label>
-                <input class="input-form" type="text" name="email" id="email"><br>
-
-                <label for="senha">Senha: </label>
-                <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br>
-
-                <button>SALVAR</button>
-
-                <script src="../scripts/main.js"></script>
-            </form>
-
+        <div class="title">
+            <h1>CADASTRO DE FUNCIONÁRIO</h1>
         </div>
+
+        <form class="form-main">
+            <label for="nome">Nome</label>
+            <input class="input-form" type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br>
+
+            <label for="cpf">CPF</label>
+            <input class="input-form" type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
+
+            <label for="email">E-mail</label>
+            <input class="input-form" type="text" name="email" id="email"><br>
+
+            <label for="senha">Senha</label>
+            <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br>
+
+            <button>SALVAR</button>
+
+            <script src="../scripts/main.js"></script>
+        </form>
         <br><br>
     </main>
 

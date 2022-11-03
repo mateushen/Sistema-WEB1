@@ -17,6 +17,7 @@
 
     <header>
         <div class="header">
+            <a href="../../main.php"><img class="img-home" src="../img/iconHome.png" /></a>
             <img src="../img/title.png" />
         </div>
     </header>
@@ -25,98 +26,97 @@
 
     <main>
         <br>
-        <div class="form-box">
+        <div class="title">
             <h1>CADASTRO DE VENDA</h1>
-
-            <form class="form-main">
-                <label for="funcionario">Funcionário: </label>
-                <select name="funcionario" id="funcionario">
-                <option selected hidden >- Selecione -</option>
-                    <?php
-                    require_once '../../modelo/Funcionario.php';
-                    require_once '../../dao/DAOFuncionario.php';
-                    require_once '../../dao/Conexao.php';
-
-                    $dao = new DAOFuncionario();
-                    $lista = $dao->lista();
-
-                    if ($lista) {
-                        foreach ($lista as $l) {
-                            echo '<option value="' . $l['idFuncionario'] . '">' . $l['nome'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-
-                <br>
-
-                <label>Cliente: </label>
-                <select name="cliente" id="cliente">
-                <option selected hidden >- Selecione -</option>
-                    <?php
-                    require_once '../../modelo/Cliente.php';
-                    require_once '../../dao/DAOCliente.php';
-                    require_once '../../dao/Conexao.php';
-
-                    $dao = new DAOCliente();
-                    $lista = $dao->lista();
-
-                    if ($lista) {
-                        foreach ($lista as $l) {
-                            echo '<option value="' . $l['idCliente'] . '">' . $l['nome'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-
-                <br>
-
-                <label>Veículo: </label>
-                <select name="veiculo" id="veiculo">
-                <option selected hidden >- Selecione -</option>
-                    <?php
-                    require_once '../../modelo/Veiculo.php';
-                    require_once '../../dao/DAOVeiculo.php';
-                    require_once '../../dao/Conexao.php';
-
-                    $dao = new DAOVeiculo();
-                    $lista = $dao->veiculoNaoVendido();
-
-                    if ($lista) {
-                        foreach ($lista as $l) {
-                            echo '<option value="' . $l['idVeiculo'] . '">' . $l['modelo'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-
-                <br>
-
-                <label>Forma de pgto: </label>
-                <select name="pagamento" id="pagamento">
-                <option selected hidden >- Selecione -</option>
-                    <?php
-                    require_once '../../modelo/Pagamento.php';
-                    require_once '../../dao/DAOPagamento.php';
-                    require_once '../../dao/Conexao.php';
-
-                    $dao = new DAOPagamento();
-                    $lista = $dao->lista();
-
-                    if ($lista) {
-                        foreach ($lista as $l) {
-                            echo '<option value="' . $l['idPagamento'] . '">' . $l['tipo_pagamento'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-
-                <br><br>
-
-                <button>SALVAR</button>
-            </form>
-
         </div>
+
+        <form class="form-venda">
+            <label for="funcionario">Funcionário</label>
+            <select name="funcionario" id="funcionario">
+                <option selected hidden>- Selecione -</option>
+                <?php
+                require_once '../../modelo/Funcionario.php';
+                require_once '../../dao/DAOFuncionario.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOFuncionario();
+                $lista = $dao->lista();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idFuncionario'] . '">' . $l['nome'] . '</option>';
+                    }
+                }
+                ?>
+            </select>
+
+            <br>
+
+            <label>Cliente</label>
+            <select name="cliente" id="cliente">
+                <option selected hidden>- Selecione -</option>
+                <?php
+                require_once '../../modelo/Cliente.php';
+                require_once '../../dao/DAOCliente.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOCliente();
+                $lista = $dao->lista();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idCliente'] . '">' . $l['nome'] . '</option>';
+                    }
+                }
+                ?>
+            </select>
+
+            <br>
+
+            <label>Veículo</label>
+            <select name="veiculo" id="veiculo">
+                <option selected hidden>- Selecione -</option>
+                <?php
+                require_once '../../modelo/Veiculo.php';
+                require_once '../../dao/DAOVeiculo.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOVeiculo();
+                $lista = $dao->veiculoNaoVendido();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idVeiculo'] . '">' . $l['modelo'] . '</option>';
+                    }
+                }
+                ?>
+            </select>
+
+            <br>
+
+            <label>Forma de pgto</label>
+            <select name="pagamento" id="pagamento">
+                <option selected hidden>- Selecione -</option>
+                <?php
+                require_once '../../modelo/Pagamento.php';
+                require_once '../../dao/DAOPagamento.php';
+                require_once '../../dao/Conexao.php';
+
+                $dao = new DAOPagamento();
+                $lista = $dao->lista();
+
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo '<option value="' . $l['idPagamento'] . '">' . $l['tipo_pagamento'] . '</option>';
+                    }
+                }
+                ?>
+            </select>
+
+            <br><br>
+
+            <button>SALVAR</button>
+        </form>
         <br><br>
     </main>
 

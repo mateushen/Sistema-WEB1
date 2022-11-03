@@ -1,6 +1,6 @@
 h1 {
     font-family: Verdana;
-    border-bottom: 5px solid #000;
+    color: #fff;
 }
 
 main {
@@ -11,14 +11,14 @@ main {
     background-color: #e0e0e0;
 }
 
-.form-box {
-    background-color: #A3A9A3;
+.title {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1.5em;
     border-radius: 0.5em;
-    padding: 2%;
+    background-color: #353535;
+    padding: 1%;
 }
 
 .form-main {
@@ -26,8 +26,16 @@ main {
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
-    background-color: #A3A9A3;
-    padding: 5%;
+    padding: 4%;
+    border-radius: 0 0 1em 1em;
+}
+
+.form-venda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4%;
     border-radius: 0 0 1em 1em;
 }
 
@@ -55,9 +63,13 @@ label {
 }
 
 button {
-    width: 5em;
-    height: 2.5em;
+    width: 12em;
+    height: 3em;
     margin: auto;
+    border-radius: 0.5em;
+    color:#fff;
+    background-color: #8C110A;
+    border: none;
 }
 
 button:hover {
