@@ -13,6 +13,11 @@ header {
     background-color: #F5F5F5;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+}
+
 .logo {
     left: 0;
     margin:auto;
@@ -35,7 +40,65 @@ header {
 
 .bar {
     width: 100%;
-    height: 2.5em;
+    height: 4em;
     background-color: #A3A9A3;
 }
 
+.bar-left {
+    width: 20%;
+    height: 35em;
+    background-color: #A3A9A3;
+    left: 0;
+}
+
+.container-center {
+    width: 80%;
+    height: auto;
+    background-color: #F5F5F5;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-line {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.widget {
+    width: 12em;
+    height: 12em;
+    border-radius: 1em;
+    background-color: #A3A9A3;
+    box-shadow: 0 1em 1.5em;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.tag {
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.tag:hover {
+    color:#AB2114;
+}
