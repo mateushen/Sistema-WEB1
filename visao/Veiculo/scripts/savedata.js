@@ -32,7 +32,8 @@ window.addEventListener('load', () => {
                                             let p = document.querySelector('p');
                                             if (json.status == 'ok') {
                                                 alert('Dados gravados com sucesso!')
-                                                window.location.href = "../../main.php";
+                                                document.forms[0].reset();
+                                                p.innerText = '';
                                             } else {
                                                 p.innerText = json.mensagem;
                                                 p.style.color = 'red';

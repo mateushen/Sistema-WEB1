@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <div class="logo">
+        <div class="logo-first">
             <img src="../img/title.png" />
         </div>
         <div class="img-exit">
@@ -27,28 +27,38 @@
         <div class="bar-left"></div>
         <div class="container-center">
             <div class="container-line">
-                <a href="../Funcionario/listagemFuncionario.php"><div class="widget">
-                    <img src="../img/icon-funcionario.png" width="170" height="150" />
-                    <p class="tag">Funcionários</p>
-                </div></a>
-                <a href="../Cliente/listagemCliente.php"><div class="widget">
-                    <img src="../img/icon-cliente.png" width="170" height="150" />
-                    <p class="tag">Clientes</p>
-                </div></a>
+                <a href="../Funcionario/listagemFuncionario.php">
+                    <div class="widget">
+                        <img src="../img/icon-funcionario.png" width="170" height="150" />
+                        <p class="tag">Funcionários</p>
+                    </div>
+                </a>
+                <a href="../Cliente/listagemCliente.php">
+                    <div class="widget">
+                        <img src="../img/icon-cliente.png" width="170" height="150" />
+                        <p class="tag">Clientes</p>
+                    </div>
+                </a>
             </div>
             <div class="container-line">
-                <a href="../Veiculo/listagemVeiculo.php"><div class="widget">
-                    <img src="../img/icon-veiculo.png" width="170" height="150" />
-                    <p class="tag">Veículos</p>
-                </div></a>
-                <a href="../Pagamento/listagemPagamento.php"><div class="widget">
-                    <img src="../img/icon-pagamento.png" width="170" height="150" />
-                    <p class="tag">Pagamentos</p>
-                </div></a>
-                <a href="../Venda/listagemVenda.php"><div class="widget">
-                    <img src="../img/icon-venda.png" width="170" height="150" />
-                    <p class="tag">Vendas</p>
-                </div></a>
+                <a href="../Veiculo/listagemVeiculo.php">
+                    <div class="widget">
+                        <img src="../img/icon-veiculo.png" width="170" height="150" />
+                        <p class="tag">Veículos</p>
+                    </div>
+                </a>
+                <a href="../Pagamento/listagemPagamento.php">
+                    <div class="widget">
+                        <img src="../img/icon-pagamento.png" width="170" height="150" />
+                        <p class="tag">Pagamentos</p>
+                    </div>
+                </a>
+                <a href="../Venda/listagemVenda.php">
+                    <div class="widget">
+                        <img src="../img/icon-venda.png" width="170" height="150" />
+                        <p class="tag">Vendas</p>
+                    </div>
+                </a>
             </div>
         </div>
     </main>

@@ -9,7 +9,6 @@ $idFuncionario = $_POST['idFuncionario'];
 $idCliente = $_POST['idCliente'];
 $idVeiculo = $_POST['idVeiculo'];
 $idPagamento = $_POST['idPagamento'];
-
 $data_venda = date('d/m/y');
 
 if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
@@ -35,7 +34,7 @@ if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
     } catch (Exception $e) {
         $retorno = [
             'status' => 'error',
-            'mensagem' => $e->getMessage(),
+            'mensagem' => 'Erro ao realizar o cadastro!',
         ];
     }
 } else {
@@ -46,3 +45,5 @@ if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
 }
 
 echo json_encode($retorno);
+
+

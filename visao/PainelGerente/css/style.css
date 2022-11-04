@@ -18,10 +18,8 @@ main {
     flex-direction: row;
 }
 
-.logo {
-    left: 0;
-    margin:auto;
-    margin-left: 10%;
+.logo-first {
+    margin: auto;
     position: absolute;
     display: flex;
     align-items: center;
@@ -30,7 +28,7 @@ main {
 
 .img-exit {
     right: 0;
-    margin:auto;
+    margin: auto;
     margin-right: 3%;
     position: absolute;
     display: flex;
@@ -41,18 +39,18 @@ main {
 .bar {
     width: 100%;
     height: 4em;
-    background-color: #A3A9A3;
+    background-color: #353535;
 }
 
 .bar-left {
-    width: 20%;
+    width: 7%;
     height: 35em;
-    background-color: #A3A9A3;
+    background-color: #353535;
     left: 0;
 }
 
 .container-center {
-    width: 80%;
+    width: 93%;
     height: auto;
     background-color: #F5F5F5;
     right: 0;
@@ -100,5 +98,5 @@ a {
 }
 
 .tag:hover {
-    color:#AB2114;
+    color: #AB2114;
 }

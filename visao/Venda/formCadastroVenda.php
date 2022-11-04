@@ -33,7 +33,7 @@
         <form class="form-venda">
             <label for="funcionario">Funcionário</label>
             <select name="funcionario" id="funcionario">
-                <option selected hidden>- Selecione -</option>
+                <option value="0" selected hidden>- Selecione -</option>
                 <?php
                 require_once '../../modelo/Funcionario.php';
                 require_once '../../dao/DAOFuncionario.php';
@@ -54,7 +54,7 @@
 
             <label>Cliente</label>
             <select name="cliente" id="cliente">
-                <option selected hidden>- Selecione -</option>
+                <option value="0" selected hidden>- Selecione -</option>
                 <?php
                 require_once '../../modelo/Cliente.php';
                 require_once '../../dao/DAOCliente.php';
@@ -75,7 +75,7 @@
 
             <label>Veículo</label>
             <select name="veiculo" id="veiculo">
-                <option selected hidden>- Selecione -</option>
+                <option value="0" selected hidden>- Selecione -</option>
                 <?php
                 require_once '../../modelo/Veiculo.php';
                 require_once '../../dao/DAOVeiculo.php';
@@ -96,7 +96,7 @@
 
             <label>Forma de pgto</label>
             <select name="pagamento" id="pagamento">
-                <option selected hidden>- Selecione -</option>
+                <option value="0" selected hidden>- Selecione -</option>
                 <?php
                 require_once '../../modelo/Pagamento.php';
                 require_once '../../dao/DAOPagamento.php';
@@ -113,7 +113,9 @@
                 ?>
             </select>
 
-            <br><br>
+            <br>
+            <p id="p1"></p>
+            <br>
 
             <button>SALVAR</button>
         </form>

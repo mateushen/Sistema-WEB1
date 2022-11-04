@@ -21,7 +21,7 @@ if ($tipo_pagamento) {
     } catch (Exception $e) {
         $retorno = [
             'status' => 'error',
-            'mensagem' => $e->getMessage(),
+            'mensagem' => 'Erro ao realizar o cadastro!',
         ];
     }
 } else {
