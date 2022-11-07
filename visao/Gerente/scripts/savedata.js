@@ -27,9 +27,7 @@ window.addEventListener('load', () => {
                                     console.log(json);
                                     let p = document.querySelector('p');
                                     if (json.status == 'ok') {
-                                        alert('Dados gravados com sucesso!')
-                                        document.forms[0].reset();
-                                        p.innerText = '';
+                                        window.open('main.php', '_self')                       
                                     } else {
                                         p.innerText = 'ERRO -> ' + json.mensagem;
                                         p.style.color = 'red';

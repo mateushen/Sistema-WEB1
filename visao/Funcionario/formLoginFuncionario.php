@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/form-login.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/login.js"></script>
 </head>
 
 <body>
@@ -23,30 +24,33 @@
     <div class="bar"></div>
 
     <main>
-    <br><br><br>
+        <br><br><br>
         <div class="box-login">
             <div class="img-user">
-                <img src="../img/iconUser.png"/>
+                <img src="../img/iconUser.png" />
             </div>
-                <br><br><br>
-                <h1>LOGIN</h1>
-                <br>
-                <div class="form-login">
-                    <form action="loginFuncionario.php" onSubmit="return (verifica())" name="frmEnvia" method="post">
+            <br><br><br>
+            <h1>LOGIN</h1>
+            <br>
+            <div class="form-login">
+                <form>
 
-                        <input class="campo" type="text" placeholder="CPF" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
+                    <input class="campo" type="text" placeholder="CPF" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)">
+                    <p id="p1"></p><br><br>
 
-                        <input class="campo" type="password" placeholder="Senha" name="senha" id="senha" maxlength="6"><br><br>
+                    <input class="campo" type="password" placeholder="Senha" name="senha" id="senha" maxlength="6">
+                    <p id="p2"></p><br><br>
 
-                        <button class="bt-form">ENTRAR</button><br><br>
+                    <button>ENTRAR</button><br><br><br>
 
-                        <script src="../scripts/main.js"></script>
-                        <script src="../scripts/login.js"></script>
+                    <p id="p3"></p><br>
 
-                    </form>
-                </div>
+                    <script src="../scripts/main.js"></script>
+
+                </form>
             </div>
-            <br><br>
+        </div>
+        <br><br>
     </main>
 
     <footer>

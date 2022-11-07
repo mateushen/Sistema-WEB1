@@ -43,18 +43,23 @@ class DAOGerente
 
     public function login($cpf, $senha){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT senha FROM Gerente WHERE cpf = ?');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente WHERE cpf = ?');
         $pst->bindValue(1, $cpf);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
-
+       
         if($lista){
             $login = $lista[0];
             if (password_verify($senha, $login['senha'])){
-                return true;
+                unset($login['senha']);
+                return $login;
             }else{
-                return false;
+                $login = [];
+                return $login;
             }
-        }else return false;
+        }else{
+            $lista = [];
+            return $lista;
+        };
     }
 }

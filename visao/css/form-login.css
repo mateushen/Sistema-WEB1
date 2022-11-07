@@ -31,6 +31,25 @@ main {
     justify-content: center;
 }
 
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5em;
+    border-radius: 0.5em;
+    background-color: #353535;
+    padding: 1%;
+}
+
+.form-main {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    padding: 4%;
+    border-radius: 0 0 1em 1em;
+}
+
 .campo {
     padding: 0.7em;
     font-size: 15px;
@@ -46,13 +65,15 @@ main {
     -moz-box-sizing: border-box;
 }
 
-.bt-form {
-    width: 8em;
-    height: 2.5em;
-    background-color: #e0e0e0;
+button {
+    width: 12em;
+    height: 3em;
+    margin: auto;
+    margin-left: 12%;
+    border-radius: 0.5em;
+    color:#fff;
+    background-color: #8C110A;
     border: none;
-    margin-left: 25%;
-    border-radius: 0.3em;
 }
 
 button:hover{
