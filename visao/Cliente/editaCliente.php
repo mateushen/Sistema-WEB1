@@ -1,47 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Cliente.php';
+require_once '../../dao/DAOCliente.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição de cliente</title>
-</head>
+$idCliente = filter_input(INPUT_POST, 'idCliente');
+$nome = filter_input(INPUT_POST, 'nome');
+$cpf = filter_input(INPUT_POST, 'cpf');
+$telefone = filter_input(INPUT_POST, 'telefone');
 
-<body>
-    <?php
-    require_once '../../modelo/Cliente.php';
-    require_once '../../dao/DAOCliente.php';
-    require_once '../../dao/Conexao.php';
+if ($idCliente && $nome && $cpf && $telefone) {
 
-    $idCliente = filter_input(INPUT_POST, 'idCliente');
-    $nome = filter_input(INPUT_POST, 'nome');
-    $cpf = filter_input(INPUT_POST, 'cpf');
-    $telefone = filter_input(INPUT_POST, 'telefone');
+    $obj = new Cliente();
+    $dao = new DAOCliente();
 
-    if ($idCliente && $nome && $cpf && $telefone) {
+    $obj->setIdCliente($idCliente);
+    $obj->setNome($nome);
+    $obj->setCpf($cpf);
+    $obj->setTelefone($telefone);
 
-        $obj = new Cliente();
-        $dao = new DAOCliente();
-
-        $obj->setIdCliente($idCliente);
-        $obj->setNome($nome);
-        $obj->setCpf($cpf);
-        $obj->setTelefone($telefone);
-
-        try {
-            $dao->altera($obj);
-            echo 'DADOS ALTERADOS';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->altera($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Alterado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => 'Erro ao realizar a alteração!',
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);
