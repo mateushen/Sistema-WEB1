@@ -51,7 +51,7 @@ class DAOVenda
         $lista = [];
         $pst = Conexao::getPreparedStatement('
             SELECT idVenda, F.nome AS FNome, 
-            C.nome AS CNome, V.modelo AS modelo, C.nome AS CNome, V.modelo AS modelo, 
+            C.nome AS CNome, V.modelo AS modelo, 
             P.tipo_pagamento AS pgto, data_venda FROM 
             Venda AS Vd 
             INNER JOIN Funcionario AS F ON F.idFuncionario = Vd.idFuncionario 

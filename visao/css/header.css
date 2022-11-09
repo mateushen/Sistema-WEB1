@@ -27,11 +27,8 @@
 }
 
 .img-home {
-    width: 10px;
-    height: 10px;
     left: 0;
-    top: 5%;
-    margin:auto;
+    top: 1%;
     margin-left: 8%;
     position: absolute;
     display: flex;

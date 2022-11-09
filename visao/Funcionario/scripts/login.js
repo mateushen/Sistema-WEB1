@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
                                 alert(json.mensagem)
                                 window.open('../PainelFuncionario/', '_self')
                             } else {
-                                p.innerText = 'Dados inválidos';
+                                p.innerText = 'Usuário ou senha incorretos';
                                 p.style.color = 'red';
                             }
                         })

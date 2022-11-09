@@ -7,53 +7,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de vendas</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/listing.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
-    <div>
-        <h1>VENDAS CADASTRADAS</h1>
-    </div>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Funcionário</th>
-            <th>Cliente</th>
-            <th>Veículo</th>
-            <th>Tipo de pgto</th>
-            <th>Data</th>
-        </tr>
-        <?php
-        require_once '../../dao/DAOVenda.php';
-        require_once '../../dao/Conexao.php';
+    <header>
+        <div class="header">
+            <img src="../img/title.png" />
+        </div>
+    </header>
 
-        $dao = new DAOVenda();
-        $lista = $dao->listagemVenda();
+    <div class="bar"></div>
 
-        foreach ($lista as $l) {
-            echo "<tr>";
+    <main>
+        <div class="title">
+            <h1>LISTAGEM DE VENDAS</h1>
+        </div><br><br>
 
-            echo '<td>' . $l['idVenda'] . "</td>";
-            echo '<td>' . $l['FNome'] . '</td>';
-            echo '<td>' . $l['CNome'] . '</td>';
-            echo '<td>' . $l['modelo'] . '</td>';
-            echo '<td>' . $l['pgto'] . '</td>';
-            echo '<td>' . $l['data_venda'] . '</td>';
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Funcionário</th>
+                <th>Cliente</th>
+                <th>Veículo</th>
+                <th>Tipo de pgto</th>
+                <th>Data</th>
+            </tr>
+            <?php
+            require_once '../../dao/DAOVenda.php';
+            require_once '../../dao/Conexao.php';
 
-            echo '<td>
-            <form method="POST" action="excluiVenda.php">
-            <input type="submit" value="" id="trash" name="excluir">
-            <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
-            </form></td>';
+            $dao = new DAOVenda();
+            $lista = $dao->listagemVenda();
 
-            echo "</tr>";
-        }
+            foreach ($lista as $l) {
+                echo "<tr>";
 
-        ?>
-    </table>
-    <div></div>
-    <a href="/Sistema-WEB1">Inicio</a>
+                echo '<td class="item">' . $l['idVenda'] . "</td>";
+                echo '<td class="item">' . $l['FNome'] . '</td>';
+                echo '<td class="item">' . $l['CNome'] . '</td>';
+                echo '<td class="item">' . $l['modelo'] . '</td>';
+                echo '<td class="item">' . $l['pgto'] . '</td>';
+                echo '<td class="item">' . $l['data_venda'] . '</td>';
+
+                echo '<td class="action">
+                <form method="POST" action="excluiVenda.php">
+                <input type="submit" value="" id="trash" name="excluir">
+                <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
+                </form></td>';
+
+                echo "</tr>";
+            }
+
+            ?>
+        </table>
+        <br><br><br>
+    </main>
+
+    <footer>
+        <div class="footer-penult">
+            <img class="logo" src="../img/logo.png" />
+            <div class="social">
+                <p class="pub">Siga WEBCars nas redes sociais:</p>
+                <img class="icon-social" src="../img/icon-facebook.png" />
+                <img class="icon-social" src="../img/icon-instagram.png" />
+            </div>
+        </div>
+        <div class="footer-end">
+            <p class="cookies">Copyright © WEBCars</p>
+            <p class="cookies">Política de privacidade</p>
+            <p class="cookies">Termos de uso</p>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -17,7 +17,6 @@
 
     <header>
         <div class="header">
-            <a href="../../main.php"><img class="img-home" src="../img/iconHome.png" /></a>
             <img src="../img/title.png" />
         </div>
     </header>

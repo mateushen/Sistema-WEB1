@@ -8,61 +8,89 @@
     <title>Listagem de veículos</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/listing.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
 
-    <div>
-        <h1>LISTAGEM DE MOTOS</h1>
-    </div>
+    <header>
+        <div class="header">
+            <img src="../img/title.png" />
+        </div>
+    </header>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Placa</th>
-            <th>Renavam</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Cor</th>
-            <th>Ano</th>
-        </tr>
-        <?php
-        require_once '../../dao/DAOVeiculo.php';
-        require_once '../../dao/Conexao.php';
+    <div class="bar"></div>
 
-        $dao = new DAOVeiculo();
-        $lista = $dao->veiculoNaoVendido();
+    <main>
+        <div class="title">
+            <h1>LISTAGEM DE VEÍCULOS</h1>
+        </div><br><br>
 
-        foreach ($lista as $l) {
-            echo "<tr>";
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Placa</th>
+                <th>Renavam</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Cor</th>
+                <th>Ano</th>
+            </tr>
+            <?php
+            require_once '../../dao/DAOVeiculo.php';
+            require_once '../../dao/Conexao.php';
 
-            echo '<td>' . $l['idVeiculo'] . "</td>";
-            echo '<td>' . $l['placa'] . "</td>";
-            echo '<td>' . $l['renavam'] . "</td>";
-            echo '<td>' . $l['marca'] . "</td>";
-            echo '<td>' . $l['modelo'] . "</td>";
-            echo '<td>' . $l['cor'] . "</td>";
-            echo '<td>' . $l['ano'] . "</td>";
+            $dao = new DAOVeiculo();
+            $lista = $dao->veiculoNaoVendido();
 
-            echo '<td>
-            <form method="POST" action="excluiVeiculo.php">
-            <input type="submit" value="" id="trash" name="excluir">
-            <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
-            </form></td>';
+            foreach ($lista as $l) {
+                echo "<tr>";
 
-            echo '<td>
-            <form method="POST" action="formEditaVeiculo.php">
-            <input type="submit" value="" id="edit" name="editar">
-            <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
-            </form></td>';
+                echo '<td class="item">' . $l['idVeiculo'] . "</td>";
+                echo '<td class="item">' . $l['placa'] . "</td>";
+                echo '<td class="item">' . $l['renavam'] . "</td>";
+                echo '<td class="item">' . $l['marca'] . "</td>";
+                echo '<td class="item">' . $l['modelo'] . "</td>";
+                echo '<td class="item">' . $l['cor'] . "</td>";
+                echo '<td class="item">' . $l['ano'] . "</td>";
 
-            echo "</tr>";
-        }
+                echo '<td class="action">
+                <form method="POST" action="excluiVeiculo.php">
+                <input type="submit" value="" id="trash" name="excluir">
+                <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
+                </form></td>';
 
-        ?>
-    </table>
-    <div></div>
-    <a href="/Sistema-WEB1">Inicio</a>
+                echo '<td class="action">
+                <form method="POST" action="formEditaVeiculo.php">
+                <input type="submit" value="" id="edit" name="editar">
+                <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
+                </form></td>';
+
+                echo "</tr>";
+            }
+
+            ?>
+        </table>
+        <br><br><br>
+    </main>
+
+    <footer>
+        <div class="footer-penult">
+            <img class="logo" src="../img/logo.png" />
+            <div class="social">
+                <p class="pub">Siga WEBCars nas redes sociais:</p>
+                <img class="icon-social" src="../img/icon-facebook.png" />
+                <img class="icon-social" src="../img/icon-instagram.png" />
+            </div>
+        </div>
+        <div class="footer-end">
+            <p class="cookies">Copyright © WEBCars</p>
+            <p class="cookies">Política de privacidade</p>
+            <p class="cookies">Termos de uso</p>
+        </div>
+    </footer>
 </body>
 
 </html>

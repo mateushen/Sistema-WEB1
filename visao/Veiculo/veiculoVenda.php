@@ -48,11 +48,11 @@
             foreach ($lista as $l) {
                 echo "<tr>";
 
-                echo '<td>' . $l['placa'] . "</td>";
-                echo '<td>' . $l['marca'] . "</td>";
-                echo '<td>' . $l['modelo'] . "</td>";
-                echo '<td>' . $l['cor'] . "</td>";
-                echo '<td>' . $l['ano'] . "</td>";
+                echo '<td class="item">' . $l['placa'] . "</td>";
+                echo '<td class="item">' . $l['marca'] . "</td>";
+                echo '<td class="item">' . $l['modelo'] . "</td>";
+                echo '<td class="item">' . $l['cor'] . "</td>";
+                echo '<td class="item">' . $l['ano'] . "</td>";
 
                 echo "</tr>";
             }
