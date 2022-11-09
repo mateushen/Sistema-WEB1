@@ -27,8 +27,8 @@
 }
 
 .img-home {
-    width: 60px;
-    height: 60px;
+    width: 10px;
+    height: 10px;
     left: 0;
     top: 5%;
     margin:auto;
@@ -63,6 +63,15 @@ a {
     font-family: Verdana;
 }
 
+.img-exit {
+    left: 0;
+    margin: auto;
+    margin-left: 3%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

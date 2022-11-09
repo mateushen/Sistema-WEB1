@@ -31,7 +31,7 @@
         require_once '../../dao/Conexao.php';
 
         $dao = new DAOVeiculo();
-        $lista = $dao->lista();
+        $lista = $dao->veiculoNaoVendido();
 
         foreach ($lista as $l) {
             echo "<tr>";

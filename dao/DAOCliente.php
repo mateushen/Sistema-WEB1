@@ -60,15 +60,6 @@ class DAOCliente
         return $lista;
     }
 
-    public function retornaID($nome){
-        $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT idCliente FROM Cliente WHERE nome = ?');
-        $pst->bindValue(1, $nome);
-        $pst->execute();
-        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
-        return $lista;
-    }
-
 }
 
 ?>

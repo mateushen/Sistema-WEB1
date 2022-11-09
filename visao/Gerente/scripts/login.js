@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
         function verificaCPF() {
             if (document.forms[0].cpf.value.length != 14) {
                 let p = document.getElementById('p1');
-                p.innerText = 'CPF inválido';
+                p.innerText = 'CPF incorreto';
                 p.style.color = 'red';
                 document.forms[0].cpf.focus();
                 return false;

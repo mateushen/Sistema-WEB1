@@ -8,6 +8,7 @@
     <title>Sistema-WEB1</title>
     <link rel="icon" type="imagem/png" href="visao/img/logo.png" />
     <link rel="stylesheet" href="visao/css/main.css">
+    <link rel="stylesheet" href="visao/css/footer.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="visao/scripts/menu.js"></script>
@@ -23,8 +24,8 @@
                             <img class="icon-menu" src="visao/img/icon-menu.png">
                         </a>
                         <ul class="ul-menu">
-                            <li class="item-menu"><a href="">Veículos à venda</a></li>
-                            <li class="item-menu"><a href="">Sobre</a></li>
+                            <li class="item-menu"><a href="visao/Veiculo/veiculoVenda.php">Veículos à venda</a></li>
+                            <li class="item-menu"><a href="sobre.php">Sobre</a></li>
                         </ul>
                     </li>
                 </ul>
