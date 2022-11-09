@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
                         })
                         .then((json) => {
                             console.log(json);
-                            let p = document.querySelector('p');
+                            let p = document.getElementById('p1');
                             if (json.status == 'ok') {
                                 alert('Dados alterados com sucesso!')
                                 document.forms[0].reset();

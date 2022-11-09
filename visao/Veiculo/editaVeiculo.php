@@ -1,57 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Veiculo.php';
+require_once '../../dao/DAOVeiculo.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição de veículo</title>
-</head>
+$idVeiculo = filter_input(INPUT_POST, 'idVeiculo');
+$placa = filter_input(INPUT_POST, 'placa');
+$renavam = filter_input(INPUT_POST, 'renavam');
+$marca = filter_input(INPUT_POST, 'marca');
+$modelo = filter_input(INPUT_POST, 'modelo');
+$cor = filter_input(INPUT_POST, 'cor');
+$ano = filter_input(INPUT_POST, 'ano');
 
-<body>
-    <?php
-    require_once '../../modelo/Veiculo.php';
-    require_once '../../dao/DAOVeiculo.php';
-    require_once '../../dao/Conexao.php';
+var_dump($idVeiculo);
+var_dump($placa);
 
-    $idVeiculo = filter_input(INPUT_POST, 'idVeiculo');
-    $placa = filter_input(INPUT_POST, 'placa');
-    $renavam = filter_input(INPUT_POST, 'renavam');
-    $marca = filter_input(INPUT_POST, 'marca');
-    $modelo = filter_input(INPUT_POST, 'modelo');
-    $cor = filter_input(INPUT_POST, 'cor');
-    $ano = filter_input(INPUT_POST, 'ano');
+if ($idVeiculo && $placa && $renavam && $marca && $modelo && $cor && $ano) {
 
-    $tamPlaca = strlen($placa);
-    $tamAno = strlen($ano);
-    $tamRenavam = strlen($renavam);
+    $obj = new Veiculo();
+    $dao = new DAOVeiculo();
 
-    if ($idVeiculo && $tamPlaca == 8 && $tamRenavam == 11 && $marca && $modelo && $cor && $tamAno == 4) {
+    $obj->setIdVeiculo($idVeiculo);
+    $obj->setPlaca($placa);
+    $obj->setRenavam($renavam);
+    $obj->setMarca($marca);
+    $obj->setModelo($modelo);
+    $obj->setCor($cor);
+    $obj->setAno($ano);
 
-        $obj = new Veiculo();
-        $dao = new DAOVeiculo();
-
-        $obj->setIdVeiculo($idVeiculo);
-        $obj->setPlaca($placa);
-        $obj->setRenavam($renavam);
-        $obj->setMarca($marca);
-        $obj->setModelo($modelo);
-        $obj->setCor($cor);
-        $obj->setAno($ano);
-
-        try {
-            $dao->altera($obj);
-            echo 'DADOS ALTERADOS';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->altera($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Alterado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => 'Erro ao realizar a alteração!',
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);

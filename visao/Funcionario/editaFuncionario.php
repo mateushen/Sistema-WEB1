@@ -1,49 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../modelo/Funcionario.php';
+require_once '../../dao/DAOFuncionario.php';
+require_once '../../dao/Conexao.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição de funcionário</title>
-</head>
+$nome = filter_input(INPUT_POST, 'nome');
+$cpf = filter_input(INPUT_POST, 'cpf');
+$email = filter_input(INPUT_POST, 'email');
+$senha = filter_input(INPUT_POST, 'senha');
 
-<body>
-    <?php
-    require_once '../../modelo/Funcionario.php';
-    require_once '../../dao/DAOFuncionario.php';
-    require_once '../../dao/Conexao.php';
+if ($nome && $email && $cpf && $senha) {
 
-    $nome = filter_input(INPUT_POST, 'nome');
-    $cpf = filter_input(INPUT_POST, 'cpf');
-    $email = filter_input(INPUT_POST, 'email');
-    $senha = filter_input(INPUT_POST, 'senha');
+    $obj = new Funcionario();
+    $dao = new DAOFuncionario();
 
-    if ($nome && $email && $cpf && $senha) {
+    $obj->setIdFuncionario($idFuncionario);
+    $obj->setNome($nome);
+    $obj->setCpf($cpf);
+    $obj->setEmail($email);
+    $obj->setSenha($senha);
+    $obj->setIdGerente(1);
 
-        $obj = new Funcionario();
-        $dao = new DAOFuncionario();
-
-        $obj->setIdFuncionario($idFuncionario);
-        $obj->setNome($nome);
-        $obj->setCpf($cpf);
-        $obj->setEmail($email);
-        $obj->setSenha($senha);
-        $obj->setIdGerente(1);
-
-        try {
-            $dao->altera($obj);
-            echo 'DADOS ALTERADOS';
-        } catch (Exception $e) {
-            echo 'ERRO: ',  $e->getMessage(), "\n";
-        }
-    } else {
-        echo 'Dados inválidos';
+    try {
+        $dao->altera($obj);
+        $retorno = [
+            'status' => 'ok',
+            'mensagem' => 'Alterado com sucesso!',
+        ];
+    } catch (Exception $e) {
+        $retorno = [
+            'status' => 'error',
+            'mensagem' => 'Erro ao realizar a alteração!',
+        ];
     }
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Dados inválidos',
+    ];
+}
 
-    ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
-</body>
-
-</html>
+echo json_encode($retorno);

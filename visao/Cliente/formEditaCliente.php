@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de cliente</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -53,13 +54,14 @@
             <input class="input-form" type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)" value="<?= $cliente['cpf'] ?>"><br>
 
             <label for="telefone">Telefone: </label>
-            <input class="input-form" type="text" name="telefone" id="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)" value="<?= $cliente['telefone'] ?>"><br>
-
-            <p></p>
+            <input class="input-form" type="text" name="telefone" id="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)" value="<?= $cliente['telefone'] ?>"><br><br>
 
             <button>SALVAR</button><br><br>
 
+            <p id="p1"></p>
+
             <script src="../scripts/main.js"></script>
+
         </form>
         <br><br>
     </main>
