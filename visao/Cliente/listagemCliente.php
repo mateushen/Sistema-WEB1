@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/listing.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/deletedata.js"></script>
 </head>
 
 <body>
@@ -50,8 +51,9 @@
                 echo '<td class="item">' . $l['telefone'] . "</td>";
 
                 echo '<td class="action">
-                <form method="POST" action="excluiCliente.php">
-                <input type="submit" value="" id="trash" name="excluir">
+                <form>
+
+                <button id="trash"></button>
                 <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
                 </form></td>';
 
@@ -67,7 +69,7 @@
             ?>
         </table>
         <br>
-        <p id="p1"></p>
+        <p id="msg"></p>
         <br><br>
     </main>
 
