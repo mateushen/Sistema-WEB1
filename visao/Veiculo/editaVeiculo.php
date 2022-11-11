@@ -3,16 +3,13 @@ require_once '../../modelo/Veiculo.php';
 require_once '../../dao/DAOVeiculo.php';
 require_once '../../dao/Conexao.php';
 
-$idVeiculo = filter_input(INPUT_POST, 'idVeiculo');
-$placa = filter_input(INPUT_POST, 'placa');
-$renavam = filter_input(INPUT_POST, 'renavam');
-$marca = filter_input(INPUT_POST, 'marca');
-$modelo = filter_input(INPUT_POST, 'modelo');
-$cor = filter_input(INPUT_POST, 'cor');
-$ano = filter_input(INPUT_POST, 'ano');
-
-var_dump($idVeiculo);
-var_dump($placa);
+$idVeiculo = $_POST['idVeiculo'];
+$placa = $_POST['placa'];
+$renavam = $_POST['renavam'];
+$marca = $_POST['marca'];
+$modelo = $_POST['modelo'];
+$cor = $_POST['cor'];
+$ano = $_POST['ano'];
 
 if ($idVeiculo && $placa && $renavam && $marca && $modelo && $cor && $ano) {
 

@@ -23,13 +23,13 @@ window.addEventListener('load', () => {
                                         method: 'POST',
                                         body: dados
                                     };
-                                    fetch('../Veiculo/cadastroVeiculo.php', config)
+                                    fetch('cadastroVeiculo.php', config)
                                         .then((response) => {
                                             return response.json();
                                         })
                                         .then((json) => {
                                             console.log(json);
-                                            let p = document.querySelector('p');
+                                            let p = document.getElementById('msg');
                                             if (json.status == 'ok') {
                                                 alert('Dados gravados com sucesso!')
                                                 document.forms[0].reset();

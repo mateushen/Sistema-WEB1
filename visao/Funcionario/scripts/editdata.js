@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
                                 method: 'POST',
                                 body: dados
                             };
-                            fetch('cadastroFuncionario.php', config)
+                            fetch('editaFuncionario.php', config)
                                 .then((response) => {
                                     return response.json();
                                 })
@@ -27,9 +27,10 @@ window.addEventListener('load', () => {
                                     console.log(json);
                                     let p = document.getElementById('msg');
                                     if (json.status == 'ok') {
-                                        alert('Dados gravados com sucesso!')
+                                        alert(json.mensagem)
                                         document.forms[0].reset();
                                         p.innerText = '';
+                                        window.open('listagemFuncionario.php', '_self');
                                     } else {
                                         p.innerText = json.mensagem;
                                         p.style.color = 'red';

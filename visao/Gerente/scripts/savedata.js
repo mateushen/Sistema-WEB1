@@ -25,11 +25,11 @@ window.addEventListener('load', () => {
                                 })
                                 .then((json) => {
                                     console.log(json);
-                                    let p = document.querySelector('p');
+                                    let p = document.getElementById('msg');
                                     if (json.status == 'ok') {
                                         window.open('main.php', '_self')                       
                                     } else {
-                                        p.innerText = 'ERRO -> ' + json.mensagem;
+                                        p.innerText = json.mensagem;
                                         p.style.color = 'red';
                                     }
                                 })

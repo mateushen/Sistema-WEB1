@@ -17,15 +17,15 @@ window.addEventListener('load', () => {
                         method: 'POST',
                         body: dados
                     };
-                    fetch('../Cliente/editaCliente.php', config)
+                    fetch('editaCliente.php', config)
                         .then((response) => {
                             return response.json();
                         })
                         .then((json) => {
                             console.log(json);
-                            let p = document.getElementById('p1');
+                            let p = document.getElementById('msg');
                             if (json.status == 'ok') {
-                                alert('Dados alterados com sucesso!')
+                                alert(json.mensagem)
                                 document.forms[0].reset();
                                 p.innerText = '';
                                 window.open('listagemCliente.php', '_self');

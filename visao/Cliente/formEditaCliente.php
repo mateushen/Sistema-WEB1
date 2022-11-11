@@ -14,20 +14,6 @@
 </head>
 
 <body>
-    <?php
-    require_once '../../modelo/Cliente.php';
-    require_once '../../dao/DAOCliente.php';
-    require_once '../../dao/Conexao.php';
-
-    $idCliente = $_POST['idCliente'];
-
-    $dao = new DAOCliente();
-
-    $lista = $dao->buscaID($idCliente);
-
-    $cliente = $lista[0];
-
-    ?>
 
     <header>
         <div class="header">
@@ -45,6 +31,21 @@
 
         <form class="form-main">
 
+            <?php
+            require_once '../../modelo/Cliente.php';
+            require_once '../../dao/DAOCliente.php';
+            require_once '../../dao/Conexao.php';
+
+            $idCliente = $_POST['idCliente'];
+
+            $dao = new DAOCliente();
+
+            $lista = $dao->buscaID($idCliente);
+
+            $cliente = $lista[0];
+
+            ?>
+
             <input type="hidden" id="idCliente" name="idCliente" value="<?= $cliente['idCliente'] ?>">
 
             <label for="nome">Nome: </label>
@@ -58,7 +59,7 @@
 
             <button>SALVAR</button><br><br>
 
-            <p id="p1"></p>
+            <p id="msg"></p>
 
             <script src="../scripts/main.js"></script>
 

@@ -3,12 +3,15 @@ require_once '../../modelo/Funcionario.php';
 require_once '../../dao/DAOFuncionario.php';
 require_once '../../dao/Conexao.php';
 
-$nome = filter_input(INPUT_POST, 'nome');
-$cpf = filter_input(INPUT_POST, 'cpf');
-$email = filter_input(INPUT_POST, 'email');
-$senha = filter_input(INPUT_POST, 'senha');
+$idFuncionario = $_POST['idFuncionario'];
+$nome = $_POST['nome'];
+$cpf = $_POST['cpf'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 
-if ($nome && $email && $cpf && $senha) {
+$senha_crip = password_hash($senha, PASSWORD_DEFAULT);
+
+if ($idFuncionario && $nome && $email && $cpf && $senha_crip) {
 
     $obj = new Funcionario();
     $dao = new DAOFuncionario();
@@ -17,8 +20,7 @@ if ($nome && $email && $cpf && $senha) {
     $obj->setNome($nome);
     $obj->setCpf($cpf);
     $obj->setEmail($email);
-    $obj->setSenha($senha);
-    $obj->setIdGerente(1);
+    $obj->setSenha($senha_crip);
 
     try {
         $dao->altera($obj);

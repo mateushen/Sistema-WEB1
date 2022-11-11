@@ -14,21 +14,6 @@
 </head>
 
 <body>
-    <?php
-    require_once '../../modelo/Veiculo.php';
-    require_once '../../dao/DAOVeiculo.php';
-    require_once '../../dao/Conexao.php';
-
-    $idVeiculo = $_POST['idVeiculo'];
-
-    $dao = new DAOVeiculo();
-
-    $lista = $dao->buscaID($idVeiculo);
-
-    $veiculo = $lista[0];
-
-    ?>
-
     <header>
         <div class="header">
             <img src="../img/title.png" />
@@ -45,10 +30,25 @@
 
         <form class="form-main">
 
+            <?php
+            require_once '../../modelo/Veiculo.php';
+            require_once '../../dao/DAOVeiculo.php';
+            require_once '../../dao/Conexao.php';
+
+            $idVeiculo = $_POST['idVeiculo'];
+
+            $dao = new DAOVeiculo();
+
+            $lista = $dao->buscaID($idVeiculo);
+
+            $veiculo = $lista[0];
+
+            ?>
+
             <input type="hidden" id="idVeiculo" name="idVeiculo" value="<?= $veiculo['idVeiculo'] ?>">
 
             <label for="placa">Placa: </label>
-            <input class="input-form" type="text" name="placa " id="placa" value="<?= $veiculo['placa'] ?>" autocomplete="off" maxlength="8"><br>
+            <input class="input-form" type="text" name="placa" id="placa" value="<?= $veiculo['placa'] ?>" autocomplete="off" maxlength="8"><br>
 
             <label for="renavam">Renavam: </label>
             <input class="input-form" type="text" name="renavam" id="renavam" value="<?= $veiculo['renavam'] ?>" onkeypress="return somenteNumeros(event)" maxlength="11"><br>
@@ -67,7 +67,7 @@
 
             <button>SALVAR</button><br><br>
 
-            <p id="p1"></p>
+            <p id="msg"></p>
 
             <script src="../scripts/main.js"></script>
 

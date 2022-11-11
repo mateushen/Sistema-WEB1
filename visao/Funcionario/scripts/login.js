@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
                         method: 'POST',
                         body: dados
                     };
-                    fetch('../Funcionario/loginFuncionario.php', config)
+                    fetch('loginFuncionario.php', config)
                         .then((response) => {
                             return response.json();
                         })

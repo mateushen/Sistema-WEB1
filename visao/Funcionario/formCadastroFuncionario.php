@@ -40,10 +40,12 @@
             <input class="input-form" type="text" name="email" id="email"><br>
 
             <label for="senha">Senha</label>
-            <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br>
+            <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br><br>
 
-            <button>SALVAR</button>
+            <button>SALVAR</button><br><br>
 
+            <p id="msg"></p>
+            
             <script src="../scripts/main.js"></script>
         </form>
         <br><br>

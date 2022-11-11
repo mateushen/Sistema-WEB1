@@ -38,10 +38,10 @@
 
             <label for="telefone">Telefone</label>
             <input class="input-form" type="text" id="telefone" name="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
+            
+            <button>SALVAR</button><br><br>
 
-            <p></p>
-
-            <button>SALVAR</button>
+            <p id="msg"></p>
 
             <script src="../scripts/main.js"></script>
         </form>

@@ -9,25 +9,18 @@
 </head>
 
 <body>
-    <h1>Exclusão</h1>
     <?php
     require_once '../../dao/Conexao.php';
     require_once '../../dao/DAOPagamento.php';
 
     $idPagamento = $_POST['idPagamento'];
 
-    $dao = new DAOPagamento();
-
-    try {
+    if ($idPagamento) {
+        $dao = new DAOPagamento();
         $dao->exclui($idPagamento);
-        echo 'DELETADO!';
-    } catch (Exception $e) {
-        echo 'ERRO: ',  $e->getMessage(), "\n";
+        header('Location: listagemPagamento.php');
     }
     ?>
-
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
 </body>
 
 </html>

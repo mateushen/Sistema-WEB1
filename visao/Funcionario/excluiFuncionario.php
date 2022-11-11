@@ -9,24 +9,18 @@
 </head>
 
 <body>
-    <h1>Exclusão</h1>
     <?php
     require_once '../../dao/Conexao.php';
     require_once '../../dao/DAOFuncionario.php';
 
     $idFuncionario = $_POST['idFuncionario'];
 
-    $dao = new DAOFuncionario();
-
-    try {
+    if ($idFuncionario) {
+        $dao = new DAOFuncionario();
         $dao->exclui($idFuncionario);
-        echo 'DELETADO!';
-    } catch (Exception $e) {
-        echo 'ERRO: ', $e->getMessage(), "\n";
+        header('Location: listagemFuncionario.php');
     }
     ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
 </body>
 
 </html>

@@ -62,6 +62,8 @@
                 <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br><br>
         
                 <button class="bt-form">SALVAR</button><br><br>
+
+                <p class="msg"></p>
         
                 <script src="visao/scripts/main.js"></script>
 

@@ -9,24 +9,18 @@
 </head>
 
 <body>
-    <h1>Exclusão</h1>
     <?php
     require_once '../../dao/Conexao.php';
     require_once '../../dao/DAOVeiculo.php';
 
     $idVeiculo = $_POST['idVeiculo'];
 
-    $dao = new DAOVeiculo();
-
-    try {
+    if ($idVeiculo) {
+        $dao = new DAOVeiculo();
         $dao->exclui($idVeiculo);
-        echo 'DELETADO!';
-    } catch (Exception $e) {
-        echo 'ERRO: ',  $e->getMessage(), "\n";
+        header('Location: listagemVeiculo,php');
     }
     ?>
-    <br><br>
-    <a href="/Sistema-WEB1">Inicio</a>
 </body>
 
 </html>

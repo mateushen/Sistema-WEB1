@@ -17,15 +17,15 @@ window.addEventListener('load', () => {
                         method: 'POST',
                         body: dados
                     };
-                    fetch('../Cliente/cadastroCliente.php', config)
+                    fetch('cadastroCliente.php', config)
                         .then((response) => {
                             return response.json();
                         })
                         .then((json) => {
                             console.log(json);
-                            let p = document.querySelector('p');
+                            let p = document.getElementById('msg');
                             if (json.status == 'ok') {
-                                alert('Dados gravados com sucesso!')
+                                alert(json.mensagem)
                                 document.forms[0].reset();
                                 p.innerText = '';
                             } else {

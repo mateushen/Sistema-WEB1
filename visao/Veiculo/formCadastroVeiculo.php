@@ -46,9 +46,11 @@
             <input class="input-form" type="text" name="cor" id="cor" onkeypress="return somenteLetras(event)" maxlength="15"><br>
 
             <label for="ano">Ano</label>
-            <input class="input-form" type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br>
+            <input class="input-form" type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br><br>
 
-            <button>SALVAR</button>
+            <button>SALVAR</button><br><br>
+
+            <p id="msg"></p>
 
             <script src="../scripts/main.js"></script>
         </form>

@@ -41,7 +41,7 @@ class DAOVeiculo
     }
 
     public function altera(Veiculo $veiculo){
-        $sql = 'UPDATE Veiculo SET placa = ?, renavam = ?, marca = ?, modelo = ?, cor = ?, ano = ?, vendido = ? WHERE idVeiculo = ?';
+        $sql = 'UPDATE Veiculo SET placa = ?, renavam = ?, marca = ?, modelo = ?, cor = ?, ano = ? WHERE idVeiculo = ?';
         $pst = Conexao::getPreparedStatement($sql);        
         $pst->bindValue(1, $veiculo->getPlaca());
         $pst->bindValue(2, $veiculo->getRenavam());
@@ -49,8 +49,7 @@ class DAOVeiculo
         $pst->bindValue(4, $veiculo->getModelo());
         $pst->bindValue(5, $veiculo->getCor());
         $pst->bindValue(6, $veiculo->getAno());
-        $pst->bindValue(7, $veiculo->getVendido());
-        $pst->bindValue(8, $veiculo->getIdVeiculo());
+        $pst->bindValue(7, $veiculo->getIdVeiculo());
 
         if($pst->execute()){
             return true;

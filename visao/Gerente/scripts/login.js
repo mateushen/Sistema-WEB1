@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
                         method: 'POST',
                         body: dados
                     };
-                    fetch('../Gerente/loginGerente.php', config)
+                    fetch('loginGerente.php', config)
                         .then((response) => {
                             return response.json();
                         })
