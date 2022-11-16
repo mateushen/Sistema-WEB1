@@ -1,6 +1,7 @@
 h1 {
     font-family: Verdana;
     color: #fff;
+    text-align: center;
 }
 
 main {
@@ -97,4 +98,15 @@ button:hover{
 
 .img-user img {
     width: 100%;
+}
+
+.msg-recover {
+    font-family: Verdana;
+    color: #000;
+    text-align: center;
+    margin-left: 14%;
+}
+
+.msg-recover:hover{
+    color: #fff
 }

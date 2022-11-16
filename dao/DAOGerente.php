@@ -62,4 +62,19 @@ class DAOGerente
             return $lista;
         };
     }
+
+    public function recupera($cpf, $email){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente WHERE cpf = ? AND email = ?');
+        $pst->bindValue(1, $cpf);
+        $pst->bindValue(2, $email);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+       
+        if($lista){
+            return true;
+        }else{
+            return false;
+        };
+    }
 }

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login de Gerente</title>
+    <title>Recuperação de conta</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
-    <link rel="stylesheet" href="../css/form-login.css">
+    <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <script type="text/javascript" src="scripts/login.js"></script>
+    <script type="text/javascript" src="scripts/recover.js"></script>
 </head>
 
 <body>
@@ -24,33 +24,25 @@
     <div class="bar"></div>
 
     <main>
-        <br><br><br>
-        <div class="box-login">
-            <div class="img-user">
-                <img src="../img/iconUser.png" />
-            </div>
-            <br><br><br>
-            <h1>LOGIN</h1>
-            <br>
-            <div class="form-login">
-                <form>
+        <br>
+        <div class="title">
+            <h1>Esqueceu a senha?</h1>
+        </div><br><br>
+        <p class="msg-recover">Para fazer a recuperação do login preencha os cqmpos abaixo:</p>
+        <form class="form-main">
 
-                    <input class="campo" type="text" placeholder="CPF" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)">
-                    <p id="p1"></p><br><br>
+            <label for="cpf">CPF</label>
+            <input class="input-form" type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
 
-                    <input class="campo" type="password" placeholder="Senha" name="senha" id="senha" maxlength="6">
-                    <p id="p2"></p><br><br>
+            <label class="label-form" for="email">E-mail</label>
+            <input class="input-form" type="text" name="email" id="email"><br><br>
 
-                    <button>ENTRAR</button><br><br>
-                    <a class="msg-recover" href="formRecuperaGerente.php">Esqueceu a senha?</a><br><br>
+            <button>ENVIAR</button><br><br>
 
-                    <p id="p3"></p><br>
+            <p id="msg"></p>
 
-                    <script src="../scripts/main.js"></script>
-
-                </form>
-            </div>
-        </div>
+            <script src="../scripts/main.js"></script>
+        </form>
         <br><br>
     </main>
 
@@ -69,6 +61,7 @@
             <p class="cookies">Termos de uso</p>
         </div>
     </footer>
+
 </body>
 
 </html>

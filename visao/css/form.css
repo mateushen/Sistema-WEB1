@@ -1,6 +1,13 @@
 h1 {
     font-family: Verdana;
     color: #fff;
+    text-align: center;
+}
+
+.msg-recover{
+    font-family: Verdana;
+    color: #000;
+    text-align: center;
 }
 
 main {
@@ -62,6 +69,15 @@ label {
     font-weight: bold;
 }
 
+.label-form {
+    text-align: center;
+    font-family: Verdana;
+    font-size: 12px;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
 button {
     width: 12em;
     height: 3em;
@@ -74,4 +90,10 @@ button {
 
 button:hover {
     color: #AB2114;
+}
+
+#msg{
+    font-family: Verdana;
+    color: #000;
+    text-align: center;
 }
