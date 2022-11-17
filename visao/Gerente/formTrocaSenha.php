@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperação de conta</title>
+    <title>Troca de senha</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -26,16 +26,25 @@
     <main>
         <br>
         <div class="title">
-            <h1>Esqueceu a senha?</h1>
+            <h1>Alteração de senha</h1>
         </div><br><br>
-        <p class="msg-recover">Para fazer a recuperação do login preencha os campos abaixo:</p>
-        <form class="form-main" action="formTrocaSenha.php">
+        <form class="form-main">
+
+            <?php
+
+            $cpf = $_POST['cpf'];
+            $email = $_POST['email'];
+
+            ?>
 
             <label for="cpf">CPF</label>
-            <input class="input-form" type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
+            <input class="input-form" type="text" id="cpf" name="cpf" disabled="true" value="<?= $cpf ?>"><br>
 
             <label class="label-form" for="email">E-mail</label>
-            <input class="input-form" type="text" name="email" id="email"><br><br>
+            <input class="input-form" type="text" name="email" id="email" disabled="true" value="<?= $email ?>"><br>
+
+            <label class="label-form" for="senha">Nova senha</label>
+            <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br><br>
 
             <button>ENVIAR</button><br><br>
 

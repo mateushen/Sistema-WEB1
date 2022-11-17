@@ -23,8 +23,7 @@ window.addEventListener('load', () => {
                             console.log(json);
                             let p = document.getElementById('msg');
                             if (json.status == 'ok') {
-                                alert(json.mensagem)
-                                window.open('../PainelGerente/', '_self')
+                                window.open('formTrocaSenha.php', '_self')
                             } else {
                                 p.innerText = json.mensagem;
                                 p.style.color = 'red';

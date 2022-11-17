@@ -77,4 +77,17 @@ class DAOGerente
             return false;
         };
     }
+
+    public function alteraSenha($senha, $cpf){
+        $sql = 'UPDATE Gerente SET senha = ? WHERE cpf = ?';
+        $pst = Conexao::getPreparedStatement($sql);
+        $pst->bindValue(1, $senha);
+        $pst->bindValue(2, $cpf);
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
