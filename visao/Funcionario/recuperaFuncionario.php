@@ -1,26 +1,26 @@
 <?php
+session_start();
 require_once '../../modelo/Funcionario.php';
 require_once '../../dao/DAOFuncionario.php';
 require_once '../../dao/Conexao.php';
 
 $cpf = filter_input(INPUT_POST, 'cpf');
-$senha = filter_input(INPUT_POST, 'senha');
+$email = filter_input(INPUT_POST, 'email');
 
 $dao = new DAOFuncionario();
-$lista = $dao->login($cpf, $senha);
+$lista = $dao->recupera($cpf, $email);
 
 if ($lista) {
     $retorno = [
         'status' => 'ok',
-        'mensagem' => 'Logado com sucesso!',
+        'mensagem' => 'Dados corretos!',
     ];
-    session_start();
-    $_SESSION['idFuncionario'] = $lista['idFuncionario'];
-    $_SESSION['nome'] = $lista['nome'];
+    $_SESSION['cpf'] = $cpf;
+    $_SESSION['email'] = $email;
 } else {
     $retorno = [
         'status' => 'error',
-        'mensagem' => 'Erro ao fazer login!',
+        'mensagem' => 'Dados incorretos!',
     ];
 }
 

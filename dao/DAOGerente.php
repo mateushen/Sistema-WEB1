@@ -78,11 +78,12 @@ class DAOGerente
         };
     }
 
-    public function alteraSenha($senha, $cpf){
-        $sql = 'UPDATE Gerente SET senha = ? WHERE cpf = ?';
+    public function alteraSenha($senha, $cpf, $email){
+        $sql = 'UPDATE Gerente SET senha = ? WHERE cpf = ? AND email = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $senha);
         $pst->bindValue(2, $cpf);
+        $pst->bindValue(3, $email);
 
         if($pst->execute()){
             return true;

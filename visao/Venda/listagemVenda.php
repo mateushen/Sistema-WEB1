@@ -65,6 +65,7 @@
             ?>
         </table>
         <br><br><br>
+        <a class="new-register" href="formCadastroVenda.php">CADASTRAR NOVA VENDA</a><br><br>
     </main>
 
     <footer>

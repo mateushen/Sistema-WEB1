@@ -32,20 +32,9 @@
         <form class="form-venda">
             <label for="funcionario">Funcionário</label>
             <select name="funcionario" id="funcionario">
-                <option value="0" selected hidden>- Selecione -</option>
                 <?php
-                require_once '../../modelo/Funcionario.php';
-                require_once '../../dao/DAOFuncionario.php';
-                require_once '../../dao/Conexao.php';
-
-                $dao = new DAOFuncionario();
-                $lista = $dao->lista();
-
-                if ($lista) {
-                    foreach ($lista as $l) {
-                        echo '<option value="' . $l['idFuncionario'] . '">' . $l['nome'] . '</option>';
-                    }
-                }
+                session_start();
+                echo '<option value="' . $_SESSION['idFuncionario'] . '" selected hidden>' . $_SESSION['nome'] . '</option>'
                 ?>
             </select>
 

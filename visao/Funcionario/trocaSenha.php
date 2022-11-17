@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../../modelo/Gerente.php';
-require_once '../../dao/DAOGerente.php';
+require_once '../../modelo/Funcionario.php';
+require_once '../../dao/DAOFuncionario.php';
 require_once '../../dao/Conexao.php';
 
 $senha = filter_input(INPUT_POST, 'senha');
@@ -11,7 +11,7 @@ $email = $_SESSION['email'];
 $senha_crip = password_hash($senha, PASSWORD_DEFAULT);
 
 if ($senha_crip && $cpf && $email) {
-    $dao = new DAOGerente();
+    $dao = new DAOFuncionario();
     $lista = $dao->alteraSenha($senha_crip, $cpf, $email);
 
     if ($lista) {

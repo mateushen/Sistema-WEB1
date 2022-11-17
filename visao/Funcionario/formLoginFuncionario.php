@@ -41,7 +41,8 @@
                     <input class="campo" type="password" placeholder="Senha" name="senha" id="senha" maxlength="6">
                     <p id="p2"></p><br><br>
 
-                    <button>ENTRAR</button><br><br><br>
+                    <button>ENTRAR</button><br><br>
+                    <a class="msg-recover" href="formRecuperaFuncionario.php">Esqueceu a senha?</a><br><br>
 
                     <p id="p3"></p><br>
 

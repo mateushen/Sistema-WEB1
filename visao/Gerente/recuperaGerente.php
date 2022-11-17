@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../../modelo/Gerente.php';
 require_once '../../dao/DAOGerente.php';
 require_once '../../dao/Conexao.php';
@@ -14,6 +15,8 @@ if ($lista) {
         'status' => 'ok',
         'mensagem' => 'Dados corretos!',
     ];
+    $_SESSION['cpf'] = $cpf;
+    $_SESSION['email'] = $email;
 } else {
     $retorno = [
         'status' => 'error',

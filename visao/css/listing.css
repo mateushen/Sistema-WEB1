@@ -71,3 +71,20 @@ tr {
     background-color: #e0e0e0;
     border: none;
 }
+
+.new-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15em;
+    height: 3em;
+    border-radius: 0.5em;
+    color:#fff;
+    background-color: #416472;
+    border: none;
+}
+
+.new-register:hover{
+    color: #353030;
+}

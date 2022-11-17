@@ -93,4 +93,34 @@ class DAOFuncionario
             return $lista;
         };
     }
+
+    public function recupera($cpf, $email){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Funcionario WHERE cpf = ? AND email = ?');
+        $pst->bindValue(1, $cpf);
+        $pst->bindValue(2, $email);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+       
+        if($lista){
+            return true;
+        }else{
+            return false;
+        };
+    }
+
+    public function alteraSenha($senha, $cpf, $email){
+        $sql = 'UPDATE Funcionario SET senha = ? WHERE cpf = ? AND email = ?';
+        $pst = Conexao::getPreparedStatement($sql);
+        $pst->bindValue(1, $senha);
+        $pst->bindValue(2, $cpf);
+        $pst->bindValue(3, $email);
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
+?>
