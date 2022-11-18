@@ -79,6 +79,18 @@ class DAOVeiculo
         }
     }
 
+    public function retiraVenda($idVeiculo){
+        $sql = 'UPDATE Veiculo SET vendido = 0 WHERE idVeiculo = ?';
+        $pst = Conexao::getPreparedStatement($sql);        
+        $pst->bindValue(1, $idVeiculo);
+
+        if($pst->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function veiculoNaoVendido(){
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendido = 0');

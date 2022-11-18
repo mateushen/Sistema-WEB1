@@ -3,10 +3,10 @@ require_once '../../dao/Conexao.php';
 require_once '../../dao/DAOCliente.php';
 
 $idCliente = $_POST['idCliente'];
-
-$dao = new DAOCliente();
+var_dump($idCliente);
 
 if ($idCliente) {
+    $dao = new DAOCliente();
     $dao->exclui($idCliente);
 
     $retorno = [
@@ -21,5 +21,3 @@ if ($idCliente) {
 }
 
 echo json_encode($retorno);
-
-var_dump($retorno);

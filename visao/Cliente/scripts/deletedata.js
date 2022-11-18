@@ -3,12 +3,19 @@ window.addEventListener('load', () => {
     document.forms[0].addEventListener('submit', () => {
         event.preventDefault();
 
-        const dados = new FormData(document.forms[0]);
+        //const dados = new FormData(document.forms[0]);
+
+        const id = document.getElementById("idCliente").value;
+
+        const dados = []
+        dados['idCliente'] = id;
+
+        console.log(dados);
 
         const config = {
             method: 'POST',
             body: dados
-        }; 
+        };
         fetch('excluiCliente.php', config)
             .then((response) => {
                 return response.json();
@@ -19,7 +26,7 @@ window.addEventListener('load', () => {
                 if (json.status == 'ok') {
                     alert(json.mensagem)
                     p.innerText = '';
-                    window.open('listagemCliente.php', '_self');
+                    //window.open('listagemCliente.php', '_self');
                 } else {
                     p.innerText = json.mensagem;
                     p.style.color = 'red';

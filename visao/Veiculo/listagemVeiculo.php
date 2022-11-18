@@ -74,6 +74,7 @@
             ?>
         </table>
         <br><br><br>
+        <a class="new-register" href="formCadastroVeiculo.php">CADASTRAR NOVO VEÍCULO</a><br><br>
     </main>
 
     <footer>

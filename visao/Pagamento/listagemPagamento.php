@@ -56,6 +56,7 @@
             ?>
         </table>
         <br><br><br>
+        <a class="new-register" href="formCadastroPagamento.php">CADASTRAR NOVO TIPO DE PAGAMENTO</a><br><br>
     </main>
 
     <footer>

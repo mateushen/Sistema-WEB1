@@ -65,7 +65,13 @@
             ?>
         </table>
         <br><br><br>
-        <a class="new-register" href="formCadastroVenda.php">CADASTRAR NOVA VENDA</a><br><br>
+        <?php
+        session_start();
+        $user = $_SESSION['user'];
+        if ($user != 'Gerente') {
+            echo '<a class="new-register" href="formCadastroVenda.php">CADASTRAR NOVA VENDA</a><br><br>';
+        }
+        ?>
     </main>
 
     <footer>

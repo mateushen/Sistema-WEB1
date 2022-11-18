@@ -51,9 +51,8 @@
                 echo '<td class="item">' . $l['telefone'] . "</td>";
 
                 echo '<td class="action">
-                <form>
-
-                <button id="trash"></button>
+                <form method="POST">
+                <input type="submit" value="" id="trash" name="excluir"
                 <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
                 </form></td>';
 
@@ -70,7 +69,8 @@
         </table>
         <br>
         <p id="msg"></p>
-        <br><br>
+        <br><br><br>
+        <a class="new-register" href="formCadastroCliente.php">CADASTRAR NOVO CLIENTE</a><br><br>
     </main>
 
     <footer>

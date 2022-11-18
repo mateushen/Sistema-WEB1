@@ -14,6 +14,10 @@ if ($lista) {
         'status' => 'ok',
         'mensagem' => 'Logado com sucesso!',
     ];
+    session_start();
+    $_SESSION['idGerente'] = $lista['idGerente'];
+    $_SESSION['nome'] = $lista['nome'];
+    $_SESSION['user'] = 'Gerente';
 } else {
     $retorno = [
         'status' => 'error',

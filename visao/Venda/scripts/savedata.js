@@ -22,9 +22,9 @@ window.addEventListener('load', () => {
                 })
                 .then((json) => {
                     console.log(json);
-                    let p = document.getElementById('p1');
+                    let p = document.getElementById('msg');
                     if (json.status == 'ok') {
-                        alert('Dados gravados com sucesso!')
+                        alert(json.mensagem)
                         document.forms[0].reset();
                         p.innerText = '';
                     } else {

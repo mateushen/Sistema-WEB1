@@ -34,7 +34,7 @@ if ($idFuncionario && $idCliente && $idVeiculo && $idPagamento && $data_venda) {
     } catch (Exception $e) {
         $retorno = [
             'status' => 'error',
-            'mensagem' => 'Erro ao realizar o cadastro!',
+            'mensagem' => 'Erro ao realizar o cadastro da venda!',
         ];
     }
 } else {

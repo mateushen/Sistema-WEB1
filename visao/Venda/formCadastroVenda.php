@@ -99,13 +99,11 @@
                     }
                 }
                 ?>
-            </select>
+            </select><br><br>
 
-            <br>
-            <p id="p1"></p>
-            <br>
+            <button>SALVAR</button><br><br>
 
-            <button>SALVAR</button>
+            <p id="msg"></p>
         </form>
         <br><br>
     </main>

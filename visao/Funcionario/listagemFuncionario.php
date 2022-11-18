@@ -66,6 +66,7 @@
             ?>
         </table>
         <br><br><br>
+        <a class="new-register" href="formCadastroFuncionario.php">CADASTRAR NOVO FUNCIONÁRIO</a><br><br>
     </main>
 
     <footer>
