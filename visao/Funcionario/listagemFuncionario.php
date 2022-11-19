@@ -14,6 +14,16 @@
 
 <body>
     <header>
+        <?php
+        session_start();
+        $user = $_SESSION['user'];
+
+        if ($user == 'Gerente') {
+            echo '<div class="img-back">
+                <a href="../PainelGerente/"><img src="../img/icon-back.png" width="80" height="80" /></a>
+                </div>';
+        }
+        ?>
         <div class="header">
             <img src="../img/title.png" />
         </div>

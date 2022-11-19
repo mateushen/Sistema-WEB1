@@ -70,6 +70,15 @@ a {
     justify-content: center;
 }
 
+.img-back {
+    left: 0;
+    margin: auto;
+    margin-left: 3%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
