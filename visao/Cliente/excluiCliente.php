@@ -3,7 +3,6 @@ require_once '../../dao/Conexao.php';
 require_once '../../dao/DAOCliente.php';
 
 $idCliente = $_POST['idCliente'];
-var_dump($idCliente);
 
 if ($idCliente) {
     $dao = new DAOCliente();

@@ -18,6 +18,7 @@ if ($lista) {
     $_SESSION['idFuncionario'] = $lista['idFuncionario'];
     $_SESSION['nome'] = $lista['nome'];
     $_SESSION['user'] = 'Funcionario';
+    $_SESSION['status'] = 'ativo';
 } else {
     $retorno = [
         'status' => 'error',

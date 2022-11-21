@@ -14,21 +14,25 @@
 
 <body>
 
-    <header>
-        <?php
-        session_start();
-        $user = $_SESSION['user'];
+    <?php
+    session_start();
+    $user = $_SESSION['user'];
+    $status = $_SESSION['status'];
 
-        if ($user == 'Gerente') {
-            echo '<div class="img-back">
+    if ($status != 'ativo') {
+        header('Location: ../../main.php');
+    } else if ($user == 'Gerente') {
+        echo '<div class="img-back">
                 <a href="../PainelGerente/"><img src="../img/icon-back.png" width="80" height="80" /></a>
                 </div>';
-        } else {
-            echo '<div class="img-back">
+    } else if ($user == 'Funcionario') {
+        echo '<div class="img-back">
                 <a href="../PainelFuncionario/"><img src="../img/icon-back.png" width="80" height="80" /></a>
                 </div>';
-        }
-        ?>
+    }
+    ?>
+
+    <header>
         <div class="header">
             <img src="../img/title.png" />
         </div>

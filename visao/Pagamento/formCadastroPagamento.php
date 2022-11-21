@@ -15,6 +15,15 @@
 
 <body>
 
+    <?php
+    session_start();
+    $status = $_SESSION['status'];
+
+    if ($status != 'ativo') {
+        header('Location: ../../main.php');
+    }
+    ?>
+
     <header>
         <div class="header">
             <img src="../img/title.png" />
@@ -31,7 +40,7 @@
         <form class="form-main">
             <label for="tipo_pagamento">Tipo de pagamento</label>
             <input class="input-form" type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)"><br><br>
-            
+
             <button>SALVAR</button><br><br>
 
             <p id="msg"></p>

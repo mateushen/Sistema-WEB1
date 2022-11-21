@@ -15,6 +15,15 @@
 
 <body>
 
+    <?php
+    session_start();
+    $status = $_SESSION['status'];
+
+    if ($status != 'ativo') {
+        header('Location: ../../main.php');
+    }
+    ?>
+
     <header>
         <div class="header">
             <img src="../img/title.png" />

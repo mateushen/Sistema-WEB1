@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-    document.forms[0].addEventListener('submit', () => {
+    document.forms[0].addEventListener('submit', (event) => {
         event.preventDefault(verifica());
 
         // Verifica se os inputs estão preenchidos corretamente

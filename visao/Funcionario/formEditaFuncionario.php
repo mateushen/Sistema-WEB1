@@ -14,6 +14,16 @@
 </head>
 
 <body>
+
+    <?php
+    session_start();
+    $status = $_SESSION['status'];
+
+    if ($status != 'ativo') {
+        header('Location: ../../main.php');
+    }
+    ?>
+    
     <header>
         <div class="header">
             <img src="../img/title.png" />
@@ -44,7 +54,7 @@
             $funcionario = $lista[0];
 
             ?>
-            
+
             <input type="hidden" id="idFuncionario" name="idFuncionario" value="<?= $funcionario['idFuncionario'] ?>">
 
             <label for="nome">Nome: </label>

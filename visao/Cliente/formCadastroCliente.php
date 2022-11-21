@@ -15,6 +15,15 @@
 
 <body>
 
+    <?php
+    session_start();
+    $status = $_SESSION['status'];
+
+    if ($status != 'ativo') {
+        header('Location: ../../main.php');
+    }
+    ?>
+
     <header>
         <div class="header">
             <img src="../img/title.png" />
@@ -38,7 +47,7 @@
 
             <label for="telefone">Telefone</label>
             <input class="input-form" type="text" id="telefone" name="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
-            
+
             <button>SALVAR</button><br><br>
 
             <p id="msg"></p>

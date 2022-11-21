@@ -17,8 +17,11 @@
         <?php
         session_start();
         $user = $_SESSION['user'];
+        $status = $_SESSION['status'];
 
-        if ($user == 'Gerente') {
+        if ($status != 'ativo') {
+            header('Location: ../../main.php');
+        } else if ($user == 'Gerente') {
             echo '<div class="img-back">
                 <a href="../PainelGerente/"><img src="../img/icon-back.png" width="80" height="80" /></a>
                 </div>';

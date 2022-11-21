@@ -19,12 +19,15 @@
         <?php
         session_start();
         $user = $_SESSION['user'];
+        $status = $_SESSION['status'];
 
-        if ($user == 'Gerente') {
+        if ($status != 'ativo') {
+            header('Location: ../../main.php');
+        } else if ($user == 'Gerente') {
             echo '<div class="img-back">
                 <a href="../PainelGerente/"><img src="../img/icon-back.png" width="80" height="80" /></a>
                 </div>';
-        } else {
+        } else if ($user == 'Funcionario') {
             echo '<div class="img-back">
                 <a href="../PainelFuncionario/"><img src="../img/icon-back.png" width="80" height="80" /></a>
                 </div>';
@@ -65,8 +68,8 @@
                 echo '<td class="item">' . $l['telefone'] . "</td>";
 
                 echo '<td class="action">
-                <form method="POST">
-                <input type="submit" value="" id="trash" name="excluir"
+                <form class="exclui">
+                <input type="submit" value="" id="trash" name="excluir">
                 <input type="hidden" value="' . $l['idCliente'] . '" id="idCliente" name="idCliente">
                 </form></td>';
 

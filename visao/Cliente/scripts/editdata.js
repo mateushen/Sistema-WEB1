@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-    document.forms[0].addEventListener('submit', () => {
+    document.forms[0].addEventListener('submit', (event) => {
         event.preventDefault(verifica());
 
         // Verifica se os inputs estão preenchidos corretamente
@@ -37,38 +37,38 @@ window.addEventListener('load', () => {
                 } else return false;
             } else return false;
         }
-
-        // Verificação de nome
-        function verificaNome() {
-            if (document.forms[0].nome.value.length < 3) {
-                alert('Informe o nome.');
-                document.forms[0].nome.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        // Verificação de cpf
-        function verificaCPF() {
-            if (document.forms[0].cpf.value.length != 14) {
-                alert('CPF inválido.');
-                document.forms[0].cpf.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        // Verificação de telefone
-        function verificaTelefone() {
-            if (document.forms[0].telefone.value.length != 14) {
-                alert('Número de telefone inválido.');
-                document.forms[0].telefone.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
     });
+
+    // Verificação de nome
+    function verificaNome() {
+        if (document.forms[0].nome.value.length < 3) {
+            alert('Informe o nome.');
+            document.forms[0].nome.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // Verificação de cpf
+    function verificaCPF() {
+        if (document.forms[0].cpf.value.length != 14) {
+            alert('CPF inválido.');
+            document.forms[0].cpf.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // Verificação de telefone
+    function verificaTelefone() {
+        if (document.forms[0].telefone.value.length != 14) {
+            alert('Número de telefone inválido.');
+            document.forms[0].telefone.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
 });

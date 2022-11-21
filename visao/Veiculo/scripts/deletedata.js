@@ -1,13 +1,13 @@
 window.addEventListener('load', () => {
 
-    const forms = document.querySelectorAll('.exclui');
+    const forms = document.forms;
 
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', (event) => {
             event.preventDefault();
 
             const dados = new FormData();
-            dados.append('idCliente', document.getElementById("idCliente").value)
+            dados.append('idVeiculo', document.getElementById("idVeiculo").value)
 
             console.log(dados);
 
@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
                 method: 'POST',
                 body: dados
             };
-            fetch('excluiCliente.php', config)
+            fetch('excluiVeiculo.php', config)
                 .then((response) => {
                     return response.json();
                 })
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
                     let p = document.getElementById('msg');
                     if (json.status == 'ok') {
                         alert(json.mensagem)
-                        window.open('listagemCliente.php', '_self');
+                        window.open('listagemVeiculo.php', '_self');
                     } else {
                         p.innerText = json.mensagem;
                         p.style.color = 'red';

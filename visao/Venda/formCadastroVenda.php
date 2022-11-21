@@ -15,6 +15,15 @@
 
 <body>
 
+    <?php
+    session_start();
+    $status = $_SESSION['status'];
+
+    if ($status != 'ativo') {
+        header('Location: ../../main.php');
+    }
+    ?>
+
     <header>
         <div class="header">
             <img src="../img/title.png" />
@@ -33,7 +42,6 @@
             <label for="funcionario">Funcionário</label>
             <select name="funcionario" id="funcionario">
                 <?php
-                session_start();
                 echo '<option value="' . $_SESSION['idFuncionario'] . '" selected hidden>' . $_SESSION['nome'] . '</option>'
                 ?>
             </select>
