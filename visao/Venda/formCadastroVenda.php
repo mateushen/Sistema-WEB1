@@ -109,7 +109,7 @@
                 ?>
             </select><br><br>
 
-            <button>SALVAR</button><br><br>
+            <button class="btn">SALVAR</button><br><br>
 
             <p id="msg"></p>
         </form>

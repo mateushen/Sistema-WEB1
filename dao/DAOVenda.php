@@ -64,4 +64,16 @@ class DAOVenda
         return $lista;
     }
 
+    public function qtVendas($idFuncionario){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('SELECT COUNT(*) as qt FROM Venda WHERE idFuncionario = ?');
+        $pst->bindValue(1, $idFuncionario);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        if($lista){
+            return $lista;
+        } else {
+            return false;
+        }
+    }
 }

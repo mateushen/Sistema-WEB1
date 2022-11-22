@@ -43,12 +43,22 @@ main {
 }
 
 .bar-left {
-    width: 7%;
+    width: 15%;
     height: 35em;
     background-color: #353535;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.show-qt{
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
 .container-center {
     width: 93%;
     height: auto;

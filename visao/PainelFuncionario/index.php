@@ -34,7 +34,24 @@
     <div class="bar"></div>
 
     <main>
-        <div class="bar-left"></div>
+        <div class="bar-left">
+            <?php
+            require_once '../../dao/Conexao.php';
+            require_once '../../dao/DAOVenda.php';
+            $idFuncionario = $_SESSION['idFuncionario'];
+            $dao = new DAOVenda();
+            $lista = $dao->qtVendas($idFuncionario);
+
+            if($lista){
+                $vendas = $lista[0];
+                echo '<p class="show-qt">Total de vendas feitas: </p><br>';
+                echo '<p class="show-qt"> '. $vendas['qt'] .'</p>';
+            }else {
+                echo '<p class="show-qt">Total de vendas feitas: </p><br>';
+                echo '<p class="show-qt">0</p>';
+            }
+            ?>
+        </div>
         <div class="container-center">
             <div class="container-line">
                 <a href="../Cliente/listagemCliente.php">

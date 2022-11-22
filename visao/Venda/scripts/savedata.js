@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-    document.forms[0].addEventListener('submit', () => {
+    document.forms[0].addEventListener('submit', (event) => {
         event.preventDefault(verifica());
 
         // Verifica se os inputs estão preenchidos corretamente
@@ -24,9 +24,8 @@ window.addEventListener('load', () => {
                     console.log(json);
                     let p = document.getElementById('msg');
                     if (json.status == 'ok') {
-                        alert(json.mensagem)
-                        document.forms[0].reset();
-                        p.innerText = '';
+                        alert(json.mensagem);
+                        window.location.reload();
                     } else {
                         p.innerText = json.mensagem;
                         p.style.color = 'red';

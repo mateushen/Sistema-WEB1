@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/listing.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/deletedata.js"></script>
 </head>
 
 <body>
