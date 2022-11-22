@@ -9,8 +9,6 @@ window.addEventListener('load', () => {
             const dados = new FormData();
             dados.append('idCliente', document.getElementById("idCliente").value)
 
-            console.log(dados);
-
             const config = {
                 method: 'POST',
                 body: dados

@@ -31,16 +31,16 @@ window.addEventListener('load', () => {
                     })
             } else return false;
         }
-
-        // Verificação de tipo de pgto
-        function verificaTipo() {
-            if (document.forms[0].tipo_pagamento.value.length < 3) {
-                alert('Tipo de pagamento inválido.');
-                document.forms[0].tipo_pagamento.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
     });
+
+    // Verificação de tipo de pgto
+    function verificaTipo() {
+        if (document.forms[0].tipo_pagamento.value.length < 3) {
+            alert('Tipo de pagamento inválido.');
+            document.forms[0].tipo_pagamento.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
 });

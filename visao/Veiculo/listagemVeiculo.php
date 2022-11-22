@@ -74,7 +74,7 @@
                 echo '<td class="item">' . $l['ano'] . "</td>";
 
                 echo '<td class="action">
-                <form method="POST" action="excluiVeiculo.php">
+                <form class="exclui">
                 <input type="submit" value="" id="trash" name="excluir">
                 <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
                 </form></td>';

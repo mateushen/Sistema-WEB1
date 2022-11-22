@@ -32,32 +32,31 @@ window.addEventListener('load', () => {
                 } else return false;
             } else return false;
         }
-
-        // Verificação de cpf
-        function verificaCPF() {
-            if (document.forms[0].cpf.value.length != 14) {
-                alert('CPF inválido.');
-                document.forms[0].cpf.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        // Verificação de email
-        function verificaEmail() {
-            if (document.forms[0].email.value.length == 0) {
-                alert('Informe o seu E-MAIL.');
-                document.forms[0].email.focus();
-                return false;
-            } else {
-                if (document.forms[0].email.value == ""
-                    || document.forms[0].email.value.indexOf('@') == -1
-                    || document.forms[0].email.value.indexOf('.') == -1) {
-                    alert("Informe um E-MAIL válido!");
-                    return false;
-                } else return true
-            }
-        }
     });
+    // Verificação de cpf
+    function verificaCPF() {
+        if (document.forms[0].cpf.value.length != 14) {
+            alert('CPF inválido.');
+            document.forms[0].cpf.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // Verificação de email
+    function verificaEmail() {
+        if (document.forms[0].email.value.length == 0) {
+            alert('Informe o seu E-MAIL.');
+            document.forms[0].email.focus();
+            return false;
+        } else {
+            if (document.forms[0].email.value == ""
+                || document.forms[0].email.value.indexOf('@') == -1
+                || document.forms[0].email.value.indexOf('.') == -1) {
+                alert("Informe um E-MAIL válido!");
+                return false;
+            } else return true
+        }
+    }
 });

@@ -1,48 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once '../../dao/Conexao.php';
+require_once '../../dao/DAOVenda.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusão de venda</title>
-</head>
+$idVenda = $_POST['idVenda'];
 
-<body>
-    <?php
-    require_once '../../dao/Conexao.php';
-    require_once '../../dao/DAOVenda.php';
-    require_once '../../dao/DAOVeiculo.php';
+if ($idVenda) {
+    $dao = new DAOVenda();
+    $dao->exclui($idVenda);
 
-    $idVenda = $_POST['idVenda'];
+    $retorno = [
+        'status' => 'ok',
+        'mensagem' => 'Excluído com sucesso!',
+    ];
+} else {
+    $retorno = [
+        'status' => 'error',
+        'mensagem' => 'Erro ao realizar a exclusão!',
+    ];
+}
 
-    if ($idVenda) {
-        try {
-            $venda = new DAOVenda();
-            $veiculo = new DAOVeiculo();
-
-            $lista = $venda->buscaID($idVenda);
-            $listaAux = $lista[0];
-            $veiculo->retiraVenda($listaAux['idVeiculo']);
-            $venda->exclui($idVenda);
-            $retorno = [
-                'status' => 'ok',
-                'mensagem' => 'Venda excluída com sucesso!',
-            ];
-        } catch (Exception $e) {
-            $retorno = [
-                'status' => 'error',
-                'mensagem' => 'Erro ao excluir a venda!',
-            ];
-        }
-    } else {
-        $retorno = [
-            'status' => 'error',
-            'mensagem' => 'Erro ao excluir a venda!',
-        ];
-    }
-    echo json_encode($retorno);
-    ?>
-</body>
-
-</html>
+echo json_encode($retorno);

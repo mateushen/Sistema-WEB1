@@ -62,7 +62,7 @@
                 echo '<td class="item">' . $l['tipo_pagamento'] . "</td>";
 
                 echo '<td class="action">
-                <form method="POST" action="excluiPagamento.php">
+                <form class="exclui">
                 <input type="submit" value="" id="trash" name="excluir">
                 <input type="hidden" value="' . $l['idPagamento'] . '" id="idPagamento" name="idPagamento">
                 </form></td>';

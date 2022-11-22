@@ -30,16 +30,16 @@ window.addEventListener('load', () => {
                     })
             } else return false;
         }
-
-        // Verificação de senha
-        function verificaSenha() {
-            if (document.forms[0].senha.value.length != 6) {
-                alert('A senha deve conter 6 caracteres.');
-                document.forms[0].senha.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
     });
+
+    // Verificação de senha
+    function verificaSenha() {
+        if (document.forms[0].senha.value.length != 6) {
+            alert('A senha deve conter 6 caracteres.');
+            document.forms[0].senha.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
 });

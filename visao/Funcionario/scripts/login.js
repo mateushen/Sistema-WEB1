@@ -33,31 +33,31 @@ window.addEventListener('load', () => {
                 } else return false;
             } else return false;
         }
-
-        // Verificação de cpf
-        function verificaCPF() {
-            if (document.forms[0].cpf.value.length != 14) {
-                let p = document.getElementById('p1');
-                p.innerText = 'CPF incorreto';
-                p.style.color = 'red';
-                document.forms[0].cpf.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
-
-        // Verificação de senha
-        function verificaSenha() {
-            if (document.forms[0].senha.value.length != 6) {
-                let p = document.getElementById('p2');
-                p.innerText = 'A senha deve conter 6 caracteres';
-                p.style.color = 'red';
-                document.forms[0].senha.focus();
-                return false;
-            } else {
-                return true;
-            }
-        }
     });
+
+    // Verificação de cpf
+    function verificaCPF() {
+        if (document.forms[0].cpf.value.length != 14) {
+            let p = document.getElementById('p1');
+            p.innerText = 'CPF incorreto';
+            p.style.color = 'red';
+            document.forms[0].cpf.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // Verificação de senha
+    function verificaSenha() {
+        if (document.forms[0].senha.value.length != 6) {
+            let p = document.getElementById('p2');
+            p.innerText = 'A senha deve conter 6 caracteres';
+            p.style.color = 'red';
+            document.forms[0].senha.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
 });

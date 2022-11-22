@@ -72,7 +72,7 @@
                 echo '<td class="item">' . $l['data_venda'] . '</td>';
 
                 echo '<td class="action">
-                <form method="POST" action="excluiVenda.php">
+                <form class="exclui">
                 <input type="submit" value="" id="trash" name="excluir">
                 <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
                 </form></td>';

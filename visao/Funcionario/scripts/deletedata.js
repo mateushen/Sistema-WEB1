@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
 
-    const forms = document.forms;
+    const forms = document.querySelectorAll('.exclui');
 
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', (event) => {
@@ -8,8 +8,6 @@ window.addEventListener('load', () => {
 
             const dados = new FormData();
             dados.append('idFuncionario', document.getElementById("idFuncionario").value)
-
-            console.log(dados);
 
             const config = {
                 method: 'POST',

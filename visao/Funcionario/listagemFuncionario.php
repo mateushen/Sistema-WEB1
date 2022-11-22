@@ -62,7 +62,7 @@
                 echo '<td class="item">' . $l['email'] . "</td>";
 
                 echo '<td class="action">
-                <form method="POST" action="excluiFuncionario.php">
+                <form class="exclui">
                 <input type="submit" value="" id="trash" name="excluir">
                 <input type="hidden" value="' . $l['idFuncionario'] . '" id="idFuncionario" name="idFuncionario">
                 </form></td>';
