@@ -25,6 +25,9 @@
     ?>
 
     <header>
+        <div class="img-back">
+            <a href="listagemVenda.php"><img src="../img/icon-back.png" width="80" height="80" /></a>
+        </div>
         <div class="header">
             <img src="../img/title.png" />
         </div>

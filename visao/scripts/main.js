@@ -9,9 +9,11 @@ function somenteNumeros(e) {
 
 function somenteLetras(e) {
     tecla = e.key;
-    if (tecla != 8 && tecla != 9) {
-        if (tecla < 65 || tecla > 90) {
-            return false;
+    if (e.keyCode != 32 ) {
+        if (tecla != 8 && tecla != 9) {
+            if (tecla < 65 || tecla > 90) {
+                return false;
+            }
         }
     }
 }

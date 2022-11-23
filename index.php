@@ -41,10 +41,7 @@
         <main>
             <br><br>
             <div class="title">
-                <br>
-                <h1>PRIMEIRO ACESSO</h1><br>
-                <h1>Cadastro de Gerente</h1>
-                <br>
+                <h1>PRIMEIRO ACESSO DE GERENTE</h1>
             </div>
 
             <form class="form-main">

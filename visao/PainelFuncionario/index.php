@@ -31,7 +31,11 @@
         </div>
     </header>
 
-    <div class="bar"></div>
+    <div class="bar">
+        <?php
+        echo '<p class="welcome-title">Olá, ' . $_SESSION['nome'] . ' </p><br>'
+        ?>
+    </div>
 
     <main>
         <div class="bar-left">
@@ -42,11 +46,11 @@
             $dao = new DAOVenda();
             $lista = $dao->qtVendas($idFuncionario);
 
-            if($lista){
+            if ($lista) {
                 $vendas = $lista[0];
                 echo '<p class="show-qt">Total de vendas feitas: </p><br>';
-                echo '<p class="show-qt"> '. $vendas['qt'] .'</p>';
-            }else {
+                echo '<p class="show-qt"> ' . $vendas['qt'] . '</p>';
+            } else {
                 echo '<p class="show-qt">Total de vendas feitas: </p><br>';
                 echo '<p class="show-qt">0</p>';
             }

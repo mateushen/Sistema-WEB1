@@ -56,7 +56,13 @@ window.addEventListener('load', () => {
             document.forms[0].placa.focus();
             return false;
         } else {
-            return true;
+            const placa = document.forms[0].placa;
+            let length = document.forms[0].placa.value.length;
+            for (let i=0; i<length; i++){
+                let char = placa[i].keyCode;
+                console.log(char)
+                return false;
+            }
         }
     }
 

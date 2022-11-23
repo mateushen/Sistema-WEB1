@@ -21,7 +21,7 @@
         header('Location: ../../main.php');
     }
     ?>
-    
+
     <header>
         <div class="logo-first">
             <img src="../img/title.png" />
@@ -31,7 +31,11 @@
         </div>
     </header>
 
-    <div class="bar"></div>
+    <div class="bar">
+        <?php
+        echo '<p class="welcome-title">Olá, ' . $_SESSION['nome'] . ' </p><br>'
+        ?>
+    </div>
 
     <main>
         <div class="bar-left"></div>
