@@ -19,6 +19,19 @@
     <?php
     session_start();
     session_destroy();
+
+    require_once 'modelo/Gerente.php';
+    require_once 'dao/DAOGerente.php';
+    require_once 'dao/Conexao.php';
+
+    $dao = new DAOGerente();
+    $obj = new Gerente();
+
+    $lista = $dao->lista();
+
+    if (!$lista) {
+        header('Location: index.php');
+    }
     ?>
 
     <header>

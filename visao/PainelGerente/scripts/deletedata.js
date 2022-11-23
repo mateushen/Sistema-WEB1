@@ -1,20 +1,20 @@
 window.addEventListener('load', () => {
 
     const forms = document.querySelectorAll('.exclui');
-    const id = document.querySelectorAll('#idVeiculo');
+    const id = document.querySelectorAll('#idVenda');
 
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', (event) => {
             event.preventDefault();
 
             const dados = new FormData();
-            dados.append('idVeiculo', id[i].value)
+            dados.append('idVenda', id[i].value)
 
             const config = {
                 method: 'POST',
                 body: dados
             };
-            fetch('excluiVeiculo.php', config)
+            fetch('../Venda/excluiVenda.php', config)
                 .then((response) => {
                     return response.json();
                 })
@@ -23,12 +23,13 @@ window.addEventListener('load', () => {
                     let p = document.getElementById('msg');
                     if (json.status == 'ok') {
                         alert(json.mensagem)
-                        window.open('listagemVeiculo.php', '_self');
+                        window.open('listagemVenda.php', '_self');
                     } else {
                         p.innerText = json.mensagem;
                         p.style.color = 'red';
                     }
                 })
         });
+
     }
 });

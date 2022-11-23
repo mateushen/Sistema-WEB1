@@ -1,13 +1,14 @@
 window.addEventListener('load', () => {
 
     const forms = document.querySelectorAll('.exclui');
+    const id = document.querySelectorAll('#idPagamento');
 
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', (event) => {
             event.preventDefault();
 
             const dados = new FormData();
-            dados.append('idPagamento', document.getElementById("idPagamento").value)
+            dados.append('idPagamento', id[i].value)
 
             const config = {
                 method: 'POST',

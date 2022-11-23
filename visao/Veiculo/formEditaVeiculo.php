@@ -58,7 +58,7 @@
             <input type="hidden" id="idVeiculo" name="idVeiculo" value="<?= $veiculo['idVeiculo'] ?>">
 
             <label for="placa">Placa: </label>
-            <input class="input-form" type="text" name="placa" id="placa" value="<?= $veiculo['placa'] ?>" autocomplete="off" maxlength="8"><br>
+            <input class="input-form" type="text" name="placa" id="placa" value="<?= $veiculo['placa'] ?>" autocomplete="off" oninput="somenteMaiusculas(event)" maxlength="7"><br>
 
             <label for="renavam">Renavam: </label>
             <input class="input-form" type="text" name="renavam" id="renavam" value="<?= $veiculo['renavam'] ?>" onkeypress="return somenteNumeros(event)" maxlength="11"><br>

@@ -78,7 +78,7 @@
                         <p class="tag">Pagamentos</p>
                     </div>
                 </a>
-                <a href="../Venda/listagemVenda.php">
+                <a href="listagemVenda.php">
                     <div class="widget">
                         <img src="../img/icon-venda.png" width="170" height="150" />
                         <p class="tag">Vendas</p>

@@ -51,16 +51,18 @@ window.addEventListener('load', () => {
 
     // Verificação de placa
     function verificaPlaca() {
-        if (document.forms[0].placa.value.length != 8) {
+        if (document.forms[0].placa.value.length != 7) {
             alert('Placa inválida.');
             document.forms[0].placa.focus();
             return false;
         } else {
-            const placa = document.forms[0].placa;
-            let length = document.forms[0].placa.value.length;
-            for (let i=0; i<length; i++){
-                let char = placa[i].keyCode;
-                console.log(char)
+            var placa = document.forms[0].placa.value;
+            const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
+            if (regexPlaca.test(placa)) {
+                return true;
+            } else {
+                alert('Placa inválida.');
+                document.forms[0].placa.focus();
                 return false;
             }
         }

@@ -54,7 +54,15 @@ window.addEventListener('load', () => {
             document.forms[0].placa.focus();
             return false;
         } else {
-            return true;
+            var placa = "ABC1234";
+            const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
+            if (regexPlaca.test(placa)) {
+                return true
+            } else {
+                alert('Placa inválida.');
+                document.forms[0].placa.focus();
+                return false;
+            }
         }
     }
 
