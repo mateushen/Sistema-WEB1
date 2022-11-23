@@ -5,7 +5,9 @@ require_once '../../dao/DAOVenda.php';
 require_once '../../modelo/Veiculo.php';
 require_once '../../dao/DAOVeiculo.php';
 
-$idFuncionario = $_POST['idFuncionario'];
+session_start();
+
+$idFuncionario = $_SESSION['idFuncionario'];
 $idCliente = $_POST['idCliente'];
 $idVeiculo = $_POST['idVeiculo'];
 $idPagamento = $_POST['idPagamento'];

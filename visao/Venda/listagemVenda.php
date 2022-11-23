@@ -59,28 +59,60 @@
             require_once '../../dao/DAOVenda.php';
             require_once '../../dao/Conexao.php';
 
-            $dao = new DAOVenda();
-            $lista = $dao->listagemVenda();
+            $user = $_SESSION['user'];
 
-            foreach ($lista as $l) {
-                echo "<tr>";
+            if ($user == 'Gerente') {
 
-                echo '<td class="item">' . $l['idVenda'] . "</td>";
-                echo '<td class="item">' . $l['FNome'] . '</td>';
-                echo '<td class="item">' . $l['CNome'] . '</td>';
-                echo '<td class="item">' . $l['modelo'] . '</td>';
-                echo '<td class="item">' . $l['pgto'] . '</td>';
-                echo '<td class="item">' . $l['data_venda'] . '</td>';
+                $dao = new DAOVenda();
+                $lista = $dao->listagemVenda();
 
-                echo '<td class="action">
-                <form class="exclui">
-                <input type="submit" value="" id="trash" name="excluir">
-                <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
-                </form></td>';
+                if ($lista) {
+                    foreach ($lista as $l) {
+                        echo "<tr>";
 
-                echo "</tr>";
+                        echo '<td class="item">' . $l['idVenda'] . "</td>";
+                        echo '<td class="item">' . $l['FNome'] . '</td>';
+                        echo '<td class="item">' . $l['CNome'] . '</td>';
+                        echo '<td class="item">' . $l['modelo'] . '</td>';
+                        echo '<td class="item">' . $l['pgto'] . '</td>';
+                        echo '<td class="item">' . $l['data_venda'] . '</td>';
+
+                        echo '<td class="action">
+                        <form class="exclui">
+                        <input type="submit" value="" id="trash" name="excluir">
+                        <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
+                        </form></td>';
+
+                        echo "</tr>";
+                    }
+                }
+            } else if ($user == 'Funcionario') {
+                $dao = new DAOVenda();
+                $idFuncionario = $_SESSION['idFuncionario'];
+                $lista = $dao->listaVendaFuncionario($idFuncionario);
+
+                if ($lista) {
+
+                    foreach ($lista as $l) {
+                        echo "<tr>";
+
+                        echo '<td class="item">' . $l['idVenda'] . "</td>";
+                        echo '<td class="item">' . $l['FNome'] . '</td>';
+                        echo '<td class="item">' . $l['CNome'] . '</td>';
+                        echo '<td class="item">' . $l['modelo'] . '</td>';
+                        echo '<td class="item">' . $l['pgto'] . '</td>';
+                        echo '<td class="item">' . $l['data_venda'] . '</td>';
+
+                        echo '<td class="action">
+                        <form class="exclui">
+                        <input type="submit" value="" id="trash" name="excluir">
+                        <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
+                        </form></td>';
+
+                        echo "</tr>";
+                    }
+                }
             }
-
             ?>
         </table>
         <br><br><br>

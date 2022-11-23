@@ -61,6 +61,32 @@ main {
     -moz-box-sizing: border-box;
 }
 
+.input-formVenda {
+    width: 14em;
+    padding: 0.6em;
+    font-size: 14px;
+    text-align: center;
+    background-color: transparent;
+    color: #000;
+    letter-spacing: 0.15em;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+select {
+    margin-top: 2%;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    padding: 0.4em;
+    border-radius: 0.5em;
+}
+
 label {
     text-align: center;
     font-family: Verdana;

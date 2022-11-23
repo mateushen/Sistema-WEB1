@@ -43,13 +43,7 @@
 
         <form class="form-venda">
             <label for="funcionario">Funcionário</label>
-            <select name="funcionario" id="funcionario">
-                <?php
-                echo '<option value="' . $_SESSION['idFuncionario'] . '" selected hidden>' . $_SESSION['nome'] . '</option>'
-                ?>
-            </select>
-
-            <br>
+            <input class="input-formVenda" type="text" disabled="disabled" value="<?= $_SESSION['nome'] ?>">
 
             <label>Cliente</label>
             <select name="cliente" id="cliente">

@@ -64,6 +64,30 @@ class DAOVenda
         return $lista;
     }
 
+    public function listaVendaFuncionario($idFuncionario){
+        $lista = [];
+        $pst = Conexao::getPreparedStatement('
+            SELECT idVenda, F.nome AS FNome, 
+            C.nome AS CNome, V.modelo AS modelo, 
+            P.tipo_pagamento AS pgto, data_venda FROM 
+            Venda AS Vd 
+            INNER JOIN Funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
+            INNER JOIN Cliente AS C ON C.idCliente = Vd.idCliente 
+            INNER JOIN Veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
+            INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento 
+            WHERE Vd.idFuncionario = ?
+        ');
+        $pst->bindValue(1, $idFuncionario);
+        $pst->execute();
+        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
+        if($lista){
+            return $lista;
+        } else {
+            return false;
+        }
+
+    }
+
     public function qtVendas($idFuncionario){
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT COUNT(*) as qt FROM Venda WHERE idFuncionario = ?');

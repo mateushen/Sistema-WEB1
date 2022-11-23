@@ -3,11 +3,9 @@ window.addEventListener('load', () => {
     document.forms[0].addEventListener('submit', (event) => {
         event.preventDefault(verifica());
 
-        // Verifica se os inputs estão preenchidos corretamente
         function verifica() {
             const dados = new FormData();
 
-            dados.append('idFuncionario', document.forms[0].funcionario.value);
             dados.append('idCliente', document.forms[0].cliente.value);
             dados.append('idVeiculo', document.forms[0].veiculo.value);
             dados.append('idPagamento', document.forms[0].pagamento.value);
