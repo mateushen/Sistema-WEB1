@@ -55,7 +55,7 @@ main {
 
 .bar-left {
     width: 15%;
-    height: 35em;
+    height: auto;
     background-color: #353535;
     left: 0;
     display: flex;

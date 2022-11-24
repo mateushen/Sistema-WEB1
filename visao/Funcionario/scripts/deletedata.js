@@ -1,14 +1,14 @@
 window.addEventListener('load', () => {
 
     const forms = document.querySelectorAll('.exclui');
-    const id = document.querySelectorAll('#idFuncionario');
+    const id = document.querySelectorAll('.delete');
 
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', (event) => {
             event.preventDefault();
 
             const dados = new FormData();
-            dados.append('idFuncionario', id[i].value)
+            dados.append('idFuncionario', id[i].value);
 
             const config = {
                 method: 'POST',

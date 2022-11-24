@@ -4,7 +4,7 @@ class DAOFuncionario
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Funcionario');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Funcionario ORDER BY idFuncionario');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
@@ -58,15 +58,6 @@ class DAOFuncionario
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT idFuncionario, nome, cpf, email FROM Funcionario WHERE idFuncionario = ?');
         $pst->bindValue(1, $idFuncionario);
-        $pst->execute();
-        $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
-        return $lista;
-    }
-
-    public function retornaID($nome){
-        $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT idFuncionario FROM Funcionario WHERE nome = ?');
-        $pst->bindValue(1, $nome);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

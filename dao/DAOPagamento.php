@@ -4,7 +4,7 @@ class DAOPagamento
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Pagamento');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Pagamento ORDER BY idPagamento');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

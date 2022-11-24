@@ -57,8 +57,11 @@ window.addEventListener('load', () => {
             return false;
         } else {
             var placa = document.forms[0].placa.value;
-            const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
-            if (regexPlaca.test(placa)) {
+            const regexDefault = /^[a-zA-Z]{3}[0-9]{4}$/;
+            const regexMercosul = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
+            if (regexDefault.test(placa)) {
+                return true;
+            } else if (regexMercosul.test(placa)) {
                 return true;
             } else {
                 alert('Placa inválida.');

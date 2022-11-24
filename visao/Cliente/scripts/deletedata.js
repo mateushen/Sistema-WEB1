@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
 
     const forms = document.querySelectorAll('.exclui');
-    const id = document.querySelectorAll('#idCliente');
+    const id = document.querySelectorAll('.delete');
 
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', (event) => {

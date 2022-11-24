@@ -4,7 +4,7 @@ class DAOVenda
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Venda');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Venda ORDER BY idVenda');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
@@ -57,7 +57,7 @@ class DAOVenda
             INNER JOIN Funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
             INNER JOIN Cliente AS C ON C.idCliente = Vd.idCliente 
             INNER JOIN Veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
-            INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento
+            INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento ORDER BY Vd.idVenda
         ');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
@@ -75,7 +75,7 @@ class DAOVenda
             INNER JOIN Cliente AS C ON C.idCliente = Vd.idCliente 
             INNER JOIN Veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
             INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento 
-            WHERE Vd.idFuncionario = ?
+            WHERE Vd.idFuncionario = ? ORDER BY Vd.idVenda
         ');
         $pst->bindValue(1, $idFuncionario);
         $pst->execute();

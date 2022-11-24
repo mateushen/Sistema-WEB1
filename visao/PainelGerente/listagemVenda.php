@@ -72,7 +72,7 @@
                     echo '<td class="action">
                         <form class="exclui">
                         <input type="submit" value="" id="trash" name="excluir">
-                        <input type="hidden" value="' . $l['idVenda'] . '" id="idVenda" name="idVenda">
+                        <input type="hidden" value="' . $l['idVenda'] . '" id="delete" class="delete">
                         </form></td>';
 
                     echo "</tr>";

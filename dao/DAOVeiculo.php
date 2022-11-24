@@ -4,7 +4,7 @@ class DAOVeiculo
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo ORDER BY idVeiculo');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
@@ -93,7 +93,7 @@ class DAOVeiculo
 
     public function veiculoNaoVendido(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendido = 0');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendido = 0 ORDER BY idVeiculo');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

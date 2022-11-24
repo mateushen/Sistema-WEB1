@@ -4,7 +4,7 @@ class DAOCliente
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Cliente');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM Cliente ORDER BY idCliente');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;

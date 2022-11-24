@@ -15,6 +15,20 @@
 
 <body>
 
+    <?php
+    require_once '../../dao/Conexao.php';
+    require_once '../../dao/DAOFuncionario.php';
+
+    $dao = new DAOFuncionario();
+
+    $lista = $dao->lista();
+
+    if(!$lista){
+        echo "<script>alert('Não existe funcionário cadastrado');</script>";
+        echo "<script>window.open('../../main.php', '_self');</script>";
+    }
+    ?>
+
     <header>
         <div class="header">
             <img src="../img/title.png" />

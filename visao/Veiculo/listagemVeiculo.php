@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/listing.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <script type="text/javascript" src="scripts/deletedata.js"></script>
 </head>
 
 <body>
@@ -76,7 +77,7 @@
                 echo '<td class="action">
                 <form class="exclui">
                 <input type="submit" value="" id="trash" name="excluir">
-                <input type="hidden" value="' . $l['idVeiculo'] . '" id="idVeiculo" name="idVeiculo">
+                <input type="hidden" value="' . $l['idVeiculo'] . '" id="delete" class="delete">
                 </form></td>';
 
                 echo '<td class="action">
