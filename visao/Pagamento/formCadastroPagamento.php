@@ -11,21 +11,22 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script type="text/javascript" src="scripts/savedata.js"></script>
+
+    <?php
+    require_once '../functions.php';
+    session_start();
+    $status = $_SESSION['status'];
+
+    $function = new Functions();
+    $function->verificaSessao($status);
+    ?>
+
 </head>
 
 <body>
 
-    <?php
-    session_start();
-    $status = $_SESSION['status'];
-
-    if ($status != 'ativo') {
-        header('Location: ../../main.php');
-    }
-    ?>
-
     <header>
-    <div class="img-back">
+        <div class="img-back">
             <a href="listagemPagamento.php"><img src="../img/icon-back.png" width="80" height="80" /></a>
         </div>
         <div class="header">

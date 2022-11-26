@@ -9,18 +9,19 @@
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
-</head>
-
-<body>
 
     <?php
+    require_once '../functions.php';
     session_start();
     $status = $_SESSION['status'];
 
-    if ($status != 'ativo') {
-        header('Location: ../../main.php');
-    }
+    $function = new Functions();
+    $function->verificaSessao($status);
     ?>
+    
+</head>
+
+<body>
 
     <header>
         <div class="logo-first">

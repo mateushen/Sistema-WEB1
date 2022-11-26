@@ -91,7 +91,7 @@ class DAOVeiculo
         }
     }
 
-    public function veiculoNaoVendido(){
+    public function veiculoDisponivel(){
         $lista = [];
         $pst = Conexao::getPreparedStatement('SELECT * FROM Veiculo WHERE vendido = 0 ORDER BY idVeiculo');
         $pst->execute();

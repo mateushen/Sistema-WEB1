@@ -11,18 +11,19 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script type="text/javascript" src="scripts/editdata.js"></script>
-</head>
-
-<body>
 
     <?php
+    require_once '../functions.php';
     session_start();
     $status = $_SESSION['status'];
 
-    if ($status != 'ativo') {
-        header('Location: ../../main.php');
-    }
+    $function = new Functions();
+    $function->verificaSessao($status);
     ?>
+    
+</head>
+
+<body>
     
     <header>
         <div class="header">

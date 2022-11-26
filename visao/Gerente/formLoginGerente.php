@@ -11,6 +11,21 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script type="text/javascript" src="scripts/login.js"></script>
+
+    <?php
+    require_once '../../dao/Conexao.php';
+    require_once '../../dao/DAOGerente.php';
+
+    $dao = new DAOGerente();
+
+    $lista = $dao->lista();
+
+    if (!$lista) {
+        echo "<script>alert('Não existe gerente cadastrado');</script>";
+        echo "<script>window.open('../../index.php', '_self');</script>";
+    }
+    ?>
+
 </head>
 
 <body>

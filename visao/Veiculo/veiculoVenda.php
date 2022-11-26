@@ -38,12 +38,13 @@
                 <th>Cor</th>
                 <th>Ano</th>
             </tr>
+            
             <?php
             require_once '../../dao/DAOVeiculo.php';
             require_once '../../dao/Conexao.php';
 
             $dao = new DAOVeiculo();
-            $lista = $dao->veiculoNaoVendido();
+            $lista = $dao->veiculoDisponivel();
 
             foreach ($lista as $l) {
                 echo "<tr>";

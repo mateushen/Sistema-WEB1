@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script type="text/javascript" src="scripts/login.js"></script>
-</head>
-
-<body>
 
     <?php
     require_once '../../dao/Conexao.php';
@@ -23,11 +20,15 @@
 
     $lista = $dao->lista();
 
-    if(!$lista){
+    if (!$lista) {
         echo "<script>alert('Não existe funcionário cadastrado');</script>";
         echo "<script>window.open('../../main.php', '_self');</script>";
     }
     ?>
+
+</head>
+
+<body>
 
     <header>
         <div class="header">
