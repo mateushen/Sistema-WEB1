@@ -27,7 +27,7 @@
     <header>
 
         <?php
-        $status = $_SESSION['status'];
+        $user = $_SESSION['user'];
 
         if ($user == 'Gerente') {
             echo '<div class="img-back">
