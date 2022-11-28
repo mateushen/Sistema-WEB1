@@ -92,9 +92,9 @@
 
             ?>
         </table>
-        <br>
+        <br><br>
         <p id="msg"></p>
-        <br><br><br>
+        <br><br>
         <a class="new-register" href="formCadastroCliente.php">CADASTRAR NOVO CLIENTE</a><br><br>
     </main>
 

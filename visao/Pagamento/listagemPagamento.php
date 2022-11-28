@@ -81,7 +81,9 @@
 
             ?>
         </table>
-        <br><br><br>
+        <br><br>
+        <p id="msg"></p>
+        <br><br>
         <a class="new-register" href="formCadastroPagamento.php">CADASTRAR NOVO TIPO DE PAGAMENTO</a><br><br>
     </main>
 

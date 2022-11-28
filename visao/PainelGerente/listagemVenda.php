@@ -86,7 +86,9 @@
             }
             ?>
         </table>
-        <br><br><br>
+        <br><br>
+        <p id="msg"></p>
+        <br><br>
     </main>
 
     <footer>

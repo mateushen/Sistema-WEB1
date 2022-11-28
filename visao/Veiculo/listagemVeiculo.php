@@ -97,7 +97,9 @@
 
             ?>
         </table>
-        <br><br><br>
+        <br><br>
+        <p id="msg"></p>
+        <br><br>
         <a class="new-register" href="formCadastroVeiculo.php">CADASTRAR NOVO VEÍCULO</a><br><br>
     </main>
 
