@@ -76,12 +76,10 @@ class DAOFuncionario
                 unset($login['senha']);
                 return $login;
             }else{
-                $login = [];
-                return $login;
+                return false;
             }
         }else{
-            $lista = [];
-            return $lista;
+            return false;
         };
     }
 
