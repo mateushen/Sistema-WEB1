@@ -17,6 +17,7 @@ if ($lista) {
     ];
     $_SESSION['cpf'] = $cpf;
     $_SESSION['email'] = $email;
+    $_SESSION['status'] = 'ok';
 } else {
     $retorno = [
         'status' => 'error',

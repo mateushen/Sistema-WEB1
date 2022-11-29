@@ -20,11 +20,11 @@
     $function = new Functions();
     $function->verificaSessao($status);
     ?>
-    
+
 </head>
 
 <body>
-    
+
     <header>
         <div class="header">
             <img src="../img/title.png" />
@@ -70,13 +70,14 @@
             <label for="senha">Senha: </label>
             <input class="input-form" type="password" name="senha" id="senha" maxlength="6" value=""><br><br>
 
-            <button>SALVAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>SALVAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

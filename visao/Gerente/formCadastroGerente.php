@@ -5,22 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição de cliente</title>
+    <title>Primeiro acesso</title>
     <link rel="icon" type="imagem/png" href="../img/logo.png" />
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <script type="text/javascript" src="scripts/editdata.js"></script>
+    <script type="text/javascript" src="scripts/savedata.js"></script>
 
     <?php
-    require_once '../functions.php';
-    session_start();
-    $status = $_SESSION['status'];
+    require_once '../../dao/Conexao.php';
+    require_once '../../dao/DAOGerente.php';
 
-    $function = new Functions();
-    $function->verificaSessao($status);
+    $dao = new DAOGerente();
+
+    $lista = $dao->lista();
+
+    if ($lista) {
+        echo "<script>alert('Já existe gerente cadastrado');</script>";
+        echo "<script>window.open('../../main.php', '_self');</script>";
+    }
     ?>
-    
+
 </head>
 
 <body>
@@ -34,45 +39,31 @@
     <div class="bar"></div>
 
     <main>
-        <br>
+        <br><br>
         <div class="title">
-            <h1>EDIÇÃO DE CLIENTE</h1>
+            <h1>PRIMEIRO ACESSO DE GERENTE</h1>
         </div>
 
         <form class="form-main">
 
-            <?php
-            require_once '../../modelo/Cliente.php';
-            require_once '../../dao/DAOCliente.php';
-            require_once '../../dao/Conexao.php';
-
-            $idCliente = $_POST['idCliente'];
-
-            $dao = new DAOCliente();
-
-            $lista = $dao->buscaID($idCliente);
-
-            $cliente = $lista[0];
-
-            ?>
-
-            <input type="hidden" id="idCliente" name="idCliente" value="<?= $cliente['idCliente'] ?>">
-
             <label for="nome">Nome: </label>
-            <input class="input-form" type="text" id="nome" autocomplete="off" name="nome" maxlength="25" value="<?= $cliente['nome'] ?>"><br>
+            <input class="input-form" type="text" name="nome" id="nome" maxlength="25" onkeypress="return somenteLetras(event)"><br><br>
 
             <label for="cpf">CPF: </label>
-            <input class="input-form" type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)" value="<?= $cliente['cpf'] ?>"><br>
+            <input class="input-form" type="text" id="cpf" name="cpf" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br><br>
 
-            <label for="telefone">Telefone: </label>
-            <input class="input-form" type="text" name="telefone" id="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)" value="<?= $cliente['telefone'] ?>"><br><br>
+            <label for="email">E-mail: </label>
+            <input class="input-form" type="text" name="email" id="email"><br><br>
 
-            <button>SALVAR</button><br>
+            <label for="senha">Senha: </label>
+            <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br><br>
+
+            <button class="bt-form">SALVAR</button><br>
 
             <script src="../scripts/main.js"></script>
 
         </form>
-        
+
         <div class="box-msg">
             <p id="msg"></p>
         </div><br><br><br>
@@ -93,6 +84,7 @@
             <p class="cookies">Termos de uso</p>
         </div>
     </footer>
+
 </body>
 
 </html>

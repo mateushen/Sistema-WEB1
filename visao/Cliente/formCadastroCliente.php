@@ -52,13 +52,14 @@
             <label for="telefone">Telefone</label>
             <input class="input-form" type="text" id="telefone" name="telefone" autocomplete="off" maxlength="14" onkeypress="return somenteNumeros(event)"><br>
 
-            <button>SALVAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>SALVAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

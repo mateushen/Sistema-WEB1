@@ -61,13 +61,14 @@
             <label for="ano">Ano</label>
             <input class="input-form" type="text" name="ano" id="ano" onkeypress="return somenteNumeros(event)" maxlength="4"><br><br>
 
-            <button>SALVAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>SALVAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+        
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

@@ -45,13 +45,14 @@
             <label for="tipo_pagamento">Tipo de pagamento</label>
             <input class="input-form" type="text" name="tipo_pagamento" id="tipo_pagamento" onkeypress="return somenteLetras(event)"><br><br>
 
-            <button>SALVAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>SALVAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+        
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

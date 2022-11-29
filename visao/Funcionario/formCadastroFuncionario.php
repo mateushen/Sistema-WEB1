@@ -26,7 +26,7 @@
 <body>
 
     <header>
-    <div class="img-back">
+        <div class="img-back">
             <a href="listagemFuncionario.php"><img src="../img/icon-back.png" width="80" height="80" /></a>
         </div>
         <div class="header">
@@ -55,13 +55,14 @@
             <label for="senha">Senha</label>
             <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br><br>
 
-            <button>SALVAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>SALVAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

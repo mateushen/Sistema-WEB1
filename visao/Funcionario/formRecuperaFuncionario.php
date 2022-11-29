@@ -25,7 +25,7 @@
         echo "<script>window.open('../../main.php', '_self');</script>";
     }
     ?>
-    
+
 </head>
 
 <body>
@@ -52,13 +52,14 @@
             <label class="label-form" for="email">E-mail</label>
             <input class="input-form" type="text" name="email" id="email"><br><br>
 
-            <button>ENVIAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>ENVIAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

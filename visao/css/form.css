@@ -118,6 +118,13 @@ button:hover {
     color: #AB2114;
 }
 
+.box-msg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 #msg{
     font-family: Verdana;
     color: #000;

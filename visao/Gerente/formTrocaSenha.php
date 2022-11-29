@@ -13,17 +13,15 @@
     <script type="text/javascript" src="scripts/changepass.js"></script>
 
     <?php
-    require_once '../../dao/Conexao.php';
-    require_once '../../dao/DAOGerente.php';
 
-    $dao = new DAOGerente();
+    session_start();
+    $status = $_SESSION['status'];
 
-    $lista = $dao->lista();
-
-    if (!$lista) {
-        echo "<script>alert('Não existe gerente cadastrado');</script>";
+    if ($status != 'ok') {
+        echo "<script>alert('ERRO');</script>";
         echo "<script>window.open('../../main.php', '_self');</script>";
     }
+
     ?>
     
 </head>
@@ -45,30 +43,23 @@
         </div><br>
         <form class="form-main">
 
-            <?php
-
-            session_start();
-            $cpf = $_SESSION['cpf'];
-            $email = $_SESSION['email'];
-
-            ?>
-
             <label for="cpf">CPF</label>
-            <input class="input-form" type="text" id="cpf" name="cpf" disabled="true" value="<?= $cpf ?>"><br>
+            <input class="input-form" type="text" id="cpf" name="cpf" disabled="true" value="<?= $_SESSION['cpf'] ?>"><br>
 
             <label class="label-form" for="email">E-mail</label>
-            <input class="input-form" type="text" name="email" id="email" disabled="true" value="<?= $email ?>"><br>
+            <input class="input-form" type="text" name="email" id="email" disabled="true" value="<?= $_SESSION['email'] ?>"><br>
 
             <label class="label-form" for="senha">Nova senha</label>
             <input class="input-form" type="password" name="senha" id="senha" maxlength="6"><br><br>
 
-            <button>ENVIAR</button><br><br>
-
-            <p id="msg"></p>
+            <button>ENVIAR</button><br>
 
             <script src="../scripts/main.js"></script>
         </form>
-        <br><br>
+
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

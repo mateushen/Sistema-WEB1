@@ -118,11 +118,13 @@
                 ?>
             </select><br><br>
 
-            <button class="btn">SALVAR</button><br><br>
+            <button class="btn">SALVAR</button><br>
 
-            <p id="msg"></p>
         </form>
-        <br><br>
+        
+        <div class="box-msg">
+            <p id="msg"></p>
+        </div><br><br><br>
     </main>
 
     <footer>

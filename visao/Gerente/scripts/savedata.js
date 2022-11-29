@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
                                 method: 'POST',
                                 body: dados
                             };
-                            fetch('visao/Gerente/cadastroGerente.php', config)
+                            fetch('cadastroGerente.php', config)
                                 .then((response) => {
                                     return response.json();
                                 })
@@ -27,7 +27,8 @@ window.addEventListener('load', () => {
                                     console.log(json);
                                     let p = document.getElementById('msg');
                                     if (json.status == 'ok') {
-                                        window.open('main.php', '_self')
+                                        alert(json.mensagem);
+                                        window.open('../../main.php', '_self')
                                     } else {
                                         p.innerText = json.mensagem;
                                         p.style.color = 'red';
