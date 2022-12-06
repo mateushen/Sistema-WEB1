@@ -52,12 +52,12 @@ class DAOGerente
             $login = $lista[0];
             if (password_verify($senha, $login['senha'])){
                 unset($login['senha']);
-                return false;
+                return $login;
             }else{
                 return false;
             }
         }else{
-            return $lista;
+            return false;
         };
     }
 

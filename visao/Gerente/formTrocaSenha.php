@@ -17,7 +17,7 @@
     session_start();
     $status = $_SESSION['status'];
 
-    if ($status != 'ok') {
+    if ($status != 'sim') {
         echo "<script>alert('ERRO');</script>";
         echo "<script>window.open('../../main.php', '_self');</script>";
     }

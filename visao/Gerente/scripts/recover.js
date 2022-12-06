@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
                         method: 'POST',
                         body: dados
                     };
-                    fetch('recuperaFuncionario.php', config)
+                    fetch('recuperaGerente.php', config)
                         .then((response) => {
                             return response.json();
                         })
