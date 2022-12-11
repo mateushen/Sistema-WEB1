@@ -4,14 +4,14 @@ class DAOVenda
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Venda ORDER BY idVenda');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM venda ORDER BY idVenda');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
     }
 
     public function inclui(Venda $venda){
-        $sql = 'INSERT INTO Venda (idFuncionario, idCliente, idVeiculo, idPagamento, data_venda) VALUES (?,?,?,?,?)';
+        $sql = 'INSERT INTO venda (idFuncionario, idCliente, idVeiculo, idPagamento, data_venda) VALUES (?,?,?,?,?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $venda->getIdFuncionario());
@@ -28,7 +28,7 @@ class DAOVenda
     }
 
     public function exclui($idVenda){
-        $sql = 'DELETE FROM Venda WHERE idVenda = ?';
+        $sql = 'DELETE FROM venda WHERE idVenda = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $idVenda);
         if($pst->execute()){
@@ -53,11 +53,11 @@ class DAOVenda
             SELECT idVenda, F.nome AS FNome, 
             C.nome AS CNome, V.modelo AS modelo, 
             P.tipo_pagamento AS pgto, data_venda FROM 
-            Venda AS Vd 
-            INNER JOIN Funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
-            INNER JOIN Cliente AS C ON C.idCliente = Vd.idCliente 
-            INNER JOIN Veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
-            INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento ORDER BY Vd.idVenda
+            venda AS Vd 
+            INNER JOIN funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
+            INNER JOIN cliente AS C ON C.idCliente = Vd.idCliente 
+            INNER JOIN veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
+            INNER JOIN pagamento AS P ON P.idPagamento = Vd.idPagamento ORDER BY Vd.idVenda
         ');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
@@ -70,11 +70,11 @@ class DAOVenda
             SELECT idVenda, F.nome AS FNome, 
             C.nome AS CNome, V.modelo AS modelo, 
             P.tipo_pagamento AS pgto, data_venda FROM 
-            Venda AS Vd 
-            INNER JOIN Funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
-            INNER JOIN Cliente AS C ON C.idCliente = Vd.idCliente 
-            INNER JOIN Veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
-            INNER JOIN Pagamento AS P ON P.idPagamento = Vd.idPagamento 
+            venda AS Vd 
+            INNER JOIN funcionario AS F ON F.idFuncionario = Vd.idFuncionario 
+            INNER JOIN cliente AS C ON C.idCliente = Vd.idCliente 
+            INNER JOIN veiculo AS V ON V.idVeiculo = Vd.idVeiculo 
+            INNER JOIN pagamento AS P ON P.idPagamento = Vd.idPagamento 
             WHERE Vd.idFuncionario = ? ORDER BY Vd.idVenda
         ');
         $pst->bindValue(1, $idFuncionario);
@@ -90,7 +90,7 @@ class DAOVenda
 
     public function qtVendas($idFuncionario){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT COUNT(*) as qt FROM Venda WHERE idFuncionario = ?');
+        $pst = Conexao::getPreparedStatement('SELECT COUNT(*) as qt FROM venda WHERE idFuncionario = ?');
         $pst->bindValue(1, $idFuncionario);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);

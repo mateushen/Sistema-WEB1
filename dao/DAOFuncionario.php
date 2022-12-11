@@ -4,14 +4,14 @@ class DAOFuncionario
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Funcionario ORDER BY idFuncionario');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM funcionario ORDER BY idFuncionario');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
     }
 
     public function inclui(Funcionario $funcionario){
-        $sql = 'INSERT INTO Funcionario (nome, cpf, email, senha, idGerente) VALUES (?,?,?,?,?)';
+        $sql = 'INSERT INTO funcionario (nome, cpf, email, senha, idGerente) VALUES (?,?,?,?,?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $funcionario->getNome());
@@ -28,7 +28,7 @@ class DAOFuncionario
     }
 
     public function exclui($idFuncionario){
-        $sql = 'DELETE FROM Funcionario WHERE idFuncionario = ?';
+        $sql = 'DELETE FROM funcionario WHERE idFuncionario = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $idFuncionario);
         if($pst->execute()){
@@ -39,7 +39,7 @@ class DAOFuncionario
     }
 
     public function altera(Funcionario $funcionario){
-        $sql = 'UPDATE Funcionario SET nome = ?, cpf = ?, email = ?, senha = ? WHERE idFuncionario = ?';
+        $sql = 'UPDATE funcionario SET nome = ?, cpf = ?, email = ?, senha = ? WHERE idFuncionario = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $funcionario->getNome());
         $pst->bindValue(2, $funcionario->getCpf());
@@ -56,7 +56,7 @@ class DAOFuncionario
 
     public function buscaID($idFuncionario){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT idFuncionario, nome, cpf, email FROM Funcionario WHERE idFuncionario = ?');
+        $pst = Conexao::getPreparedStatement('SELECT idFuncionario, nome, cpf, email FROM funcionario WHERE idFuncionario = ?');
         $pst->bindValue(1, $idFuncionario);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
@@ -65,7 +65,7 @@ class DAOFuncionario
 
     public function login($cpf, $senha){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Funcionario WHERE cpf = ?');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM funcionario WHERE cpf = ?');
         $pst->bindValue(1, $cpf);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
@@ -85,7 +85,7 @@ class DAOFuncionario
 
     public function recupera($cpf, $email){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Funcionario WHERE cpf = ? AND email = ?');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM funcionario WHERE cpf = ? AND email = ?');
         $pst->bindValue(1, $cpf);
         $pst->bindValue(2, $email);
         $pst->execute();
@@ -99,7 +99,7 @@ class DAOFuncionario
     }
 
     public function alteraSenha($senha, $cpf, $email){
-        $sql = 'UPDATE Funcionario SET senha = ? WHERE cpf = ? AND email = ?';
+        $sql = 'UPDATE funcionario SET senha = ? WHERE cpf = ? AND email = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $senha);
         $pst->bindValue(2, $cpf);

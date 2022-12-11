@@ -4,7 +4,7 @@ class DAOGerente
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente WHERE idGerente = 1');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM gerente WHERE idGerente = 1');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
@@ -12,7 +12,7 @@ class DAOGerente
 
     
     public function inclui(Gerente $gerente){
-        $sql = 'INSERT INTO Gerente (idGerente, nome, cpf, email, senha) VALUES (?,?,?,?,?)';
+        $sql = 'INSERT INTO gerente (idGerente, nome, cpf, email, senha) VALUES (?,?,?,?,?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $gerente->getIdGerente());
@@ -43,7 +43,7 @@ class DAOGerente
 
     public function login($cpf, $senha){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente WHERE cpf = ?');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM gerente WHERE cpf = ?');
         $pst->bindValue(1, $cpf);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
@@ -63,7 +63,7 @@ class DAOGerente
 
     public function recupera($cpf, $email){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Gerente WHERE cpf = ? AND email = ?');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM gerente WHERE cpf = ? AND email = ?');
         $pst->bindValue(1, $cpf);
         $pst->bindValue(2, $email);
         $pst->execute();
@@ -77,7 +77,7 @@ class DAOGerente
     }
 
     public function alteraSenha($senha, $cpf, $email){
-        $sql = 'UPDATE Gerente SET senha = ? WHERE cpf = ? AND email = ?';
+        $sql = 'UPDATE gerente SET senha = ? WHERE cpf = ? AND email = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $senha);
         $pst->bindValue(2, $cpf);

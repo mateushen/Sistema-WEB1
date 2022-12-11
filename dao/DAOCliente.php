@@ -4,14 +4,14 @@ class DAOCliente
 {
     public function lista(){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Cliente ORDER BY idCliente');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM cliente ORDER BY idCliente');
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
         return $lista;
     }
 
     public function inclui(Cliente $cliente){
-        $sql = 'INSERT INTO Cliente (nome, cpf, telefone) VALUES (?,?,?)';
+        $sql = 'INSERT INTO cliente (nome, cpf, telefone) VALUES (?,?,?)';
 
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $cliente->getNome());
@@ -26,7 +26,7 @@ class DAOCliente
     }
 
     public function exclui($idCliente){
-        $sql = 'DELETE FROM Cliente WHERE idCliente = ?';
+        $sql = 'DELETE FROM cliente WHERE idCliente = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $idCliente);
         if($pst->execute()){
@@ -37,7 +37,7 @@ class DAOCliente
     }
 
     public function altera(Cliente $cliente){
-        $sql = 'UPDATE Cliente SET nome = ?, cpf = ?, telefone = ? WHERE idCliente = ?';
+        $sql = 'UPDATE cliente SET nome = ?, cpf = ?, telefone = ? WHERE idCliente = ?';
         $pst = Conexao::getPreparedStatement($sql);
         $pst->bindValue(1, $cliente->getNome());
         $pst->bindValue(2, $cliente->getCpf());
@@ -53,7 +53,7 @@ class DAOCliente
 
     public function buscaID($idCliente){
         $lista = [];
-        $pst = Conexao::getPreparedStatement('SELECT * FROM Cliente WHERE idCliente = ?');
+        $pst = Conexao::getPreparedStatement('SELECT * FROM cliente WHERE idCliente = ?');
         $pst->bindValue(1, $idCliente);
         $pst->execute();
         $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
